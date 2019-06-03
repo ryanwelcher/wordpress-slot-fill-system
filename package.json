@@ -1,0 +1,15 @@
+{
+  "name": "extending-gutenberg",
+  "version": "1.0.0",
+  "description": "A plugin to demonstrate extension points",
+  "main": "index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/scripts": "^3.2.1"
+  }
+}
