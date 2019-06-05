@@ -56,15 +56,13 @@ const PrePublishCheckList = () => {
 		dispatch( 'core/editor' ).unlockPostSaving();
 	}
 	return (
-		<PluginPrePublishPanel>
-			<PanelBody title={ 'Publish Checklist' }>
-				<p><b>WordCount:</b> { wordCountMessage }</p>
-				<p><b>Categories:</b> { catsMessage }</p>
-				<p><b>Tags:</b> { tagsMessage }</p>
-				<p><b>Featured Image:</b> { featuredImage }</p>
-			</PanelBody>
+		<PluginPrePublishPanel title={ 'Publish Checklist' } >
+			<p><b>WordCount:</b> { wordCountMessage }</p>
+			<p><b>Categories:</b> { catsMessage }</p>
+			<p><b>Tags:</b> { tagsMessage }</p>
+			<p><b>Featured Image:</b> { featuredImage }</p>
 		</PluginPrePublishPanel>
 	)
 };
 
-registerPlugin( 'extending-gutenberg/pre-publish-checklist', { render: PrePublishCheckList } );
+registerPlugin( 'extending-gutenberg-pre-publish-checklist', { render: PrePublishCheckList } );

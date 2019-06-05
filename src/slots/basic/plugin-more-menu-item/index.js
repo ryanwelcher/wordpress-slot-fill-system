@@ -1,12 +1,15 @@
 const { registerPlugin } = wp.plugins;
 const { PluginMoreMenuItem,} = wp.editPost;
+import { TenUp } from '../../../svg/icons';
 
 const MyButtonMoreMenuItemTest = () => (
 	<PluginMoreMenuItem
-		href="https://10up.com"
+		href="https://10up.com/careers"
+		target={'_blank'}
+		rel={ 'noopener noreferrer' }
 	>
-		More Menu Item
+		10up is hiring!
 	</PluginMoreMenuItem>
 );
 
-registerPlugin( 'more-menu-item-test', { render: MyButtonMoreMenuItemTest, icon: "smiley" } );
+registerPlugin( 'more-menu-item-test', { render: MyButtonMoreMenuItemTest, icon: TenUp } );
