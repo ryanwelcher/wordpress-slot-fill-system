@@ -98,8 +98,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _plugin_more_menu_item__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./plugin-more-menu-item */ "./src/slots/basic/plugin-more-menu-item/index.js");
-// import './plugin-sidebar';
+/* harmony import */ var _plugin_sidebar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./plugin-sidebar */ "./src/slots/basic/plugin-sidebar/index.js");
+/* harmony import */ var _plugin_more_menu_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./plugin-more-menu-item */ "./src/slots/basic/plugin-more-menu-item/index.js");
+
  // import './plugin-sidebar-more-menu-item';
 // import './plugin-post-status-info';
 // import './plugin-block-settings-menu-item';
@@ -129,9 +130,39 @@ var MyButtonMoreMenuItemTest = function MyButtonMoreMenuItemTest() {
   }, "More Menu Item");
 };
 
-registerPlugin('more-menu-item-test', {
+registerPlugin('extending-gutenberg/more-menu-item-test', {
   render: MyButtonMoreMenuItemTest,
   icon: "smiley"
+});
+
+/***/ }),
+
+/***/ "./src/slots/basic/plugin-sidebar/index.js":
+/*!*************************************************!*\
+  !*** ./src/slots/basic/plugin-sidebar/index.js ***!
+  \*************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+var registerPlugin = wp.plugins.registerPlugin;
+var PluginSidebar = wp.editPost.PluginSidebar;
+var PanelBody = wp.components.PanelBody;
+
+var PluginSidebarTest = function PluginSidebarTest() {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginSidebar, {
+    name: "plugin-sidebar-test",
+    title: "My Plugin",
+    icon: "smiley"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PanelBody, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "Plugin Sidebar")));
+};
+
+registerPlugin('extending-gutenberg/plugin-sidebar-test', {
+  render: PluginSidebarTest
 });
 
 /***/ }),
