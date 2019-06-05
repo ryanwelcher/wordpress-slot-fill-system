@@ -100,11 +100,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _plugin_more_menu_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./plugin-more-menu-item */ "./src/slots/basic/plugin-more-menu-item/index.js");
 /* harmony import */ var _plugin_pre_publish_panel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./plugin-pre-publish-panel */ "./src/slots/basic/plugin-pre-publish-panel/index.js");
 
+
  // import './plugin-sidebar-more-menu-item';
 // import './plugin-post-status-info';
 // import './plugin-block-settings-menu-item';
-
- // import './plugin-post-publish-panel';
+// import './plugin-post-publish-panel';
 
 /***/ }),
 
@@ -151,16 +151,15 @@ registerPlugin('more-menu-item-test', {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _svg_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../svg/icons */ "./src/svg/icons/index.js");
 
 var registerPlugin = wp.plugins.registerPlugin;
 var PluginPrePublishPanel = wp.editPost.PluginPrePublishPanel;
 
-
 var PluginPrePublishPanelTest = function PluginPrePublishPanelTest() {
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginPrePublishPanel, {
-    icon: "twitter",
-    title: 'Title'
+    className: "custom-panel-class",
+    title: "Panel Title",
+    initialOpen: true
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, " Pre Publish Panel "));
 };
 
