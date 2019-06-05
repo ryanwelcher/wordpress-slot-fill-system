@@ -181,7 +181,7 @@ var PrePublishCheckList = function PrePublishCheckList() {
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("b", null, "WordCount:"), " ", wordCountMessage), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("b", null, "Categories:"), " ", catsMessage), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("b", null, "Tags:"), " ", tagsMessage), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("b", null, "Featured Image:"), " ", featuredImage)));
 };
 
-registerPlugin('pre-publish-checklist', {
+registerPlugin('extending-gutenberg/pre-publish-checklist', {
   render: PrePublishCheckList
 });
 

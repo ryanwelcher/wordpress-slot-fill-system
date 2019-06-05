@@ -67,4 +67,4 @@ const PrePublishCheckList = () => {
 	)
 };
 
-registerPlugin( 'pre-publish-checklist', { render: PrePublishCheckList } );
+registerPlugin( 'extending-gutenberg/pre-publish-checklist', { render: PrePublishCheckList } );
