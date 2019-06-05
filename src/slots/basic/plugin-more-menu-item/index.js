@@ -9,4 +9,4 @@ const MyButtonMoreMenuItemTest = () => (
 	</PluginMoreMenuItem>
 );
 
-registerPlugin( 'more-menu-item-test', { render: MyButtonMoreMenuItemTest, icon: "smiley" } );
+registerPlugin( 'extending-gutenberg/more-menu-item-test', { render: MyButtonMoreMenuItemTest, icon: "smiley" } );

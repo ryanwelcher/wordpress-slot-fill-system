@@ -15,4 +15,4 @@ const PluginSidebarTest = () => {
 		</PluginSidebar>
 	)
 };
-registerPlugin( 'plugin-sidebar-test', { render: PluginSidebarTest } );
+registerPlugin( 'extending-gutenberg/plugin-sidebar-test', { render: PluginSidebarTest } );
