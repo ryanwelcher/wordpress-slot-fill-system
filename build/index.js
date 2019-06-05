@@ -113,7 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _with_word_counter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./with-word-counter */ "./src/slots/real-world/pre-publish-checklist/with-word-counter/index.js");
+/* harmony import */ var _utils_with_word_counter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../utils/with-word-counter */ "./src/utils/with-word-counter/index.js");
 
 var registerPlugin = wp.plugins.registerPlugin;
 var PluginPrePublishPanel = wp.editPost.PluginPrePublishPanel;
@@ -127,7 +127,7 @@ var PanelBody = wp.components.PanelBody;
 var PrePublishCheckList = function PrePublishCheckList() {
   var lockPost = false; // Get the WordCount
 
-  var wordCounter = Object(_with_word_counter__WEBPACK_IMPORTED_MODULE_1__["default"])({});
+  var wordCounter = Object(_utils_with_word_counter__WEBPACK_IMPORTED_MODULE_1__["default"])({});
   var wordCountMessage = "".concat(wordCounter.count);
 
   if (!wordCounter.passed) {
@@ -187,10 +187,10 @@ registerPlugin('pre-publish-checklist', {
 
 /***/ }),
 
-/***/ "./src/slots/real-world/pre-publish-checklist/with-word-counter/index.js":
-/*!*******************************************************************************!*\
-  !*** ./src/slots/real-world/pre-publish-checklist/with-word-counter/index.js ***!
-  \*******************************************************************************/
+/***/ "./src/utils/with-word-counter/index.js":
+/*!**********************************************!*\
+  !*** ./src/utils/with-word-counter/index.js ***!
+  \**********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
