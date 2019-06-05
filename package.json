@@ -1,14 +1,13 @@
 {
   "name": "extending-gutenberg",
   "version": "1.0.0",
-  "description": "A plugin to demonstrate extension points",
-  "main": "index.js",
+  "description": "A plugin to demonstrate extension points in Gutenberg",
   "scripts": {
     "build": "wp-scripts build",
     "start": "wp-scripts start"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Ryan Welcher",
+  "license": "GPL 2.0",
   "devDependencies": {
     "@wordpress/scripts": "^3.2.1"
   }
