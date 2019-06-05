@@ -3,11 +3,10 @@ const { PluginMoreMenuItem,} = wp.editPost;
 
 const MyButtonMoreMenuItemTest = () => (
 	<PluginMoreMenuItem
-		icon="smiley"
-		onClick={ () => { alert( 'Button Clicked' ) } }
+		href="https://10up.com"
 	>
 		More Menu Item
 	</PluginMoreMenuItem>
 );
 
-registerPlugin( 'more-menu-item-test', { render: MyButtonMoreMenuItemTest } );
+registerPlugin( 'more-menu-item-test', { render: MyButtonMoreMenuItemTest, icon: "smiley" } );

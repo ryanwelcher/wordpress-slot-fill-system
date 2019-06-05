@@ -1,5 +1,6 @@
 const { registerPlugin } = wp.plugins;
 const { PluginSidebar } = wp.editPost;
+const { PanelBody } = wp.components;
 
 const PluginSidebarTest = () => {
 	return(
@@ -8,8 +9,10 @@ const PluginSidebarTest = () => {
 			title='My Plugin'
 			icon="smiley"
 		>
-			<p>Plugin Sidebar</p>
+			<PanelBody>
+				<p>Plugin Sidebar</p>
+			</PanelBody>
 		</PluginSidebar>
 	)
-}
+};
 registerPlugin( 'plugin-sidebar-test', { render: PluginSidebarTest } );
