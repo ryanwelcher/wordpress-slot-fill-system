@@ -5,7 +5,7 @@
  * Version: 1.0.0
  * Author: Ryan Welcher
  * Author URI: www.ryanwelcher.com
- * Plugin URI: http://wordpress.org/plugins/hello-dolly/
+ * Plugin URI: https://github.com/ryanwelcher/extending-gutenberg
  */
 
 namespace ExtendingGutenberg;
