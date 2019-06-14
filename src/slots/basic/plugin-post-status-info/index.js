@@ -8,6 +8,6 @@ const PluginPostStatusInfoTest = () => {
 			<p>Post Status Info SlotFill</p>
 		</PluginPostStatusInfo>
 	)
-}
+};
 
 registerPlugin( 'post-status-info-test', { render: PluginPostStatusInfoTest } );
