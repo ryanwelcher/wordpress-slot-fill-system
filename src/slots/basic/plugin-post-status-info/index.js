@@ -5,7 +5,7 @@ const { PluginPostStatusInfo } = wp.editPost;
 const PluginPostStatusInfoTest = () => {
 	return(
 		<PluginPostStatusInfo>
-			<p>Post Status Info SlotFill</p>
+			<p>Content Here</p>
 		</PluginPostStatusInfo>
 	)
 };

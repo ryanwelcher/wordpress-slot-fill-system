@@ -80,17 +80,33 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _slots_basic__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slots/basic */ "./src/slots/basic/index.js");
+/* harmony import */ var _slots_real_world__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slots/real-world */ "./src/slots/real-world/index.js");
 // Basic Examples
- // Real World Examples
-//import './slots/real-world';
+//import './slots/basic';
+// Real World Examples
+
 
 /***/ }),
 
-/***/ "./src/slots/basic/combined/index.js":
-/*!*******************************************!*\
-  !*** ./src/slots/basic/combined/index.js ***!
-  \*******************************************/
+/***/ "./src/slots/real-world/index.js":
+/*!***************************************!*\
+  !*** ./src/slots/real-world/index.js ***!
+  \***************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _plugin_post_status_info__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./plugin-post-status-info */ "./src/slots/real-world/plugin-post-status-info/index.js");
+// import './pre-publish-checklist';
+
+
+/***/ }),
+
+/***/ "./src/slots/real-world/plugin-post-status-info/index.js":
+/*!***************************************************************!*\
+  !*** ./src/slots/real-world/plugin-post-status-info/index.js ***!
+  \***************************************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -98,50 +114,78 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_wordCounter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../utils/wordCounter */ "./src/utils/wordCounter/index.js");
 
 var registerPlugin = wp.plugins.registerPlugin;
-var _wp$editPost = wp.editPost,
-    PluginSidebar = _wp$editPost.PluginSidebar,
-    PluginPrePublishPanel = _wp$editPost.PluginPrePublishPanel;
-var PanelBody = wp.components.PanelBody;
-var Fragment = wp.element.Fragment;
+var PluginPostStatusInfo = wp.editPost.PluginPostStatusInfo;
 
-var PluginSidebarTest = function PluginSidebarTest() {
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginSidebar, {
-    name: "plugin-sidebar-test",
-    title: "My Plugin",
-    icon: "smiley"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PanelBody, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "Plugin Sidebar"))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginPrePublishPanel, {
-    className: "custom-panel-class",
-    title: "Panel Title",
-    initialOpen: true
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, " Pre Publish Panel ")));
+
+var PluginPostStatusInfoTest = function PluginPostStatusInfoTest() {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginPostStatusInfo, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_utils_wordCounter__WEBPACK_IMPORTED_MODULE_1__["default"], null)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginPostStatusInfo, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_utils_wordCounter__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    label: "Characters without Spaces",
+    countType: "characters_excluding_spaces"
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginPostStatusInfo, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_utils_wordCounter__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    label: "Characters with Spaces",
+    countType: "characters_including_spaces"
+  })));
 };
 
-registerPlugin('extending-gutenberg', {
-  render: PluginSidebarTest
+registerPlugin('post-status-info-test-real-world', {
+  render: PluginPostStatusInfoTest
 });
 
 /***/ }),
 
-/***/ "./src/slots/basic/index.js":
-/*!**********************************!*\
-  !*** ./src/slots/basic/index.js ***!
-  \**********************************/
-/*! no exports provided */
+/***/ "./src/utils/wordCounter/index.js":
+/*!****************************************!*\
+  !*** ./src/utils/wordCounter/index.js ***!
+  \****************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _combined__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./combined */ "./src/slots/basic/combined/index.js");
-//import './plugin-sidebar';
-//import './plugin-more-menu-item';
-//import './plugin-pre-publish-panel';
-// import './plugin-sidebar-more-menu-item';
-// import './plugin-post-status-info';
-// import './plugin-block-settings-menu-item';
-// import './plugin-post-publish-panel';
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 
+var Component = wp.element.Component;
+var count = wp.wordcount.count;
+var serialize = wp.blocks.serialize;
+var withSelect = wp.data.withSelect;
+var compose = wp.compose.compose;
+/**
+ * Display the count with a label.
+ *
+ * @param {Object} params         Props for the component.
+ * @param {string} [params.label] The label to display
+ * @param {int}    [params.count] The current count.
+ */
+
+var WordCounter = function WordCounter(_ref) {
+  var _ref$label = _ref.label,
+      label = _ref$label === void 0 ? "Word Count" : _ref$label,
+      count = _ref.count;
+
+  if (false === count) {
+    return null;
+  }
+
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null, label), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, count));
+};
+
+var allowedCountTypes = ['words', 'characters_excluding_spaces', 'characters_including_spaces'];
+/* harmony default export */ __webpack_exports__["default"] = (compose(withSelect(function (select, ownProps) {
+  var countType = ownProps.countType || 'words';
+  var counted = false;
+
+  if (allowedCountTypes.includes(countType)) {
+    counted = count(serialize(select('core/editor').getBlocks()), countType);
+  }
+
+  return {
+    count: counted
+  };
+}))(WordCounter));
 
 /***/ }),
 
