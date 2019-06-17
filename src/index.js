@@ -1,5 +1,5 @@
 // Basic Examples
-import './slots/basic';
+//import './slots/basic';
 
 // Real World Examples
-//import './slots/real-world';
+import './slots/real-world';
