@@ -8,7 +8,7 @@ const { compose } = wp.compose;
  * Display the count with a label.
  *
  * @param {Object} params         Props for the component.
- * @param {string} [params.label] The label to display
+ * @param {string} [params.label] The label to display.
  * @param {int}    [params.count] The current count.
  */
 const WordCounter = ( { label = "Word Count", count } ) => {
