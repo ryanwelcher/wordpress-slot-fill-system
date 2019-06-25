@@ -71,6 +71,84 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/filters/editor-blockedit/examples/basic/index.js":
+/*!**************************************************************!*\
+  !*** ./src/filters/editor-blockedit/examples/basic/index.js ***!
+  \**************************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+var createHigherOrderComponent = wp.compose.createHigherOrderComponent;
+var addFilter = wp.hooks.addFilter;
+var Fragment = wp.element.Fragment;
+var InspectorControls = wp.editor.InspectorControls;
+var _wp$components = wp.components,
+    Slot = _wp$components.Slot,
+    PanelBody = _wp$components.PanelBody;
+/**
+ * Filter the InspectorControls for all blocks
+ */
+
+var withInspectorControls = createHigherOrderComponent(function (BlockEdit) {
+  return function (props) {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(BlockEdit, props), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InspectorControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PanelBody, {
+      title: "Basic Example: editor.BlockEdit"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "Every Block Gets This"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Slot, {
+      name: "Toolbar"
+    }))));
+  };
+}, "withInspectorControl");
+addFilter('editor.BlockEdit', 'ryanwelcher/filters/blockedit/basic', withInspectorControls);
+
+/***/ }),
+
+/***/ "./src/filters/editor-blockedit/examples/per-block/index.js":
+/*!******************************************************************!*\
+  !*** ./src/filters/editor-blockedit/examples/per-block/index.js ***!
+  \******************************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _slots_custom_basic_fills__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../slots/custom/basic-fills */ "./src/slots/custom/basic-fills/index.js");
+
+var createHigherOrderComponent = wp.compose.createHigherOrderComponent;
+var addFilter = wp.hooks.addFilter;
+var Fragment = wp.element.Fragment;
+var InspectorControls = wp.editor.InspectorControls;
+var _wp$components = wp.components,
+    Fill = _wp$components.Fill,
+    PanelBody = _wp$components.PanelBody;
+
+/**
+ * Filter the InspectorControls for a single block type.
+ */
+
+var withInspectorControls = createHigherOrderComponent(function (BlockEdit) {
+  return function (props) {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(BlockEdit, props), props.name === 'core/paragraph' && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InspectorControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PanelBody, {
+      title: "Per Block Example: editor.BlockEdit"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fill, {
+      name: "Toolbar"
+    }, "Panel body 2"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fill, {
+      name: "Toolbar"
+    }, "Panel body 3"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fill, {
+      name: "Toolbar"
+    }, "Panel body 4"))));
+  };
+}, "withInspectorControl");
+addFilter('editor.BlockEdit', 'ryanwelcher/filters/blockedit/perblock', withInspectorControls);
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -81,9 +159,19 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _slots_basic__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slots/basic */ "./src/slots/basic/index.js");
+/* harmony import */ var _slots_custom_basic_slot_creation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./slots/custom/basic-slot-creation */ "./src/slots/custom/basic-slot-creation/index.js");
+/* harmony import */ var _slots_custom_basic_fills__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./slots/custom/basic-fills */ "./src/slots/custom/basic-fills/index.js");
+/* harmony import */ var _filters_editor_blockedit_examples_basic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./filters/editor-blockedit/examples/basic */ "./src/filters/editor-blockedit/examples/basic/index.js");
+/* harmony import */ var _filters_editor_blockedit_examples_per_block__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./filters/editor-blockedit/examples/per-block */ "./src/filters/editor-blockedit/examples/per-block/index.js");
 // Basic Examples
  // Real World Examples
 //import './slots/real-world';
+// Custom Examples
+
+
+
+
+
 
 /***/ }),
 
@@ -103,7 +191,9 @@ var registerPlugin = wp.plugins.registerPlugin;
 var _wp$editPost = wp.editPost,
     PluginSidebar = _wp$editPost.PluginSidebar,
     PluginPrePublishPanel = _wp$editPost.PluginPrePublishPanel;
-var PanelBody = wp.components.PanelBody;
+var _wp$components = wp.components,
+    Fill = _wp$components.Fill,
+    PanelBody = _wp$components.PanelBody;
 var Fragment = wp.element.Fragment;
 
 var PluginSidebarTest = function PluginSidebarTest() {
@@ -142,6 +232,61 @@ __webpack_require__.r(__webpack_exports__);
 // import './plugin-block-settings-menu-item';
 // import './plugin-post-publish-panel';
 
+
+/***/ }),
+
+/***/ "./src/slots/custom/basic-fills/index.js":
+/*!***********************************************!*\
+  !*** ./src/slots/custom/basic-fills/index.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+var Fill = wp.components.Fill;
+var registerPlugin = wp.plugins.registerPlugin;
+
+var ToolBarFills = function ToolBarFills() {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fill, {
+    name: "Toolbar"
+  }, "Panel body 2"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fill, {
+    name: "Toolbar"
+  }, "Panel body 3"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fill, {
+    name: "Toolbar"
+  }, "Panel body 4"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ToolBarFills); //registerPlugin( 'raw-slot-fill', { render: ToolBarFills } );
+
+/***/ }),
+
+/***/ "./src/slots/custom/basic-slot-creation/index.js":
+/*!*******************************************************!*\
+  !*** ./src/slots/custom/basic-slot-creation/index.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+var Slot = wp.components.Slot;
+
+var Toolbar = function Toolbar() {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "toolbar"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Slot, {
+    name: "Toolbar"
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Toolbar);
 
 /***/ }),
 
