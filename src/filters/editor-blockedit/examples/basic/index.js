@@ -2,7 +2,7 @@ const { createHigherOrderComponent } = wp.compose;
 const { addFilter } = wp.hooks;
 const { Fragment } = wp.element;
 const { InspectorControls } = wp.editor;
-const { PanelBody } = wp.components;
+const { Slot, PanelBody } = wp.components;
 
 /**
  * Filter the InspectorControls for all blocks
@@ -15,6 +15,7 @@ const withInspectorControls =  createHigherOrderComponent( ( BlockEdit ) => {
 				<InspectorControls>
 					<PanelBody title='Basic Example: editor.BlockEdit'>
 						<p>Every Block Gets This</p>
+						<Slot name="Toolbar"/>
 					</PanelBody>
 				</InspectorControls>
 			</Fragment>
@@ -23,3 +24,5 @@ const withInspectorControls =  createHigherOrderComponent( ( BlockEdit ) => {
 }, "withInspectorControl" );
 
 addFilter( 'editor.BlockEdit', 'ryanwelcher/filters/blockedit/basic', withInspectorControls );
+
+

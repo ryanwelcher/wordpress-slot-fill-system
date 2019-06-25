@@ -1,6 +1,6 @@
 const { registerPlugin } = wp.plugins;
 const { PluginSidebar, PluginPrePublishPanel } = wp.editPost;
-const { PanelBody } = wp.components;
+const { Fill, PanelBody } = wp.components;
 const { Fragment } = wp.element;
 
 const PluginSidebarTest = () => (
