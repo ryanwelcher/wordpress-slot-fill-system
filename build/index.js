@@ -87,9 +87,20 @@ var createHigherOrderComponent = wp.compose.createHigherOrderComponent;
 var addFilter = wp.hooks.addFilter;
 var Fragment = wp.element.Fragment;
 var InspectorControls = wp.editor.InspectorControls;
-var _wp$components = wp.components,
-    Slot = _wp$components.Slot,
-    PanelBody = _wp$components.PanelBody;
+var PanelBody = wp.components.PanelBody;
+var createSlotFill = wp.components.createSlotFill;
+
+var _createSlotFill = createSlotFill('Toolbar'),
+    Fill = _createSlotFill.Fill,
+    Slot = _createSlotFill.Slot;
+
+var MyTestSlot = function MyTestSlot(_ref) {
+  var children = _ref.children,
+      classname = _ref.classname;
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fill, null, children);
+};
+
+MyTestSlot.Slot = Slot;
 /**
  * Filter the InspectorControls for all blocks
  */
@@ -98,8 +109,11 @@ var withInspectorControls = createHigherOrderComponent(function (BlockEdit) {
   return function (props) {
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(BlockEdit, props), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InspectorControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PanelBody, {
       title: "Basic Example: editor.BlockEdit"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "Every Block Gets This"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Slot, {
-      name: "Toolbar"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "Every Block Gets This"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(MyTestSlot.Slot, {
+      fillProps: {
+        props: props,
+        thing: 'hi'
+      }
     }))));
   };
 }, "withInspectorControl");
@@ -118,7 +132,6 @@ addFilter('editor.BlockEdit', 'ryanwelcher/filters/blockedit/basic', withInspect
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _slots_custom_basic_fills__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../slots/custom/basic-fills */ "./src/slots/custom/basic-fills/index.js");
 
 var createHigherOrderComponent = wp.compose.createHigherOrderComponent;
 var addFilter = wp.hooks.addFilter;
@@ -127,7 +140,6 @@ var InspectorControls = wp.editor.InspectorControls;
 var _wp$components = wp.components,
     Fill = _wp$components.Fill,
     PanelBody = _wp$components.PanelBody;
-
 /**
  * Filter the InspectorControls for a single block type.
  */
@@ -136,13 +148,7 @@ var withInspectorControls = createHigherOrderComponent(function (BlockEdit) {
   return function (props) {
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(BlockEdit, props), props.name === 'core/paragraph' && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InspectorControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PanelBody, {
       title: "Per Block Example: editor.BlockEdit"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fill, {
-      name: "Toolbar"
-    }, "Panel body 2"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fill, {
-      name: "Toolbar"
-    }, "Panel body 3"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fill, {
-      name: "Toolbar"
-    }, "Panel body 4"))));
+    })));
   };
 }, "withInspectorControl");
 addFilter('editor.BlockEdit', 'ryanwelcher/filters/blockedit/perblock', withInspectorControls);
@@ -175,45 +181,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/slots/basic/combined/index.js":
-/*!*******************************************!*\
-  !*** ./src/slots/basic/combined/index.js ***!
-  \*******************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-
-var registerPlugin = wp.plugins.registerPlugin;
-var _wp$editPost = wp.editPost,
-    PluginSidebar = _wp$editPost.PluginSidebar,
-    PluginPrePublishPanel = _wp$editPost.PluginPrePublishPanel;
-var _wp$components = wp.components,
-    Fill = _wp$components.Fill,
-    PanelBody = _wp$components.PanelBody;
-var Fragment = wp.element.Fragment;
-
-var PluginSidebarTest = function PluginSidebarTest() {
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginSidebar, {
-    name: "plugin-sidebar-test",
-    title: "My Plugin",
-    icon: "smiley"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PanelBody, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "Plugin Sidebar"))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginPrePublishPanel, {
-    className: "custom-panel-class",
-    title: "Panel Title",
-    initialOpen: true
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, " Pre Publish Panel ")));
-};
-
-registerPlugin('extending-gutenberg', {
-  render: PluginSidebarTest
-});
-
-/***/ }),
-
 /***/ "./src/slots/basic/index.js":
 /*!**********************************!*\
   !*** ./src/slots/basic/index.js ***!
@@ -223,15 +190,50 @@ registerPlugin('extending-gutenberg', {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _combined__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./combined */ "./src/slots/basic/combined/index.js");
+/* harmony import */ var _plugin_pre_publish_panel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./plugin-pre-publish-panel */ "./src/slots/basic/plugin-pre-publish-panel/index.js");
 //import './plugin-sidebar';
 //import './plugin-more-menu-item';
-//import './plugin-pre-publish-panel';
-// import './plugin-sidebar-more-menu-item';
+ // import './plugin-sidebar-more-menu-item';
 // import './plugin-post-status-info';
 // import './plugin-block-settings-menu-item';
-// import './plugin-post-publish-panel';
+//import './plugin-post-publish-panel';
+//import './combined';
 
+/***/ }),
+
+/***/ "./src/slots/basic/plugin-pre-publish-panel/index.js":
+/*!***********************************************************!*\
+  !*** ./src/slots/basic/plugin-pre-publish-panel/index.js ***!
+  \***********************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+var registerPlugin = wp.plugins.registerPlugin;
+var PluginPrePublishPanel = wp.editPost.PluginPrePublishPanel;
+var _wp$components = wp.components,
+    Fill = _wp$components.Fill,
+    PanelBody = _wp$components.PanelBody;
+
+var PluginPrePublishPanelTest = function PluginPrePublishPanelTest() {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginPrePublishPanel, {
+    className: "custom-panel-class",
+    title: "Panel Title2 ",
+    initialOpen: true
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, " Pre Publish Panel ")), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fill, {
+    name: "PluginPrePublishPanel"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PanelBody, {
+    title: "test thing"
+  }, "Test thing")));
+};
+
+registerPlugin('pre-publish-panel-test', {
+  render: PluginPrePublishPanelTest
+});
 
 /***/ }),
 
