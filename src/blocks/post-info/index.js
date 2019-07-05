@@ -8,6 +8,7 @@ import { TenUp } from '../../svg/icons/';
 
 import PostInfoAuthor  from '../slots/post-info-author';
 import PostInfoOpen from '../slots/post-info-open';
+import PostInfoAlt from '../slots/post-info-alt';
 
 /**
  * Register a block that shows Post Information.
@@ -33,6 +34,7 @@ registerBlockType( 'extending-gutenberg/post-info', {
 				Post Information Block
 			<InspectorControls>
 				<PostInfoAuthor.Slot fillProps={ props } />
+				<PostInfoAlt.Slot fillProps={ props } />
 				<PostInfoOpen.Slot />
 			</InspectorControls>
 			</>
@@ -79,4 +81,17 @@ const RenderOpenItems = () => (
 
 registerPlugin( 'extending-gutenberg-open-items', { render: RenderOpenItems } );
 
+
+const RenderAltItems = () => {
+	console.log( props );
+	return (
+		<PostInfoAlt
+			title={ __( 'Alt Items' ) }
+		>
+			{ console.log( props ) }
+			<p>test</p>
+		</PostInfoAlt>
+	);
+}
+registerPlugin( 'extending-gutenberg-alt-items', { render: RenderAltItems } );
 

@@ -85,6 +85,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _svg_icons___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../svg/icons/ */ "./src/svg/icons/index.js");
 /* harmony import */ var _slots_post_info_author__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../slots/post-info-author */ "./src/blocks/slots/post-info-author/index.js");
 /* harmony import */ var _slots_post_info_open__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../slots/post-info-open */ "./src/blocks/slots/post-info-open/index.js");
+/* harmony import */ var _slots_post_info_alt__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../slots/post-info-alt */ "./src/blocks/slots/post-info-alt/index.js");
 
 var registerBlockType = wp.blocks.registerBlockType;
 var __ = wp.i18n.__;
@@ -94,6 +95,7 @@ var _wp$components = wp.components,
     PanelBody = _wp$components.PanelBody,
     createSlotFill = _wp$components.createSlotFill;
 var registerPlugin = wp.plugins.registerPlugin;
+
 
 
 
@@ -118,6 +120,8 @@ registerBlockType('extending-gutenberg/post-info', {
   },
   edit: function edit(props) {
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, "Post Information Block", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InspectorControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_slots_post_info_author__WEBPACK_IMPORTED_MODULE_2__["default"].Slot, {
+      fillProps: props
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_slots_post_info_alt__WEBPACK_IMPORTED_MODULE_4__["default"].Slot, {
       fillProps: props
     }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_slots_post_info_open__WEBPACK_IMPORTED_MODULE_3__["default"].Slot, null)));
   },
@@ -164,6 +168,52 @@ var RenderOpenItems = function RenderOpenItems() {
 registerPlugin('extending-gutenberg-open-items', {
   render: RenderOpenItems
 });
+
+var RenderAltItems = function RenderAltItems() {
+  console.log(props);
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_slots_post_info_alt__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    title: __('Alt Items')
+  }, console.log(props), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "test"));
+};
+
+registerPlugin('extending-gutenberg-alt-items', {
+  render: RenderAltItems
+});
+
+/***/ }),
+
+/***/ "./src/blocks/slots/post-info-alt/index.js":
+/*!*************************************************!*\
+  !*** ./src/blocks/slots/post-info-alt/index.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+var _arguments = arguments;
+
+var _wp$components = wp.components,
+    PanelBody = _wp$components.PanelBody,
+    createSlotFill = _wp$components.createSlotFill;
+
+var _createSlotFill = createSlotFill('PostInfoAlt'),
+    Fill = _createSlotFill.Fill,
+    Slot = _createSlotFill.Slot;
+
+var PostInfoAlt = function PostInfoAlt(_ref) {
+  var children = _ref.children,
+      title = _ref.title;
+  console.log(_arguments);
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fill, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PanelBody, {
+    title: title
+  }, children));
+};
+
+PostInfoAlt.Slot = Slot;
+/* harmony default export */ __webpack_exports__["default"] = (PostInfoAlt);
 
 /***/ }),
 
