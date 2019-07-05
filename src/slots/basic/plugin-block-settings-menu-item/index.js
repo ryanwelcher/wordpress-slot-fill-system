@@ -7,6 +7,6 @@ const PluginBlockSettingsMenuGroupTest = () => (
 		icon='smiley'
 		label='Menu item text'
 		onClick={ () => { alert( 'clicked' )} } />
-)
+);
 
 registerPlugin( 'block-settings-menu-group-test', { render: PluginBlockSettingsMenuGroupTest } );

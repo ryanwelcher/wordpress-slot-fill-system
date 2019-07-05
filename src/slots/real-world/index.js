@@ -1,1 +1,2 @@
-import './pre-publish-checklist';
+// import './pre-publish-checklist';
+import './plugin-post-status-info';
