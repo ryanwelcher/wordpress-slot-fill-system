@@ -4,7 +4,7 @@ const { select, dispatch } = wp.data;
 const { serialize } = wp.blocks;
 const { PanelBody } = wp.components;
 
-import withWordCounter from '../../../utils/with-word-counter';
+import withWordCounter from '../../../utils/wordCounter';
 
 const PrePublishCheckList = () => {
 	let lockPost = false;
