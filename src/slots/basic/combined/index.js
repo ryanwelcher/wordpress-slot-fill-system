@@ -1,10 +1,9 @@
 const { registerPlugin } = wp.plugins;
 const { PluginSidebar, PluginPrePublishPanel } = wp.editPost;
 const { PanelBody } = wp.components;
-const { Fragment } = wp.element;
 
 const PluginSidebarTest = () => (
-	<Fragment>
+	<>
 		<PluginSidebar
 			name='plugin-sidebar-test'
 			title='My Plugin'
@@ -21,7 +20,7 @@ const PluginSidebarTest = () => (
 		>
 			<p> Pre Publish Panel </p>
 		</PluginPrePublishPanel>
-	</Fragment>
+	</>
 );
 
 
