@@ -2,7 +2,7 @@ const { createHigherOrderComponent } = wp.compose;
 const { addFilter } = wp.hooks;
 const { Fragment } = wp.element;
 const { InspectorControls } = wp.editor;
-const { PanelBody } = wp.components;
+const { Fill, PanelBody } = wp.components;
 
 /**
  * Filter the InspectorControls for a single block type.
@@ -15,7 +15,6 @@ const withInspectorControls =  createHigherOrderComponent( ( BlockEdit ) => {
 				{ ( props.name === 'core/paragraph' ) &&
 					<InspectorControls>
 						<PanelBody title='Per Block Example: editor.BlockEdit'>
-							<p>Only Added to Paragraph Blocks</p>
 						</PanelBody>
 					</InspectorControls>
 				}
