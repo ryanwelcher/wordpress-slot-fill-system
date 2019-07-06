@@ -83,12 +83,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 
+var render = wp.element.render;
+var _wp$components = wp.components,
+    PanelBody = _wp$components.PanelBody,
+    createSlotFill = _wp$components.createSlotFill,
+    SlotFillProvider = _wp$components.SlotFillProvider;
 
-var Hello = function Hello() {
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "Hello Plugin React!");
+var _createSlotFill = createSlotFill('PluginDashboardWidget'),
+    Fill = _createSlotFill.Fill,
+    Slot = _createSlotFill.Slot;
+
+var PluginDashboardWidget = function PluginDashboardWidget(_ref) {
+  var children = _ref.children;
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fill, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h2", null, children));
 };
 
-wp.element.render(Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Hello, null), document.getElementById("my-app"));
+PluginDashboardWidget.Slot = Slot;
+var fills = [];
+
+var FillsRenderer = function FillsRenderer(fills) {
+  console.log(fills);
+};
+
+var DashboardWidget = function DashboardWidget() {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(SlotFillProvider, null, "React", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginDashboardWidget.Slot, null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(FillsRenderer, null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    style: {
+      display: 'none'
+    }
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginDashboardWidget, null, "This should appear above")));
+};
+
+render(Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(DashboardWidget, null), document.querySelector('#extending-gutenberg-dashboard'));
 
 /***/ }),
 
