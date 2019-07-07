@@ -5,9 +5,9 @@
   "scripts": {
     "setup": "npm install && npm run build && npm run build:dashboard",
     "build": "wp-scripts build",
-    "build:dashboard": "wp-scripts build ./src/dashboard/index.js --output-path=build",
+    "build:dashboard": "wp-scripts build ./src/dashboard/index.js --output-path=build --output-filename=dashboard.js",
     "start": "wp-scripts start",
-    "start:dashboard": "wp-scripts start ./src/dashboard/index.js --output-path=build"
+    "start:dashboard": "wp-scripts start ./src/dashboard/index.js --output-path=build --output-filename=dashboard.js"
   },
   "author": "Ryan Welcher",
   "license": "GPL 2.0",
