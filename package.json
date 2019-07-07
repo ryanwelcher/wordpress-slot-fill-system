@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "A plugin to demonstrate extension points in Gutenberg",
   "scripts": {
+    "setup": "npm install && npm run build && npm run build:dashboard",
     "build": "wp-scripts build",
     "build:dashboard": "wp-scripts build ./src/dashboard/index.js --output-path=build",
     "start": "wp-scripts start",
     "start:dashboard": "wp-scripts start ./src/dashboard/index.js --output-path=build"
   },
   "author": "Ryan Welcher",
-  "license": "GPL 2.0"
+  "license": "GPL 2.0",
+  "devDependencies": {
+    "@wordpress/scripts": "^3.2.1"
+  }
 }
