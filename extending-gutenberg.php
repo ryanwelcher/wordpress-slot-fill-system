@@ -45,7 +45,7 @@ function enqueue_dashboard_js( $hook ) {
 		wp_enqueue_script(
 			'eg-dashboard-widget',
 			plugin_dir_url( __FILE__ ) . '/build/main.js',
-			[ 'wp-element', 'wp-components' ],
+			[ 'wp-element', 'wp-components', 'wp-plugins' ],
 			time(),
 			true
 		);

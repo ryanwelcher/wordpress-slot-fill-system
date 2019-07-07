@@ -1,34 +1,34 @@
 const { render } = wp.element;
 const { PanelBody, createSlotFill, SlotFillProvider } = wp.components;
 const { Fill, Slot } = createSlotFill( 'PluginDashboardWidget' );
+const { registerPlugin, PluginArea } = wp.plugins;
 
 const PluginDashboardWidget = ( { children} ) => (
-	<Fill><h2>{children}</h2></Fill>
+	<Fill><p>{children}</p></Fill>
 );
 PluginDashboardWidget.Slot = Slot;
-
-const fills = [];
-
-const FillsRenderer = ( fills ) => {
-	console.log( fills );
-};
-
-
 
 const DashboardWidget = () => {
 	return(
 		<SlotFillProvider>
-			React
+			<h2>Custom SlotFill System</h2>
 			<PluginDashboardWidget.Slot/>
-			<FillsRenderer />
-			<div style={ { display: 'none' } }>
-				<PluginDashboardWidget>
-					This should appear above
-				</PluginDashboardWidget>
-			</div>
+			<p>This is a custom SlotFill implementation</p>
+			<PluginArea />
 		</SlotFillProvider>
 	);
 };
+
+registerPlugin(
+	'test-name',
+	{
+	render: () => (
+			<PluginDashboardWidget>
+				This will appear just below the title 2
+			</PluginDashboardWidget>
+		)
+	}
+);
 
 render(
 	<DashboardWidget />,
