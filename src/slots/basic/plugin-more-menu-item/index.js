@@ -5,8 +5,8 @@ import { TenUp } from '../../../svg/icons';
 const MyButtonMoreMenuItemTest = () => (
 	<PluginMoreMenuItem
 		href="https://10up.com/careers"
-		target={'_blank'}
-		rel={ 'noopener noreferrer' }
+		target="_blank"
+		rel="noopener noreferrer"
 	>
 		10up is hiring!
 	</PluginMoreMenuItem>
