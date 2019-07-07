@@ -1,5 +1,5 @@
 // Basic Examples
-//import './slots/basic';
+import './slots/basic';
 
 // Real World Examples
 
@@ -12,4 +12,4 @@
 //import './filters/editor-blockedit/examples/basic';
 //import './filters/editor-blockedit/examples/per-block';
 
-import './blocks/post-info';
+//import './blocks/post-info';

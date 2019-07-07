@@ -71,185 +71,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/blocks/post-info/index.js":
-/*!***************************************!*\
-  !*** ./src/blocks/post-info/index.js ***!
-  \***************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _svg_icons___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../svg/icons/ */ "./src/svg/icons/index.js");
-/* harmony import */ var _slots_post_info_author__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../slots/post-info-author */ "./src/blocks/slots/post-info-author/index.js");
-/* harmony import */ var _slots_post_info_open__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../slots/post-info-open */ "./src/blocks/slots/post-info-open/index.js");
-
-var registerBlockType = wp.blocks.registerBlockType;
-var __ = wp.i18n.__;
-var InspectorControls = wp.editor.InspectorControls;
-var _wp$components = wp.components,
-    ToggleControl = _wp$components.ToggleControl,
-    PanelBody = _wp$components.PanelBody,
-    createSlotFill = _wp$components.createSlotFill;
-var registerPlugin = wp.plugins.registerPlugin;
-
-
-
-/**
- * Register a block that shows Post Information.
- */
-
-registerBlockType('extending-gutenberg/post-info', {
-  title: __('Post Information', 'extending-gutenberg'),
-  description: __('This block displays information about the post such as author information'),
-  icon: _svg_icons___WEBPACK_IMPORTED_MODULE_1__["TenUp"],
-  category: 'common',
-  attributes: {
-    showAuthor: {
-      type: 'boolean',
-      default: true
-    },
-    showBio: {
-      type: 'boolean',
-      default: false
-    }
-  },
-  edit: function edit(props) {
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, "Post Information Block", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InspectorControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_slots_post_info_author__WEBPACK_IMPORTED_MODULE_2__["default"].Slot, {
-      fillProps: props
-    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_slots_post_info_open__WEBPACK_IMPORTED_MODULE_3__["default"].Slot, null)));
-  },
-  save: function save(props) {
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, " Your block. ");
-  }
-});
-/**
- * Register our plugin
- */
-
-var RenderAuthorItems = function RenderAuthorItems() {
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_slots_post_info_author__WEBPACK_IMPORTED_MODULE_2__["default"], null, function (props) {
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(ToggleControl, {
-      label: __('Show Post Author'),
-      onChange: function onChange(val) {
-        return props.setAttributes({
-          showAuthor: val
-        });
-      },
-      checked: props.attributes.showAuthor
-    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(ToggleControl, {
-      label: __('Show Post Bio'),
-      onChange: function onChange(val) {
-        return props.setAttributes({
-          showBio: val
-        });
-      },
-      checked: props.attributes.showBio
-    }));
-  });
-};
-
-registerPlugin('extending-gutenberg-author-items', {
-  render: RenderAuthorItems
-});
-
-var RenderOpenItems = function RenderOpenItems() {
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_slots_post_info_open__WEBPACK_IMPORTED_MODULE_3__["default"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PanelBody, {
-    title: __('Information')
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, __('Information you need to know'))));
-};
-
-registerPlugin('extending-gutenberg-open-items', {
-  render: RenderOpenItems
-});
-
-var RenderAltItems = function RenderAltItems() {
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PostInfoAlt, {
-    title: __('Alt Items')
-  }, function (props) {
-    return console.log(props);
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "test"));
-};
-
-registerPlugin('extending-gutenberg-alt-items', {
-  render: RenderAltItems
-});
-
-/***/ }),
-
-/***/ "./src/blocks/slots/post-info-author/index.js":
-/*!****************************************************!*\
-  !*** ./src/blocks/slots/post-info-author/index.js ***!
-  \****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-
-var _wp$components = wp.components,
-    PanelBody = _wp$components.PanelBody,
-    createSlotFill = _wp$components.createSlotFill;
-var __ = wp.i18n.__;
-
-var _createSlotFill = createSlotFill('PostInfoAuthor'),
-    Fill = _createSlotFill.Fill,
-    Slot = _createSlotFill.Slot; // Alternate way
-//const { Fill: PostInfoAuthor, Slot } = createSlotFill( 'PostInfoAuthor' );
-
-
-var PostInfoAuthor = function PostInfoAuthor(_ref) {
-  var children = _ref.children;
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fill, null, children);
-};
-
-PostInfoAuthor.Slot = function (_ref2) {
-  var fillProps = _ref2.fillProps;
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Slot, {
-    fillProps: fillProps
-  }, function (fills) {
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PanelBody, {
-      title: __('Post Author')
-    }, fills);
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (PostInfoAuthor);
-
-/***/ }),
-
-/***/ "./src/blocks/slots/post-info-open/index.js":
-/*!**************************************************!*\
-  !*** ./src/blocks/slots/post-info-open/index.js ***!
-  \**************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-
-var createSlotFill = wp.components.createSlotFill;
-
-var _createSlotFill = createSlotFill('PostInfoOpen'),
-    Fill = _createSlotFill.Fill,
-    Slot = _createSlotFill.Slot;
-
-var PostInfoOpen = function PostInfoOpen(_ref) {
-  var children = _ref.children;
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fill, null, children);
-};
-
-PostInfoOpen.Slot = Slot;
-/* harmony default export */ __webpack_exports__["default"] = (PostInfoOpen);
-
-/***/ }),
-
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -259,17 +80,256 @@ PostInfoOpen.Slot = Slot;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _blocks_post_info__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/post-info */ "./src/blocks/post-info/index.js");
+/* harmony import */ var _slots_basic__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slots/basic */ "./src/slots/basic/index.js");
 // Basic Examples
-//import './slots/basic';
-// Real World Examples
+ // Real World Examples
 //import './slots/real-world';
 // Custom Examples
 //import './slots/custom/basic-slot-creation';
 //import './slots/custom/basic-fills';
 //import './filters/editor-blockedit/examples/basic';
 //import './filters/editor-blockedit/examples/per-block';
+//import './blocks/post-info';
 
+/***/ }),
+
+/***/ "./src/slots/basic/index.js":
+/*!**********************************!*\
+  !*** ./src/slots/basic/index.js ***!
+  \**********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _plugin_sidebar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./plugin-sidebar */ "./src/slots/basic/plugin-sidebar/index.js");
+/* harmony import */ var _plugin_more_menu_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./plugin-more-menu-item */ "./src/slots/basic/plugin-more-menu-item/index.js");
+/* harmony import */ var _plugin_pre_publish_panel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./plugin-pre-publish-panel */ "./src/slots/basic/plugin-pre-publish-panel/index.js");
+/* harmony import */ var _plugin_sidebar_more_menu_item__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./plugin-sidebar-more-menu-item */ "./src/slots/basic/plugin-sidebar-more-menu-item/index.js");
+/* harmony import */ var _plugin_post_status_info__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./plugin-post-status-info */ "./src/slots/basic/plugin-post-status-info/index.js");
+/* harmony import */ var _plugin_block_settings_menu_item__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./plugin-block-settings-menu-item */ "./src/slots/basic/plugin-block-settings-menu-item/index.js");
+/* harmony import */ var _plugin_post_publish_panel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./plugin-post-publish-panel */ "./src/slots/basic/plugin-post-publish-panel/index.js");
+
+
+
+
+
+
+ //import './combined';
+
+/***/ }),
+
+/***/ "./src/slots/basic/plugin-block-settings-menu-item/index.js":
+/*!******************************************************************!*\
+  !*** ./src/slots/basic/plugin-block-settings-menu-item/index.js ***!
+  \******************************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+var registerPlugin = wp.plugins.registerPlugin;
+var PluginBlockSettingsMenuItem = wp.editPost.PluginBlockSettingsMenuItem;
+
+var PluginBlockSettingsMenuGroupTest = function PluginBlockSettingsMenuGroupTest() {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginBlockSettingsMenuItem, {
+    allowedBlockNames: "core/paragraph",
+    icon: "smiley",
+    label: "Menu item text",
+    onClick: function onClick() {
+      alert('clicked');
+    }
+  });
+};
+
+registerPlugin('block-settings-menu-group-test', {
+  render: PluginBlockSettingsMenuGroupTest
+});
+
+/***/ }),
+
+/***/ "./src/slots/basic/plugin-more-menu-item/index.js":
+/*!********************************************************!*\
+  !*** ./src/slots/basic/plugin-more-menu-item/index.js ***!
+  \********************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _svg_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../svg/icons */ "./src/svg/icons/index.js");
+
+var registerPlugin = wp.plugins.registerPlugin;
+var PluginMoreMenuItem = wp.editPost.PluginMoreMenuItem;
+
+
+var MyButtonMoreMenuItemTest = function MyButtonMoreMenuItemTest() {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginMoreMenuItem, {
+    href: "https://10up.com/careers",
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, "10up is hiring!");
+};
+
+registerPlugin('more-menu-item-test', {
+  render: MyButtonMoreMenuItemTest,
+  icon: _svg_icons__WEBPACK_IMPORTED_MODULE_1__["TenUp"]
+});
+
+/***/ }),
+
+/***/ "./src/slots/basic/plugin-post-publish-panel/index.js":
+/*!************************************************************!*\
+  !*** ./src/slots/basic/plugin-post-publish-panel/index.js ***!
+  \************************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+var registerPlugin = wp.plugins.registerPlugin;
+var PluginPostPublishPanel = wp.editPost.PluginPostPublishPanel;
+
+var PluginPostPublishPanelDemo = function PluginPostPublishPanelDemo() {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginPostPublishPanel, {
+    className: "custom-panel-class",
+    title: "My Custom Panel",
+    initialOpen: true
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "Post Publish Panel"));
+};
+
+registerPlugin('post-publish-panel-demo', {
+  render: PluginPostPublishPanelDemo
+});
+
+/***/ }),
+
+/***/ "./src/slots/basic/plugin-post-status-info/index.js":
+/*!**********************************************************!*\
+  !*** ./src/slots/basic/plugin-post-status-info/index.js ***!
+  \**********************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+var registerPlugin = wp.plugins.registerPlugin;
+var PluginPostStatusInfo = wp.editPost.PluginPostStatusInfo;
+
+var PluginPostStatusInfoDemo = function PluginPostStatusInfoDemo() {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginPostStatusInfo, {
+    className: "my-custom-classname"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "Post Status Info SlotFill"));
+};
+
+registerPlugin('post-status-info-test', {
+  render: PluginPostStatusInfoDemo
+});
+
+/***/ }),
+
+/***/ "./src/slots/basic/plugin-pre-publish-panel/index.js":
+/*!***********************************************************!*\
+  !*** ./src/slots/basic/plugin-pre-publish-panel/index.js ***!
+  \***********************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+var registerPlugin = wp.plugins.registerPlugin;
+var PluginPrePublishPanel = wp.editPost.PluginPrePublishPanel;
+
+var PluginPrePublishPanelDemo = function PluginPrePublishPanelDemo() {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginPrePublishPanel, {
+    className: "custom-panel-class",
+    title: "My Custom Panel",
+    initialOpen: true
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, " Pre Publish Panel "));
+};
+
+registerPlugin('pre-publish-panel-demo', {
+  render: PluginPrePublishPanelDemo
+});
+
+/***/ }),
+
+/***/ "./src/slots/basic/plugin-sidebar-more-menu-item/index.js":
+/*!****************************************************************!*\
+  !*** ./src/slots/basic/plugin-sidebar-more-menu-item/index.js ***!
+  \****************************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+var registerPlugin = wp.plugins.registerPlugin;
+var _wp$editPost = wp.editPost,
+    PluginSidebar = _wp$editPost.PluginSidebar,
+    PluginSidebarMoreMenuItem = _wp$editPost.PluginSidebarMoreMenuItem;
+var Fragment = wp.element.Fragment;
+
+var PluginSidebarMoreMenuItemTest = function PluginSidebarMoreMenuItemTest() {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginSidebarMoreMenuItem, {
+    target: "sidebar-name",
+    icon: "smiley"
+  }, "Expanded Sidebar - More item"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginSidebar, {
+    name: "sidebar-name",
+    icon: "smiley",
+    title: "My Sidebar"
+  }, "Content of the sidebar"));
+};
+
+registerPlugin('plugin-sidebar-expanded-test', {
+  render: PluginSidebarMoreMenuItemTest
+});
+
+/***/ }),
+
+/***/ "./src/slots/basic/plugin-sidebar/index.js":
+/*!*************************************************!*\
+  !*** ./src/slots/basic/plugin-sidebar/index.js ***!
+  \*************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+var registerPlugin = wp.plugins.registerPlugin;
+var PluginSidebar = wp.editPost.PluginSidebar;
+var PanelBody = wp.components.PanelBody;
+
+var PluginSidebarTest = function PluginSidebarTest() {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginSidebar, {
+    name: "plugin-sidebar-test",
+    title: "My Plugin",
+    icon: "smiley"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PanelBody, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "Plugin Sidebar")));
+};
+
+registerPlugin('extending-gutenberg', {
+  render: PluginSidebarTest
+});
 
 /***/ }),
 
