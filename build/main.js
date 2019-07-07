@@ -93,26 +93,26 @@ var _createSlotFill = createSlotFill('PluginDashboardWidget'),
     Fill = _createSlotFill.Fill,
     Slot = _createSlotFill.Slot;
 
+var _wp$plugins = wp.plugins,
+    registerPlugin = _wp$plugins.registerPlugin,
+    PluginArea = _wp$plugins.PluginArea;
+
 var PluginDashboardWidget = function PluginDashboardWidget(_ref) {
   var children = _ref.children;
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fill, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h2", null, children));
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fill, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, children));
 };
 
 PluginDashboardWidget.Slot = Slot;
-var fills = [];
-
-var FillsRenderer = function FillsRenderer(fills) {
-  console.log(fills);
-};
 
 var DashboardWidget = function DashboardWidget() {
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(SlotFillProvider, null, "React", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginDashboardWidget.Slot, null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(FillsRenderer, null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    style: {
-      display: 'none'
-    }
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginDashboardWidget, null, "This should appear above")));
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(SlotFillProvider, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h2", null, "Custom SlotFill System"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginDashboardWidget.Slot, null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "This is a custom SlotFill implementation"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginArea, null));
 };
 
+registerPlugin('test-name', {
+  render: function render() {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PluginDashboardWidget, null, "This will appear just below the title 2");
+  }
+});
 render(Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(DashboardWidget, null), document.querySelector('#extending-gutenberg-dashboard'));
 
 /***/ }),

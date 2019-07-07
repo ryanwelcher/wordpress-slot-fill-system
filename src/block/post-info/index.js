@@ -4,7 +4,7 @@ const { InspectorControls } = wp.editor;
 const { ToggleControl, PanelBody, createSlotFill } = wp.components;
 const { registerPlugin } = wp.plugins;
 
-import { TenUp } from '../../svg/icons/';
+import { TenUp } from '../../svg/icons';
 
 import PostInfoAuthor  from '../slots/post-info-author';
 import PostInfoOpen from '../slots/post-info-open';
