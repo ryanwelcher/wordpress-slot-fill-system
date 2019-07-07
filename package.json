@@ -9,9 +9,5 @@
     "start:dashboard": "wp-scripts start ./src/dashboard/index.js --output-path=build"
   },
   "author": "Ryan Welcher",
-  "license": "GPL 2.0",
-  "devDependencies": {
-    "@wordpress/editor": "^9.4.0",
-    "@wordpress/scripts": "^3.2.1"
-  }
+  "license": "GPL 2.0"
 }
