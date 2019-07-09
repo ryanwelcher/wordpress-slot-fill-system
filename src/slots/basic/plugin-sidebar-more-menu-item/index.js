@@ -1,27 +1,25 @@
 const { registerPlugin } = wp.plugins;
+const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
+const { PanelBody } = wp.components;
 
-const {
-	PluginSidebar,
-	PluginSidebarMoreMenuItem
-} = wp.editPost;
-
-const { Fragment } = wp.element;
-
-const PluginSidebarMoreMenuItemTest = () => (
-	<Fragment>
+const PluginSidebarMoreMenuItemDemo = () => (
+	<>
 		<PluginSidebarMoreMenuItem
 			target="sidebar-name"
 			icon="smiley"
 		>
-			Expanded Sidebar - More item
+			PluginSidebarMoreMenuItem - Menu Item
 		</PluginSidebarMoreMenuItem>
 		<PluginSidebar
 			name="sidebar-name"
 			icon="smiley"
-			title="My Sidebar" >
-			Content of the sidebar
+			title="My Sidebar"
+		>
+			<PanelBody>
+				PluginSidebarMoreMenuItem demo content
+			</PanelBody>
 		</PluginSidebar>
-	</Fragment>
-)
+	</>
+);
 
-registerPlugin( 'plugin-sidebar-expanded-test', { render: PluginSidebarMoreMenuItemTest } );
+registerPlugin( 'plugin-sidebar-expanded-demo', { render: PluginSidebarMoreMenuItemDemo } );
