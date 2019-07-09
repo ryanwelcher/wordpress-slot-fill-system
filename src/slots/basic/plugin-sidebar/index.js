@@ -1,16 +1,17 @@
 const { registerPlugin } = wp.plugins;
 const { PluginSidebar } = wp.editPost;
 const { PanelBody } = wp.components;
+import { TenUp } from '../../../svg/icons';
 
-const PluginSidebarTest = () => (
+const PluginSidebarDemo = () => (
 		<PluginSidebar
 			name='plugin-sidebar-test'
-			title='My Plugin'
-			icon="smiley"
+			title='Plugin Sidebar'
+			icon='palmtree'
 		>
 			<PanelBody>
 				<p>Plugin Sidebar</p>
 			</PanelBody>
 		</PluginSidebar>
 );
-registerPlugin( 'extending-gutenberg', { render: PluginSidebarTest } );
+registerPlugin( 'plugin-sidebar-demo', { render: PluginSidebarDemo } );
