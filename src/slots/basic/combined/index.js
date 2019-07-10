@@ -27,7 +27,6 @@ const CombinedSlotFillsDemo = () => (
 		<PluginPrePublishPanelDemo />
 		<PluginPostPublishPanelDemo />
 		<PluginPostStatusInfoDemo />
-		<PluginSidebarDemo />
 		<PluginSidebarMoreMenuItemDemo />
 	</>
 );
