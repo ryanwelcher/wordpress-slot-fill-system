@@ -1,4 +1,3 @@
-const { registerPlugin } = wp.plugins;
 const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
 const { PanelBody } = wp.components;
 
@@ -13,13 +12,12 @@ const PluginSidebarMoreMenuItemDemo = () => (
 		<PluginSidebar
 			name="sidebar-name"
 			icon="smiley"
-			title="My Sidebar"
+			title="PluginSidbarMoreMenuItem"
 		>
 			<PanelBody>
-				PluginSidebarMoreMenuItem demo content
+				PluginSidebarMoreMenuItem - Panel Content
 			</PanelBody>
 		</PluginSidebar>
 	</>
 );
-
-registerPlugin( 'plugin-sidebar-expanded-demo', { render: PluginSidebarMoreMenuItemDemo } );
+export default PluginSidebarMoreMenuItemDemo;
