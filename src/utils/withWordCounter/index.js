@@ -1,4 +1,3 @@
-const { Component} = wp.element;
 const { count } = wp.wordcount;
 const { serialize } = wp.blocks;
 const { select } = wp.data;

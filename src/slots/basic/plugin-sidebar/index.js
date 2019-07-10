@@ -1,7 +1,5 @@
-const { registerPlugin } = wp.plugins;
 const { PluginSidebar } = wp.editPost;
 const { PanelBody } = wp.components;
-import { TenUp } from '../../../svg/icons';
 
 const PluginSidebarDemo = () => (
 		<PluginSidebar
@@ -14,4 +12,4 @@ const PluginSidebarDemo = () => (
 			</PanelBody>
 		</PluginSidebar>
 );
-registerPlugin( 'plugin-sidebar-demo', { render: PluginSidebarDemo } );
+export default PluginSidebarDemo;

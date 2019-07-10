@@ -4,9 +4,9 @@ const { PluginBlockSettingsMenuItem } = wp.editPost;
 const PluginBlockSettingsMenuGroupDemo = () => (
 	<PluginBlockSettingsMenuItem
 		allowedBlockNames='core/paragraph'
-		icon='smiley'
-		label='Menu Item Text'
+		label='PluginBlockSettingsMenuItem'
 		onClick={ () => { alert( 'clicked' ) } } />
 );
 
-registerPlugin( 'block-settings-menu-group-demo', { render: PluginBlockSettingsMenuGroupDemo } );
+export default PluginBlockSettingsMenuGroupDemo;
+//registerPlugin( 'block-settings-menu-group-demo', { render: PluginBlockSettingsMenuGroupDemo } );

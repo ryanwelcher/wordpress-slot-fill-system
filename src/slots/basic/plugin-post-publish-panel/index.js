@@ -1,4 +1,3 @@
-const { registerPlugin } = wp.plugins;
 const { PluginPostPublishPanel } = wp.editPost;
 
 const PluginPostPublishPanelDemo = () => (
@@ -10,5 +9,4 @@ const PluginPostPublishPanelDemo = () => (
 		<p>Post Publish Panel</p>
 	</PluginPostPublishPanel>
 );
-
-registerPlugin( 'post-publish-panel-demo', { render: PluginPostPublishPanelDemo } );
+export default PluginPostPublishPanelDemo

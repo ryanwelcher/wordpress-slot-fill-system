@@ -1,8 +1,6 @@
-const { registerPlugin } = wp.plugins;
-const { PluginMoreMenuItem,} = wp.editPost;
-import { TenUp } from '../../../svg/icons';
+const { PluginMoreMenuItem } = wp.editPost;
 
-const MyButtonMoreMenuItemTest = () => (
+const MyButtonMoreMenuItemDemo = () => (
 	<PluginMoreMenuItem
 		href="https://10up.com/careers"
 		target="_blank"
@@ -12,4 +10,4 @@ const MyButtonMoreMenuItemTest = () => (
 	</PluginMoreMenuItem>
 );
 
-registerPlugin( 'more-menu-item-test', { render: MyButtonMoreMenuItemTest, icon: TenUp } );
+export default MyButtonMoreMenuItemDemo
