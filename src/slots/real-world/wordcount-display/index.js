@@ -1,21 +1,21 @@
-const { registerPlugin } = wp.plugins;
 const { PluginPostStatusInfo } = wp.editPost;
 
 import WordCounter from '../../../utils/wordCounter';
 
 
-const PluginPostStatusInfoTest = () => {
-	return(
+const WordCountDisplay = () => (
 		<>
 			<PluginPostStatusInfo>
 				<WordCounter />
 			</PluginPostStatusInfo>
+
 			<PluginPostStatusInfo>
 				<WordCounter
 					label="Characters without Spaces"
 					countType="characters_excluding_spaces"
 				/>
 			</PluginPostStatusInfo>
+
 			<PluginPostStatusInfo>
 				<WordCounter
 					label="Characters with Spaces"
@@ -23,7 +23,5 @@ const PluginPostStatusInfoTest = () => {
 				/>
 			</PluginPostStatusInfo>
 		</>
-	)
-};
-
-registerPlugin( 'post-status-info-test-real-world', { render: PluginPostStatusInfoTest } );
+);
+export default WordCountDisplay;
