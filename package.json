@@ -5,8 +5,8 @@
   "scripts": {
     "setup": "npm install && npm run build && npm run build:dashboard",
     "build": "wp-scripts build",
-    "build:dashboard": "wp-scripts build ./src/dashboard/index.js --output-path=build --output-filename=dashboard.js",
     "start": "wp-scripts start",
+    "build:dashboard": "wp-scripts build ./src/dashboard/index.js --output-path=build --output-filename=dashboard.js",
     "start:dashboard": "wp-scripts start ./src/dashboard/index.js --output-path=build --output-filename=dashboard.js"
   },
   "author": "Ryan Welcher",

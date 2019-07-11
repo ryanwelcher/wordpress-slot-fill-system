@@ -8,7 +8,7 @@ const { registerPlugin } = wp.plugins;
  */
 import { TenUp } from '../../../svg/icons';
 import PluginBlockSettingsMenuGroupDemo from '../plugin-block-settings-menu-item';
-import MyDocumentSettingDemo from '../plugin-document-setting';
+import MyDocumentSettingDemo from '../plugin-document-setting-panel';
 import MyButtonMoreMenuItemDemo from '../plugin-more-menu-item';
 import PluginPostPublishPanelDemo from '../plugin-post-publish-panel';
 import PluginPostStatusInfoDemo from '../plugin-post-status-info';
