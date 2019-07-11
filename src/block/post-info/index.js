@@ -7,7 +7,7 @@ import { TenUp } from '../../svg/icons';
 import PostInfoAuthor  from '../slots/post-info-author';
 import PostInfoOpen from '../slots/post-info-open';
 
-//
+// Import our registerPlugin call - this needs to be here to work...
 import '../plugins';
 
 /**
