@@ -23,23 +23,28 @@ function enqueue_block_editor_assets() {
 }
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue_block_editor_assets' );
 
+
+
+
+/**
+ * Create a new Dashboard Widget.
+ */
 add_action( 'wp_dashboard_setup', __NAMESPACE__ . '\add_dashboard_widgets' );
 function add_dashboard_widgets() {
 	wp_add_dashboard_widget(
 		'extending_gutenberg_dashboard_widget',
 		'Extending Gutenberg',
-		__NAMESPACE__ . '\dashboard_widget_function'
+		function() {
+			echo '<div id="extending-gutenberg-dashboard"></div>';
+		}
 	);
 }
 
-function dashboard_widget_function() {
-	?>
-	<div id="extending-gutenberg-dashboard"></div>
-	<?php
-}
 
+/**
+ * Enqueue our JS on the dashboard page.
+ */
 add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\enqueue_dashboard_js' );
-
 function enqueue_dashboard_js( $hook ) {
 	if ( 'index.php' === $hook ) {
 		wp_enqueue_script( 'wp-element' );
