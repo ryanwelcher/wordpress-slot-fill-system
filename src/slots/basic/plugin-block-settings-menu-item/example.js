@@ -1,3 +1,6 @@
+/**
+ * PluginBlockSettingsMenuItem Example
+ */
 const { registerPlugin } = wp.plugins;
 const { PluginBlockSettingsMenuItem } = wp.editPost;
 
