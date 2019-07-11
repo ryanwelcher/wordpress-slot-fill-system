@@ -3,7 +3,7 @@ const { PluginBlockSettingsMenuItem } = wp.editPost;
 
 const PluginBlockSettingsMenuGroupDemo = () => (
 	<PluginBlockSettingsMenuItem
-		allowedBlockNames='core/paragraph'
+		allowedBlocks={ ['core/paragraph'] }
 		label='PluginBlockSettingsMenuItem'
 		onClick={ () => { alert( 'clicked' ) } } />
 );
