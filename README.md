@@ -24,7 +24,7 @@ Build Commands - compiles once.
 npm run build
 npm run build:dashboard
 ```
-Watch Commands - compiles when files are changed..
+Watch Commands - compiles when files are changed.
 
 ```js
 npm run start
