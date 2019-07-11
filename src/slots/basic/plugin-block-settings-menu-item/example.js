@@ -1,11 +1,12 @@
+const { registerPlugin } = wp.plugins;
 const { PluginBlockSettingsMenuItem } = wp.editPost;
 
 const PluginBlockSettingsMenuGroupDemo = () => (
 	<PluginBlockSettingsMenuItem
 		allowedBlocks={ ['core/paragraph'] }
 		label='PluginBlockSettingsMenuItem'
-		onClick={ () => { alert( 'clicked' ) } } />
+		onClick={ () => { alert( 'clicked' ) } }
+	/>
 );
 
-export default PluginBlockSettingsMenuGroupDemo;
-
+registerPlugin( 'block-settings-menu-group-demo', { render: PluginBlockSettingsMenuGroupDemo } );
