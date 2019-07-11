@@ -5,13 +5,11 @@ const PluginSidebarMoreMenuItemDemo = () => (
 	<>
 		<PluginSidebarMoreMenuItem
 			target="sidebar-name"
-			icon="smiley"
 		>
 			PluginSidebarMoreMenuItem - Menu Item
 		</PluginSidebarMoreMenuItem>
 		<PluginSidebar
 			name="sidebar-name"
-			icon="smiley"
 			title="PluginSidbarMoreMenuItem"
 		>
 			<PanelBody>

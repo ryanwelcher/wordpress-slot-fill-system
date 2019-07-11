@@ -78,17 +78,3 @@ const RenderOpenItems = () => (
 );
 
 registerPlugin( 'extending-gutenberg-open-items', { render: RenderOpenItems } );
-
-
-const RenderAltItems = () => {
-	return (
-		<PostInfoAlt
-			title={ __( 'Alt Items' ) }
-		>
-			{ ( props ) => console.log( props ) }
-			<p>test</p>
-		</PostInfoAlt>
-	);
-};
-registerPlugin( 'extending-gutenberg-alt-items', { render: RenderAltItems } );
-

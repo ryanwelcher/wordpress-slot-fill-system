@@ -1,8 +1,8 @@
 // Basic Examples
-import './slots/basic';
+//import './slots/basic';
 
 // Real World Examples
-//import './slots/real-world';
+import './slots/real-world';
 
 // Custom Examples
 //import './slots/custom/basic-slot-creation';
@@ -11,4 +11,4 @@ import './slots/basic';
 //import './filters/editor-blockedit/examples/basic';
 //import './filters/editor-blockedit/examples/per-block';
 
-//import './blocks/post-info';
+import './block/post-info';

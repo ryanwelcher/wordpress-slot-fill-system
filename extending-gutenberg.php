@@ -49,5 +49,6 @@ function enqueue_dashboard_js( $hook ) {
 			time(),
 			true
 		);
+		
 	}
 }
