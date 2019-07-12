@@ -1,4 +1,9 @@
-/**
+## Combine Everything ##
+
+All the examples have shown a single SlotFill being used with registerPlugin. But, they can be combined into a single one to allow using a single icon for all Fills. 
+
+## Example from this plugin ##
+```js
  * Get registerPlugin.
  */
 const { registerPlugin } = wp.plugins;
@@ -34,3 +39,5 @@ const CombinedSlotFillsDemo = () => (
  * register the plugin.
  */
 registerPlugin( 'extending-gutenberg', { render: CombinedSlotFillsDemo, icon: TenUp } );
+```
+[Back: PluginDocumentSettingPanel ](./plugin-document-setting-panel.md)
