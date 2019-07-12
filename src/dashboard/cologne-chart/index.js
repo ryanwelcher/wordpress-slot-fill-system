@@ -49,7 +49,7 @@ const CologneChart = () => {
             options={ chartOptions }
             graph_id="PieChart"
             width="100%"
-            height="300px"
+            height="400px"
             legend_toggle
         />
     )
