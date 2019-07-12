@@ -54,4 +54,4 @@ None
 </SlotFillProvider>
 ```
 
-[Next: How Does Gutenberg Do It?](./HowDoesGBDoIt.md)
+[Next: How Does Gutenberg Do It?](./how-does-gutenberg-do-it.md)
