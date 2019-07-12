@@ -26,3 +26,4 @@ This function provides an entry point to the SlotFill system by accesssing an ar
 ### PluginArea ##
 This component accesses the array of registered plugins and renders them inside a hidden div. The SlotFillProvider then takes over and connects the Fills to their Slot.
 
+[Prev: Basic SlotFill System](./README.md) | [Next: wp.plugins API](./wp-plugins-api.md)
