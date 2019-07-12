@@ -1,8 +1,8 @@
 # PluginBlockSettingsMenuItem
 This SlotFill adds a new item to the More options menu on any allowed block.
-[View source](https://github.com/WordPress/gutenberg/blob/master/packages/edit-post/src/components/block-settings-menu/plugin-block-settings-menu-item.js)
 
-## Source ##
+
+## Component Structure ##
 ```js
 const PluginBlockSettingsMenuItem = ( { allowedBlocks, icon, label, onClick, small, role } ) => (
 	<PluginBlockSettingsMenuGroup>
@@ -25,7 +25,7 @@ const PluginBlockSettingsMenuItem = ( { allowedBlocks, icon, label, onClick, sma
 
 export default PluginBlockSettingsMenuItem;
 ```
-
+[View source](https://github.com/WordPress/gutenberg/blob/master/packages/edit-post/src/components/block-settings-menu/plugin-block-settings-menu-item.js)
 
 ## Available Props
  * {Array} __allowedBlocks__ An array containing a list of block names for which the item should be shown. If not present, it'll be rendered for any block. If multiple blocks are selected, it'll be shown if and only if all of them are in the whitelist.
