@@ -33,7 +33,7 @@ add_action( 'wp_dashboard_setup', __NAMESPACE__ . '\add_dashboard_widgets' );
 function add_dashboard_widgets() {
 	wp_add_dashboard_widget(
 		'extending_gutenberg_dashboard_widget',
-		'Extending Gutenberg',
+		'Custom SlotFill System',
 		function() {
 			echo '<div id="extending-gutenberg-dashboard"></div>';
 		}
@@ -47,13 +47,14 @@ function add_dashboard_widgets() {
 add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\enqueue_dashboard_js' );
 function enqueue_dashboard_js( $hook ) {
 	if ( 'index.php' === $hook ) {
-		wp_enqueue_script( 'wp-element' );
 		wp_enqueue_script(
 			'eg-dashboard-widget',
 			plugin_dir_url( __FILE__ ) . '/build/dashboard.js',
-			[ 'wp-element', 'wp-components', 'wp-plugins' ],
+			[ 'wp-blocks', 'wp-i18n',  'wp-editor', 'wp-edit-post', 'wp-element', 'wp-components', 'wp-plugins' ],
 			time(),
 			true
 		);
 	}
+	$user = wp_get_current_user();
+	wp_localize_script( 'eg-dashboard-widget', 'EB_DASH', [ user => [ 'display_name' => $user->display_name ] ] );
 }

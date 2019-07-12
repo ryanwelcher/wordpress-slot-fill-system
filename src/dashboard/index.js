@@ -1,31 +1,34 @@
 const { render } = wp.element;
-const { PanelBody, createSlotFill, SlotFillProvider } = wp.components;
-const { Fill, Slot } = createSlotFill( 'PluginDashboardWidget' );
+const { SlotFillProvider } = wp.components;
 const { registerPlugin, PluginArea } = wp.plugins;
 
-const PluginDashboardWidget = ( { children} ) => (
-	<Fill><p>{children}</p></Fill>
-);
-PluginDashboardWidget.Slot = Slot;
+import CologneChart from './cologne-chart';
+import BeardedWonder from './joey-blake';
+
+import PluginDashboardWidget from './plugin-dashboard-widget';
 
 const DashboardWidget = () => {
 	return(
 		<SlotFillProvider>
-			<h2>Custom SlotFill System</h2>
+			<p>This widget provides no value, I hope you enjoy it!</p>
 			<PluginDashboardWidget.Slot/>
-			<p>This is a custom SlotFill implementation</p>
 			<PluginArea />
 		</SlotFillProvider>
 	);
 };
 
 registerPlugin(
-	'test-name',
+	'rediculous-widget',
 	{
-	render: () => (
-			<PluginDashboardWidget>
-				This will appear just below the title 2
-			</PluginDashboardWidget>
+		render: () => (
+			<>
+				<PluginDashboardWidget>
+					<CologneChart />
+				</PluginDashboardWidget>
+				<PluginDashboardWidget>
+					<BeardedWonder />
+				</PluginDashboardWidget>
+			</>
 		)
 	}
 );
