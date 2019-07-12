@@ -33,7 +33,7 @@ export default PluginBlockSettingsMenuItem;
  * {string}  __label__ The menu item text.
  * {Function} __onClick__ Callback function to be executed when the user click the menu item.
 
- ## Inherif icon from registerPlugin()?
+ ## Inherits icon from registerPlugin()?
 No. If no icon is passed, 'admin-plugins' is used.
 
 ## Example
