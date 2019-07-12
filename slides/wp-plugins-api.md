@@ -24,7 +24,7 @@ const { PluginPostStatusInfo } = wp.editPost;
 
 const MyFirstPlugin = () => (
     <PluginPostStatusInfo className='my-custom-classname'>
-		<p>Fill Content</p>
+        <p>Fill Content</p>
     </PluginPostStatusInfo>
 );
 registerPlugin( 'example-plugin', { render: MyFirstPlugin, icon: 'smiley' } );
