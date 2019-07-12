@@ -1,10 +1,10 @@
-# PluginPrePublishPanel
-Adds a custom Panel to the pre-publish side panel.
+# PluginPostPublishPanel
+Adds a custom Panel to the post-publish panel.
 
 
 ## Component Structure ##
 ```jsx
-const PluginPrePublishPanel = ( { children, className, title, initialOpen = false } ) => (
+const PluginPostPublishPanel = ( { children, className, title, initialOpen = false } ) => (
 	<Fill>
 		<PanelBody
 			className={ className }
@@ -16,7 +16,7 @@ const PluginPrePublishPanel = ( { children, className, title, initialOpen = fals
 	</Fill>
 );
 ```
-[View source](https://github.com/WordPress/gutenberg/blob/master/packages/edit-post/src/components/sidebar/plugin-pre-publish-panel/index.js)
+[View source](https://github.com/WordPress/gutenberg/blob/master/packages/edit-post/src/components/sidebar/plugin-post-publish-panel/index.js)
 
 ## Available Props
 * __className__ `string`: An optional class name added to the row.
@@ -29,18 +29,18 @@ No. There is a Pull Request open.
 ## Example
 ```jsx
 const { registerPlugin } = wp.plugins;
-const { PluginPrePublishPanel }= wp.editPost;
+const { PluginPostPublishPanel } = wp.editPost;
 
-const PluginPrePublishPanelDemo = () => (
-	<PluginPrePublishPanel
+const PluginPostPublishPanelDemo = () => (
+	<PluginPostPublishPanel
 		className='custom-panel-class'
 		title='My Custom Panel'
 		initialOpen={ true }
 	>
-		<p> Pre Publish Panel </p>
-	</PluginPrePublishPanel>
+		<p>Post Publish Panel</p>
+	</PluginPostPublishPanel>
 );
 
-registerPlugin( 'plugin-pre-publish-panel-demo', { render: PluginPrePublishPanelDemo } );
+registerPlugin( 'plugin-post-publish-panel-demo', { render: PluginPostPublishPanelDemo } );
 ```
-[Back: PluginPostStatusInfo](./plugin-post-status-info.md) | [Next: PluginPostPublishPanel](./plugin-post-publish-panel.md)
+[Back: PluginPrePublishPanel](./plugin-pre-publish-panel.md) | [Next: PluginMoreMenuItem ](./plugin-more-menu-item.md)
