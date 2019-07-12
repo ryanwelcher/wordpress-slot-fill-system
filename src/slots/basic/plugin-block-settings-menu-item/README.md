@@ -3,7 +3,7 @@ This SlotFill adds a new item to the More options menu on any allowed block.
 
 
 ## Component Structure ##
-```js
+```jsx
 const PluginBlockSettingsMenuItem = ( { allowedBlocks, icon, label, onClick, small, role } ) => (
 	<PluginBlockSettingsMenuGroup>
 		{ ( { selectedBlocks, onClose } ) => {
@@ -37,7 +37,7 @@ export default PluginBlockSettingsMenuItem;
 No. If no icon is passed, 'admin-plugins' is used.
 
 ## Example
-```js
+```jsx
 const { registerPlugin } = wp.plugins;
 const { PluginBlockSettingsMenuItem } = wp.editPost;
 

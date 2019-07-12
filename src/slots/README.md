@@ -9,7 +9,7 @@ Wherever this component is rendered any Fills with the same name will have their
 * {Object}  __fillProps__         Object that is passed to Fills.
 * {Boolean} __bubblesVirtually__ Changes event bubbling behavior     
 ### Example ###
-```js
+```jsx
 <Slot 
     name="my-slot-name" 
     fillProps={ { key: 'value' } } 
@@ -23,7 +23,7 @@ The contents of the Fill will be rendered in the Slot with the same name propert
 * {string} __name__ The name of the Slot that this Fill associated with.
 
 ### Example ###
-```js
+```jsx
 <Fill name="my-slot-name">
     Fill Contents
 </Fill>
@@ -41,7 +41,7 @@ None
 * A Fill with the same name will occupy the Slot, even if rendered elsewhere.
 
 
-```js
+```jsx
 <SlotFillProvider>
     <Slot 
         name="my-slot-name" 
