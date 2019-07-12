@@ -51,5 +51,3 @@ const PluginBlockSettingsMenuGroupTest = () => (
 
 registerPlugin( 'block-settings-menu-group-test', { render: PluginBlockSettingsMenuGroupTest } );
 ```
-
-[Next](./HowDoesGBDoIt.md)
