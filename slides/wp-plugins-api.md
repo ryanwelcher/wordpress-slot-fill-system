@@ -30,7 +30,6 @@ const MyFirstPlugin = () => (
 registerPlugin( 'example-plugin', { render: MyFirstPlugin, icon: 'smiley' } );
 ```
 
-
 ### unregisterPlugin ###
 Unregisters a plugin by name
 #### Params ####
@@ -65,3 +64,5 @@ None
 const { getPlugins } = wp.plugins;
 getPlugins();
 ```
+
+[Back: How Does Gutenberg Do It?](./how-does-gutenberg-do-it.md) | [Next: Available SlotFills](./available-slot-fills.md)
