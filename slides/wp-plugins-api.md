@@ -23,11 +23,9 @@ const { registerPlugin } = wp.plugins;
 const { PluginPostStatusInfo } = wp.editPost;
 
 const MyFirstPlugin = () => (
-    <PluginPostStatusInfo
-        className='my-custom-classname'
-    >
+    <PluginPostStatusInfo className='my-custom-classname'>
 		<p>Fill Content</p>
-	</PluginPostStatusInfo>
+    </PluginPostStatusInfo>
 );
 registerPlugin( 'example-plugin', { render: MyFirstPlugin, icon: 'smiley' } );
 ```
