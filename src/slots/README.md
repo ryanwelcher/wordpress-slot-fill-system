@@ -1,8 +1,8 @@
-## SlotFill System Components ##
+## Basic SlotFill System  ##
 There are three components that make up a basic SlotFill system.
 
 ### Slot ##
-Where ever this component is rendered, and Fills with the same name will have their content rendered here.
+Wherever this component is rendered any Fills with the same name will have their content rendered here.
 
 #### Props: ####
 * {string}  __name__             The name of the Slot.
@@ -30,10 +30,15 @@ The contents of the Fill will be rendered in the Slot with the same name propert
 ```
 
 ### SlotFillProvider ##
-This component is the glue that connects Fills with their associated Slot. Both the Slot and Fill components must be wrapped by this compoement.
+This component is the glue that connects Fills with their associated Slot. Both the Slot and Fill components must be wrapped by this component.
 #### Props: ####
 None
-### Example ###
+
+
+### Basic Slot Fill System Example ###
+* Root of the application renders a SlotFillProvider.
+* A named Slot is rendered in the app.
+* A Fill with the same name will occupy the Slot, even if rendered elsewhere.
 ```js
 <SlotFillProvider>
     <Slot 
