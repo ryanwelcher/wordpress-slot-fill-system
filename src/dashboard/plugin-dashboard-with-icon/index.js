@@ -1,11 +1,11 @@
-const { createSlotFill } = wp.components;
+const { createSlotFill, Icon } = wp.components;
 const { Fill, Slot } = createSlotFill( 'PluginDashboardIconWidget' );
 const { compose }  = wp.compose;
 const { withPluginContext } = wp.plugins;
 
 const PluginDashboardIconWidgetFill = ( { children, icon, title } ) => (
 	<Fill>
-		<p>{children}</p>
+		<Icon icon={ icon } />{children}
 	</Fill>
 );
 
