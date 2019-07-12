@@ -1,4 +1,5 @@
 ## SlotFill System Components ##
+There are three components that make up a basic SlotFill system.
 
 ### Slot ##
 Where ever this component is rendered, and Fills with the same name will have their content rendered here.
