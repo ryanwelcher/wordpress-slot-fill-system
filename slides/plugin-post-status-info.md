@@ -11,10 +11,6 @@ const PluginPostStatusInfo = ( { children, className } ) => (
 		</PanelRow>
 	</Fill>
 );
-
-PluginPostStatusInfo.Slot = Slot;
-
-export default PluginPostStatusInfo;
 ```
 [View source](https://github.com/WordPress/gutenberg/blob/master/packages/edit-post/src/components/sidebar/plugin-post-status-info/index.js)
 

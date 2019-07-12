@@ -1,11 +1,11 @@
 ## wp.plugins API ##
 
-The `wp.plugins` API is used to manage adding and removing plugins the SlotFill system. Plugins contain Fills.
+The `wp.plugins` API is used to manage adding and removing plugins that are used in the SlotFill system.
 
 [View Source](https://github.com/WordPress/gutenberg/blob/master/packages/plugins/src/api/index.js)
 
 ### registerPlugin ##
-`registerPlugin` is used to register add a new plugin to the internal array used by PluginArea.
+`registerPlugin` is used to register a new plugin by adding it to the internal array used by the `wp.plugin` API.
 
 #### Params ####
 *  __name__ `string`: Must unique and include only lowercase alphanumeric characters or dashes, and start with a letter.
@@ -54,7 +54,7 @@ getPlugin( 'example-plugin' );
 ```
 
 ### getPlugins ###
-Retieves the settings objects for all registered plugins.
+Retrieves the settings objects for all registered plugins.
 #### Params ####
 None
 ### Returns ###
