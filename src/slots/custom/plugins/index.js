@@ -18,11 +18,11 @@ const CustomSlotFillDemo = () => (
 			<p>{`This appears where <BasicCreateSlotFill.Slot/> is rendered`}</p>
 		</BasicCreateSlotFill>
 
-		<BasicCreateSlotFill>
+		{/* <BasicCreateSlotFill>
 			{ ( props ) => (
 				<p>I was passed fillProps!<br/>{`Modified Date: ${props.modified}`} </p>
 			) }
-		</BasicCreateSlotFill>
+		</BasicCreateSlotFill> */}
 
 		<CustomizeFillStructure>
 			<p>This gets wrapped in a nested panel</p>

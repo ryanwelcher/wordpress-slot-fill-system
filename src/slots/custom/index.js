@@ -25,7 +25,7 @@ const CustomSlotFillDemo = () => (
 		</PluginDocumentSettingPanel>
 
 		<PluginDocumentSettingPanel name="custom-panel-three" title="Basic with Props">
-			<BasicCreateSlotFill.Slot fillProps={ wp.data.select('core/editor').getCurrentPost() } />
+			{/* <BasicCreateSlotFill.Slot fillProps={ wp.data.select('core/editor').getCurrentPost() } /> */}
 		</PluginDocumentSettingPanel>
 		
 		<PluginDocumentSettingPanel name="custom-panel-four" title="Customize Fill Structure">

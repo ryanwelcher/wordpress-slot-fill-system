@@ -1,6 +1,6 @@
 const { createSlotFill, PanelBody } = wp.components;
 
-const { Fill:CustomizeSlotStructure , Slot } = createSlotFill( 'CustomizeSlotStructure' );
+const { Fill: CustomizeSlotStructure , Slot } = createSlotFill( 'CustomizeSlotStructure' );
 
 CustomizeSlotStructure.Slot = () => (
 	<Slot>

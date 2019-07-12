@@ -1,12 +1,10 @@
 const { createSlotFill } = wp.components;
 
-const { Fill: BasicCreateSlotFill, Slot } = createSlotFill( 'BasicCreateSlotFill' );
-BasicCreateSlotFill.Slot = Slot;
-
 /**
- * First Example
-
+ * createSlotFill creates and returns a named Slot and Fill component.
+ */
 const { Fill, Slot } = createSlotFill( 'BasicCreateSlotFill' );
+
 const BasicCreateSlotFill = ( { children } ) => (
 	<Fill>
 		{ children }
@@ -14,7 +12,16 @@ const BasicCreateSlotFill = ( { children } ) => (
 );
 
 BasicCreateSlotFill.Slot = Slot;
+
+
+/**
+ * Streamlined
+
+const { Fill: BasicCreateSlotFill, Slot } = createSlotFill( 'BasicCreateSlotFill' );
+BasicCreateSlotFill.Slot = Slot;
+
 */
+
 
 
 /**
