@@ -1,5 +1,5 @@
 # PluginBlockSettingsMenuItem
-This SlotFill adds a new item to the More options menu on any allowed block.
+This SlotFill adds a new item in the block settings menu on any allowed block.
 
 
 ## Component Structure ##
@@ -22,19 +22,17 @@ const PluginBlockSettingsMenuItem = ( { allowedBlocks, icon, label, onClick, sma
 		} }
 	</PluginBlockSettingsMenuGroup>
 );
-
-export default PluginBlockSettingsMenuItem;
 ```
 [View source](https://github.com/WordPress/gutenberg/blob/master/packages/edit-post/src/components/block-settings-menu/plugin-block-settings-menu-item.js)
 
 ## Available Props
- * {Array} __allowedBlocks__ An array containing a list of block names for which the item should be shown. If not present, it'll be rendered for any block. If multiple blocks are selected, it'll be shown if and only if all of them are in the whitelist.
- * {string|Element}  __icon__ The [Dashicon](https://developer.wordpress.org/resource/dashicons/) icon slug string, or an SVG WP element.
- * {string}  __label__ The menu item text.
- * {Function} __onClick__ Callback function to be executed when the user click the menu item.
+ * __allowedBlocks__ `array`: An array containing a list of block names for which the item should be shown. If not present, it'll be rendered for any block. If multiple blocks are selected, it'll be shown if and only if all of them are in the whitelist.
+ * __icon__ `(string|Element)`: The [Dashicon](https://developer.wordpress.org/resource/dashicons/) icon slug string, or an SVG WP element.
+ * __label__ `string`: The menu item text.
+ * __onClick__ `Function`: Callback function to be executed when the user click the menu item.
 
  ## Inherits icon from registerPlugin()?
-No. If no icon is passed, 'admin-plugins' is used.
+No. If no icon is passed, the `admin-plugins` Dashicon is used.
 
 ## Example
 ```jsx
@@ -51,3 +49,4 @@ const PluginBlockSettingsMenuGroupTest = () => (
 
 registerPlugin( 'block-settings-menu-group-test', { render: PluginBlockSettingsMenuGroupTest } );
 ```
+[Back: PluginMoreMenuItem ](./plugin-more-menu-item.md) | [Next: PluginSidebar ](./plugin-sidebar.md)
