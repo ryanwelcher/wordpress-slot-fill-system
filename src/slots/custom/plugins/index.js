@@ -6,38 +6,50 @@ import BasicCreateSlotFill from '../basic-create-slot-fill';
 import CustomizeFillStructure from '../customize-fill-structure';
 import CustomizeSlotStructure from '../customize-slot-stucture';
 import CustomizeBoth from '../customize-both';
+import InheritIcon from '../inherit-icon';
 
 const CustomSlotFillDemo = () => (
 	<>
 		<Fill name="BasicSlot">
 			<p>This text will appear wherever the Slot named "BasicSlot" is rendered</p>
 		</Fill>
+
 		<BasicCreateSlotFill>
 			<p>{`This appears where <BasicCreateSlotFill.Slot/> is rendered`}</p>
 		</BasicCreateSlotFill>
+
 		<BasicCreateSlotFill>
 			{ ( props ) => (
 				<p>I was passed fillProps!<br/>{`Modified Date: ${props.modified}`} </p>
 			) }
 		</BasicCreateSlotFill>
+
 		<CustomizeFillStructure>
 			<p>This gets wrapped in a nested panel</p>
 		</CustomizeFillStructure>
+
 		<CustomizeFillStructure>
 			<p>So does this</p>
 		</CustomizeFillStructure>
+
 		<CustomizeSlotStructure>
 			<p>This is in a panel</p>
 		</CustomizeSlotStructure>
+		
 		<CustomizeSlotStructure>
 			<p>This is in the same panel</p>
 		</CustomizeSlotStructure>
+		
 		<CustomizeBoth>
 			First list item
 		</CustomizeBoth>
 		<CustomizeBoth>
 			Second list item
 		</CustomizeBoth>
+
+		<InheritIcon>
+			I inherited my icon!
+		</InheritIcon>
 	</>
 );
 

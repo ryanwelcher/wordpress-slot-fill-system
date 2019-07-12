@@ -2,14 +2,14 @@
 
 The `wp.plugins` API is used to manage adding and removing plugins the SlotFill system. Plugins contain Fills.
 
-[View Source](https://github.com/WordPress/gutenberg/tree/master/packages/plugins)
+[View Source](https://github.com/WordPress/gutenberg/blob/master/packages/plugins/src/api/index.js)
 
 ### registerPlugin ##
 `registerPlugin` is used to register add a new plugin to the internal array used by PluginArea.
 
 #### Params ####
 *  __name__ `string`: Must unique and include only lowercase alphanumeric characters or dashes, and start with a letter.
-* __settings__ `Object`: Component containing the UI to be rendered
+* __settings__ `Object`:
 * __settings.render__ `Function`: Component containing the UI to be rendered
 * __settings.icon__ `(string|WPElement|Function)`: An icon to be shown in the UI. It can be a slug of the Dashicon, or an element (or function returning an element) if you choose to render your own.
 
@@ -42,7 +42,7 @@ unregisterPlugin( 'example-plugin' );
 ```
 
 ### getPlugin ###
-Retieves the settings object for a registerd plugin by name.
+Retrieves the settings object for a registered plugin by name.
 #### Params ####
 *  __name__ `string`: The name of a registered plugin.
 ### Returns ###
@@ -54,7 +54,7 @@ getPlugin( 'example-plugin' );
 ```
 
 ### getPlugins ###
-Retieves the settings objects for all registerd plugins.
+Retieves the settings objects for all registered plugins.
 #### Params ####
 None
 ### Returns ###

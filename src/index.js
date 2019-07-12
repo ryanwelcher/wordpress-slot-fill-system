@@ -2,7 +2,7 @@
 //import './slots/basic';
 
 // Real World Examples
-import './slots/real-world';
+//import './slots/real-world';
 
 // Custom SlotFill Examples
 import './slots/custom';

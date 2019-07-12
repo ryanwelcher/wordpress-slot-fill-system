@@ -10,7 +10,7 @@ const PluginSidebarMoreMenuItemDemo = () => (
 		</PluginSidebarMoreMenuItem>
 		<PluginSidebar
 			name="sidebar-name"
-			title="PluginSidbarMoreMenuItem"
+			title="PluginSidebarMoreMenuItem"
 		>
 			<PanelBody>
 				PluginSidebarMoreMenuItem - Panel Content

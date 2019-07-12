@@ -1,6 +1,5 @@
 # PluginSidebar
-Renders a menu item in `Plugins` group in `More Menu` drop down, and can be used to as a button or link depending on the props provided.
-
+Renders a sidebar when activated. The contents within the `PluginSidebar` will appear as content within the sidebar.
 
 ## Component Structure ##
 ```jsx
@@ -70,6 +69,6 @@ function PluginSidebar( props ) {
 Yes.
 
 ## Example
-While this SlotFill can be used on it's own, it is meant to be used in conjunction with PluginSidebarMoreMenuItem. Without PluginSidebarMoreMenuItem, it is possible to unpin this Sidebar with no way to retrieve it.
+While this SlotFill can be used on it's own, it is meant to be used in conjunction with `PluginSidebarMoreMenuItem`. Without `PluginSidebarMoreMenuItem`, it is possible to unpin this Sidebar with no way to retrieve it.
 
 [Back: PluginBlockSettingsMenuItem ](./plugin-block-settings-menu-item.md) | [Next: PluginSidebarMoreMenuItem ](./plugin-sidebar-more-menu-item.md)
