@@ -3,7 +3,7 @@ const { Fill, Slot } = createSlotFill( 'PluginDashboardWidget' );
 
 const PluginDashboardWidget = ( { children } ) => (
 	<Fill>
-		<p>{children}</p>
+		{children}
 	</Fill>
 );
 PluginDashboardWidget.Slot = Slot;
