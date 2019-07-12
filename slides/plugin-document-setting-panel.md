@@ -51,5 +51,5 @@ const PluginDocumentSettingPanelDemo = () => (
 );
 registerPlugin( 'plugin-document-setting-panel-demo', { render: PluginDocumentSettingPanelDemo, icon: 'palmtree' } );
 ```
-[Back: PluginSidebarMoreMenuItem ](./plugin-sidebar-more-menu-item.md) | [Next: PluginDocumentSettingPanel ](./plugin-document-setting-panel.md)
+[Back: PluginSidebarMoreMenuItem ](./plugin-sidebar-more-menu-item.md) | [Next: Combine Calls ](./combine-them.md)
 
