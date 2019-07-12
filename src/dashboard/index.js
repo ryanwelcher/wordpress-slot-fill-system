@@ -1,11 +1,11 @@
 const { render } = wp.element;
 const { SlotFillProvider } = wp.components;
 const { registerPlugin, PluginArea } = wp.plugins;
-
+// Import the SlotFill
+import PluginDashboardWidget from './plugin-dashboard-widget';
+// Import some useless things to display
 import CologneChart from './cologne-chart';
 import BeardedWonder from './joey-blake';
-
-import PluginDashboardWidget from './plugin-dashboard-widget';
 
 const DashboardWidget = () => {
 	return(
@@ -17,23 +17,20 @@ const DashboardWidget = () => {
 	);
 };
 
+render(
+	<DashboardWidget />,
+	document.querySelector( '#extending-gutenberg-dashboard' )
+);
+
+// register our plugin
 registerPlugin(
 	'rediculous-widget',
 	{
 		render: () => (
-			<>
-				<PluginDashboardWidget>
-					<CologneChart />
-				</PluginDashboardWidget>
-				<PluginDashboardWidget>
-					<BeardedWonder />
-				</PluginDashboardWidget>
-			</>
+			<PluginDashboardWidget>
+				<CologneChart />
+				<BeardedWonder />
+			</PluginDashboardWidget>
 		)
 	}
-);
-
-render(
-	<DashboardWidget />,
-	document.querySelector( '#extending-gutenberg-dashboard' )
 );
