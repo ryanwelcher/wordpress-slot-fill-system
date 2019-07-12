@@ -12,7 +12,7 @@
     <SlotFillProvider>
             <Layout> 
                 <PluginArea />
-            <Layout/>
+            </Layout>
     </SlotFillProvider>
 </Editor>
 ```
