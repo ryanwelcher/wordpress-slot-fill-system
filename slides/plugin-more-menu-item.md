@@ -20,8 +20,8 @@ const PluginMoreMenuItem = ( { onClick = noop, ...props } ) => (
 ## Available Props
 * __href__ `string`: When `href` is provided then the menu item is represented as an anchor rather than button. It corresponds to the `href` attribute of the anchor.
 * __icon__ `string`: The [Dashicon](https://developer.wordpress.org/resource/dashicons/) icon slug string, or an SVG WP element.
-* __onClick__ `boolean`: The callback function to be executed when the user clicks the menu item.
-* __...props__ `...*`: Any additional props are passed through to the underlying MenuItem component.
+* __onClick__ `Function`: The callback function to be executed when the user clicks the menu item.
+* __...props__ `...*`: Any additional props are passed through to the underlying `MenuItem` component.
 
  ## Inherits icon from registerPlugin()?
 Yes.

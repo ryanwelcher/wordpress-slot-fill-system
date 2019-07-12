@@ -1,5 +1,5 @@
 ## Available SlotFIlls ##
-There are currently 8 SlotsFills exposed for use on the wp.editPost object.
+There are currently 8 SlotsFills exposed for use on the `wp.editPost` object.
 * [PluginPostStatusInfo](./plugin-post-status-info.md)
 * [PluginPrePublishPanel](./plugin-pre-publish-panel.md)
 * [PluginPostPublishPanel](./plugin-post-publish-panel.md)

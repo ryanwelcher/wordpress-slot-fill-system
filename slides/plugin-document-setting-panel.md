@@ -44,7 +44,7 @@ const PluginDocumentSettingPanelDemo = () => (
 	<PluginDocumentSettingPanel
 		name="custom-panel"
 		title="Custom Panel"
-        className="custom-panel"
+		className="custom-panel"
 	>
 		Custom Panel Contents
 	</PluginDocumentSettingPanel>
