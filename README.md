@@ -1,6 +1,7 @@
 ## The Gutenberg SlotFill System ##
 
 This plugin contains the examples for my JavaScript for WordPress conference talk.
+This repo is not being maintained. Please refer to [https://github.com/10up/slotfill-and-filter-demos](https://github.com/10up/slotfill-and-filter-demos) for on-going updates/demos.
 
 ### Setup Instructions ###
 
