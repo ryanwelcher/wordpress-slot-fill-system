@@ -1,3 +1,6 @@
+/**
+ * Don't look at me! I'm a hideous hack..
+ */
 const BeardedWonder = () => (
     <>
         <p><b>Joey Blake!</b></p>
