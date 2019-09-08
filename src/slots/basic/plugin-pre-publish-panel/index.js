@@ -4,6 +4,7 @@ const PluginPrePublishPanelDemo = () => (
 	<PluginPrePublishPanel
 		className='custom-panel-class'
 		initialOpen={ true }
+		title='My Custom Panel'
 	>
 		<p> Pre Publish Panel </p>
 	</PluginPrePublishPanel>
