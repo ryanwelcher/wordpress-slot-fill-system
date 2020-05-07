@@ -5,6 +5,7 @@ const DependencyExtractionWebpackPlugin = require( '@wordpress/dependency-extrac
 
 module.exports = {
 	entry: {
+		slotfill: './assets/js/slotfill/index.js',
 		blocks: './assets/js/block/index.js',
 		dashboard: './assets/js/dashboard/index.js',
 		settings: './assets/js/settings-page/index.js',
