@@ -7,14 +7,16 @@ import {
 	useEffect,
 } from '@wordpress/element';
 
+import { useSelect } from '@wordpress/data';
+
 /**
  * Internal dependencies
  */
-import SettingsPage from '../settings-page/SettingsPage';
-import SettingsSection from '../settings-page/SettingsSection';
-import { InputFieldSetting, CheckBoxSetting } from './SettingTypes';
+import SettingsPage from './components/SettingsPage';
+import SettingsSection from './components/SettingsSection';
+import { InputFieldSetting, CheckBoxSetting } from './components/SettingTypes';
 import Notice from './Notice';
-import PPCContext from './PPCContext';
+import PPCContext from './components/PPCContext';
 
 /**
  * External Depedencies
@@ -145,6 +147,8 @@ const App = () => {
 		}
 	}, [ appState.saving ] );
 
+	const accountID = useSelect( ( select ) => select( 'extending-gutenberg/settings' ).getForm( 'main' ) );
+	console.log( 'datastore', accountID );
 	return (
 		<PPCContext.Provider value={ { dispatch, ...appState } }>
 			<SettingsPage title="PrePublish Checklist Settings">

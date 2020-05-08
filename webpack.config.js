@@ -8,7 +8,8 @@ module.exports = {
 		slotfill: './assets/js/slotfill/index.js',
 		blocks: './assets/js/block/index.js',
 		dashboard: './assets/js/dashboard/index.js',
-		settings: './assets/js/settings-page/index.js',
+		settings: './assets/js/settings/index.js',
+		'settings-datastore': './assets/js/settings/datastore',
 	},
 	output: {
 		filename: '[name].js',

@@ -86,6 +86,20 @@ function enqueue_settings_page_javascript( $hook ) {
 	if ( 'settings_page_extending-gutenberg' !== $hook ) {
 		return;
 	}
+	$store_build_assets = EG_DIR_PATH . '/dist/settings-datastore.asset.php';
+
+	if ( file_exists( $store_build_assets ) ) {
+		$assets = include $store_build_assets;
+		wp_enqueue_script(
+			'extending-gutenberg-settings-datastore', // Handle.
+			EG_DIR_URL . '/dist/settings-datastore.js',
+			$assets['dependencies'],
+			$assets['version'],
+			true
+		);
+	}
+
+
 	// Check for the build assets file.
 	$build_assets = EG_DIR_PATH . '/dist/settings.asset.php';
 
@@ -95,7 +109,7 @@ function enqueue_settings_page_javascript( $hook ) {
 		wp_enqueue_script(
 			'extending-gutenberg-settings', // Handle.
 			EG_DIR_URL . '/dist/settings.js',
-			$assets['dependencies'],
+			array_merge( $assets['dependencies'], array( 'extending-gutenberg-settings-datastore' ) ),
 			$assets['version'],
 			true
 		);
@@ -111,4 +125,6 @@ function enqueue_settings_page_javascript( $hook ) {
 			]
 		);
 	};
+
+	
 }
