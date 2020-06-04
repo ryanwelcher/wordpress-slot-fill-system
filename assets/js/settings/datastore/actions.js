@@ -47,6 +47,7 @@ const actions = {
 				payload: { ...settings },
 				type: SAVE_SETTINGS,
 			};
+
 			yield {
 				payload: {},
 				type: FINISH_SAVE_SETTINGS,
@@ -58,7 +59,6 @@ const actions = {
 				type: CATCH_SAVE_SETTINGS,
 			};
 		}
-
 		return { response, error };
 	},
 
