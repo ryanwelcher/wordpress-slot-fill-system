@@ -1,1 +1,10 @@
 export const STORE_NAME = 'extending-gutenberg/settings';
+export const CHANGE_TAB = 'CHANGE_TAB';
+export const START_SAVE_SETTINGS = 'START_SAVE_SETTINGS';
+export const SAVE_SETTINGS = 'SAVE_SETTINGS';
+export const FINISH_SAVE_SETTINGS = 'FINISH_SAVE_SETTINGS';
+export const CATCH_SAVE_SETTINGS = 'CATCH_SAVE_SETTINGS';
+export const UPDATE_SETTING = 'UPDATE_SETTING';
+export const GET_SETTINGS = 'GET_SETTINGS';
+export const RECEIVE_SETTINGS = 'RECEIVE_SETTINGS';
+export const FINISH_GET_SETTINGS = 'FINISH_GET_SETTINGS';

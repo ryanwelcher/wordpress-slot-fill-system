@@ -119,9 +119,10 @@ function enqueue_settings_page_javascript( $hook ) {
 			'extending-gutenberg-settings',
 			'_extendingGutenbergSettings',
 			[
-				'nonce'    => wp_create_nonce( 'wp_rest' ),
-				'restBase' => rest_url(),
-				'state'    => json_decode( get_option( 'pre_publish_checklist' ) ),
+				'nonce'      => wp_create_nonce( 'wp_rest' ),
+				'restBase'   => rest_url(),
+				'state'      => json_decode( get_option( 'extending_gutenberg' ) ),
+				'pluginPath' => EG_DIR_URL
 			]
 		);
 	};

@@ -1,5 +1,4 @@
 import { useEffect, useContext, useRef } from '@wordpress/element';
-import PPCContext from '../PPCContext';
 
 const Notice = ( { id, type = 'error', message = 'Default Message' } ) => {
 	const { dispatch } = useContext( PPCContext );

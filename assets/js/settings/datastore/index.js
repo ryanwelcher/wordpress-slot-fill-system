@@ -5,7 +5,6 @@
 /**
  * WordPress depenencies
  */
-
 import { registerStore } from '@wordpress/data';
 
 /**
@@ -14,33 +13,12 @@ import { registerStore } from '@wordpress/data';
 import { STORE_NAME } from './constants';
 export { STORE_NAME };
 
-const initialState = {
-	activePage: 'main',
-	pages: {
-		main: { data: [ 1, 2, 3, 3, 4, 5, 5 ] },
-	},
-};
-const actions = {};
-const controls = {};
-const reducer = ( state, { payload, type } ) => {
-	switch ( type ) {
-		default: {
-			return { ...state };
-		}
-	}
-};
-const resolvers = {};
-const selectors = {
-	getForm( state, formId ) {
-		const { pages } = state;
-		return pages[ formId ];
-	},
-
-	getActivePage( state ) {
-		const { activePage } = state;
-		return activePage;
-	},
-};
+import initialState from './initial-state';
+import actions from './actions';
+import controls from './controls';
+import reducer from './reducer';
+import resolvers from './resolvers';
+import selectors from './selectors';
 
 const store = {
 	initialState,
@@ -50,7 +28,7 @@ const store = {
 	resolvers,
 	selectors,
 };
-
-registerStore( STORE_NAME, store );
-
 export default store;
+
+// Register our store.
+registerStore( STORE_NAME, store );

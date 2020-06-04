@@ -3,7 +3,8 @@
 All the examples have shown a single SlotFill being used with `registerPlugin`. But, they can be combined into a single one to allow using a single icon for all Fills. 
 
 ## Example from this plugin ##
-```js
+```jsx
+ /*
  * Get registerPlugin.
  */
 const { registerPlugin } = wp.plugins;

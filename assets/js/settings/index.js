@@ -2,18 +2,48 @@
  * WordPress dependencies
  */
 import domReady from '@wordpress/dom-ready';
-import { render } from '@wordpress/element';
-import { useSelect } from '@wordpress/data';
+import { render, useEffect } from '@wordpress/element';
+import { useSelect, useDispatch } from '@wordpress/data';
+
 /**
  * Internal dependencies
  */
-import SettingsPage from './components/SettingsPage';
+import SettingsPage from './components/settings-page';
+import SettingsSection from './components/settings-section';
+import { CheckBoxSetting } from './components/setting-types';
 
 const App = ( ) => {
-	const accountID = useSelect( ( select ) => select( 'extending-gutenberg/settings' ).getActivePage() );
-	console.log( 'datastore', accountID );
+	const isLoading = useSelect( ( select ) => select( 'extending-gutenberg/settings' ).getLoadingStatus() );
+	const settings = useSelect( ( select ) => select( 'extending-gutenberg/settings' ).getSettings() );
+	const { updateSetting, getSettings } = useDispatch( 'extending-gutenberg/settings' );
+
+	useEffect( () => {
+		getSettings();
+	}, [] );
+
+	if ( isLoading ) {
+		return (
+			<SettingsPage title="Extending Gutenberg"><p>Loading</p></SettingsPage>
+		);
+	}
+	const { blocksEnabled, slotFillEnabled } = settings;
 	return (
-		<SettingsPage title="Extending Gutenberg"></SettingsPage>
+		<SettingsPage title="Extending Gutenberg">
+			<SettingsSection>
+				<CheckBoxSetting
+					label="Enable example blocks"
+					id="blocksEnabled"
+					isChecked={ blocksEnabled }
+					dispatch={ updateSetting }
+				/>
+				<CheckBoxSetting
+					label="Enable slotfill examples"
+					id="slotFillEnabled"
+					isChecked={ slotFillEnabled }
+					dispatch={ updateSetting }
+				/>
+			</SettingsSection>
+		</SettingsPage>
 	);
 };
 // Initialize the app once the DOM is ready.

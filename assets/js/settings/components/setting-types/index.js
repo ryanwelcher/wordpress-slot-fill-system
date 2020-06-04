@@ -1,3 +1,6 @@
+
+import { useState, useEffect } from '@wordpress/element';
+
 /**
  * InputFieldSettings
  *
@@ -7,9 +10,7 @@ export const InputFieldSetting = ( {
 	label = 'Setting Name',
 	id = 'setting-name',
 	value = '',
-	onChange = ( e ) => {
-		console.log( e.target.value );
-	},
+	onChange = () => {},
 	classes = '',
 	type = 'text',
 } ) => {
@@ -34,12 +35,13 @@ export const InputFieldSetting = ( {
 /**
  * Checkbox
  */
-export const CheckBoxSetting = ( {
-	value,
-	label = 'Setting Name',
-	id = 'setting-name',
-	onChange = ( e ) => console.log( e.target.checked ),
-} ) => {
+export const CheckBoxSetting = ( { isChecked, label = 'Setting Name', id = 'setting-name', dispatch, ...props } ) => {
+	const [ checked, setChecked ] = useState( isChecked );
+
+	useEffect( () => {
+		dispatch( id, checked );
+	}, [ checked ] );
+
 	return (
 		<tr>
 			<th scope="row">{ label }</th>
@@ -48,12 +50,13 @@ export const CheckBoxSetting = ( {
 					<legend className="screen-reader-text"><span>{ label }</span></legend>
 					<label htmlFor={ id }>
 						<input
-							name={ id }
 							type="checkbox"
+							value="yes"
+							name={ id }
 							id={ id }
-							value="true"
-							checked={ value }
-							onChange={ onChange }
+							checked={ checked }
+							onChange={ () => setChecked( ! checked ) }
+							{ ...props }
 						/>
 					</label>
 				</fieldset>
@@ -64,4 +67,3 @@ export const CheckBoxSetting = ( {
 
 export const SelectSetting = () => {};
 export const RadioSetting = () => {};
-

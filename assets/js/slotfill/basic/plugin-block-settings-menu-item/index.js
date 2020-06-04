@@ -5,7 +5,7 @@ const PluginBlockSettingsMenuGroupDemo = () => (
 		allowedBlocks={ [ 'core/paragraph' ] }
 		label="PluginBlockSettingsMenuItem Text"
 		onClick={ () => {
-			alert( 'clicked' );
+			global.alert( 'clicked' );
 		} } />
 );
 

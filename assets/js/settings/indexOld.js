@@ -66,44 +66,6 @@ const reducer = ( state, action ) => {
 	}
 };
 
-async function getRequest( { requestUrl, nonce } ) {
-	const response = await fetch( requestUrl, {
-		headers: {
-			'X-WP-Nonce': nonce,
-			'Content-Type': 'application/json',
-		},
-	} );
-
-	if ( 200 === response.status ) {
-		return response.json();
-	}
-	return new Error( response );
-}
-
-/**
- * Helper to make POST requests
- *
- * @param {string} requestUrl The query url to fetch.
- * @param {string} nonce      User nonce.
- * @param {Object} data       Data to be stringified and sent as the body of the request.
- */
-async function postRequest( { requestUrl, nonce, data } ) {
-	const response = await fetch( requestUrl, {
-		method: 'POST',
-		headers: {
-			'X-WP-Nonce': nonce,
-			'Content-Type': 'application/json',
-		},
-		body: JSON.stringify( data ),
-	} );
-
-	if ( 200 === response.status ) {
-		return response.json();
-	}
-	const error = await response.json();
-	return new Error( error.message );
-}
-
 const App = () => {
 	// Get the
 	const { nonce = false, restBase, state: options } = window._extendingGutenbergSettings;
@@ -142,7 +104,7 @@ const App = () => {
 			dispatch( { type: 'TOGGLE_SAVING' } );
 		};
 
-		if ( true == appState.saving ) {
+		if ( true === appState.saving ) {
 			updateData();
 		}
 	}, [ appState.saving ] );

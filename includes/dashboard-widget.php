@@ -7,6 +7,10 @@ namespace ExtendingGutenberg\DashboardWidget;
 
 
 function setup() {
+	$options = json_decode( get_option( 'extending_gutenberg' ), true );
+	if ( ! isset( $options['dashboardWidget'] ) || false === $options['dashboardWidget'] ) {
+		return;
+	}
 	add_action( 'wp_dashboard_setup', __NAMESPACE__ . '\add_dashboard_widgets' );
 	add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\enqueue_dashboard_js' );
 }

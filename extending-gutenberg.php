@@ -21,20 +21,10 @@ define( 'EG_INC', plugin_dir_path( __FILE__ ) . 'includes/' );
 // Include the files
 require_once EG_INC . 'settings-page.php';
 require_once EG_INC . 'dashboard-widget.php';
+require_once EG_INC . 'blocks.php';
+require_once EG_INC . 'slotfill.php';
 
 SettingsPage\setup();
+Blocks\setup();
+SlotFill\setup();
 DashboardWidget\setup();
-
-
-/**
- * Enqueue the JS for our demos
- */
-function enqueue_block_editor_assets() {
-	wp_enqueue_script(
-		'extending-guteberg', // Handle.
-		plugin_dir_url( __FILE__ ) . '/dist/index.js',
-		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-edit-post', 'word-count' ),
-		time()
-	);
-}
-add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue_block_editor_assets' );

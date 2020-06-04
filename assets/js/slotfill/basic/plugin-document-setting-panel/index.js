@@ -7,14 +7,7 @@ const MyDocumentSettingDemo = () => (
 			title={ 'Custom Panel Title' }
 			className={ 'my-awesome-class' }
 		>
-			{ ( props ) => {
-		  console.log( props );
-				return (
-					<>
-						<p>{ `Post Type: ${ props.currentPostType }` }</p>
-					</>
-				);
-			} }
+			<p>{ `Post Type: hi` }</p>
 		</PluginDocumentSettingPanel>
 	</>
 );
