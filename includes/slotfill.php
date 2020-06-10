@@ -7,7 +7,7 @@ namespace ExtendingGutenberg\SlotFill;
 
 function setup() {
 	$options = json_decode( get_option( 'extending_gutenberg' ), true );
-	if ( ! isset( $options['dashboardWidget'] ) || false === $options['slotFillEnabled'] ) {
+	if ( ! isset( $options['slotFillEnabled'] ) || false === $options['slotFillEnabled'] ) {
 		return;
 	}
 	add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue_block_editor_assets' );

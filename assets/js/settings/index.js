@@ -26,7 +26,7 @@ const App = ( ) => {
 			<SettingsPage title="Extending Gutenberg"><p>Loading</p></SettingsPage>
 		);
 	}
-	const { blocksEnabled, slotFillEnabled } = settings;
+	const { blocksEnabled, slotFillEnabled, dashboardWidget } = settings;
 	return (
 		<SettingsPage title="Extending Gutenberg">
 			<SettingsSection>
@@ -40,6 +40,12 @@ const App = ( ) => {
 					label="Enable slotfill examples"
 					id="slotFillEnabled"
 					isChecked={ slotFillEnabled }
+					dispatch={ updateSetting }
+				/>
+				<CheckBoxSetting
+					label="Enable custom SlotFill Dashboard widget"
+					id="dashboardWidget"
+					isChecked={ dashboardWidget }
 					dispatch={ updateSetting }
 				/>
 			</SettingsSection>

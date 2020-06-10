@@ -46,6 +46,7 @@ const CologneChart = () => {
 					[ 'Works Every Time', 60 ],
 				]
 			}
+			loader={ <div>A very usefull and insightfull chart is loading.</div> }
 			options={ chartOptions }
 			graph_id="PieChart"
 			width="100%"

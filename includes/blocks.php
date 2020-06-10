@@ -7,7 +7,7 @@ namespace ExtendingGutenberg\Blocks;
 
 function setup() {
 	$options = json_decode( get_option( 'extending_gutenberg' ), true );
-	if ( ! isset( $options['dashboardWidget'] ) || false === $options['blocksEnabled'] ) {
+	if ( ! isset( $options['blocksEnabled'] ) || false === $options['blocksEnabled'] ) {
 		return;
 	}
 	add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue_block_editor_assets' );

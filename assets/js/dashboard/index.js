@@ -5,7 +5,7 @@ import { registerPlugin, PluginArea } from '@wordpress/plugins';
 import PluginDashboardWidget from './plugin-dashboard-widget';
 // Import some useless things to display
 import CologneChart from './cologne-chart';
-import BeardedWonder from './joey-blake';
+import BeardyMcBeardFace from './beardy-mcbeardface';
 
 const DashboardWidget = () => {
 	return (
@@ -29,7 +29,7 @@ registerPlugin(
 		render: () => (
 			<PluginDashboardWidget>
 				<CologneChart />
-				<BeardedWonder />
+				<BeardyMcBeardFace />
 			</PluginDashboardWidget>
 		),
 	}
