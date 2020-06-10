@@ -10,6 +10,7 @@ import { useSelect, useDispatch } from '@wordpress/data';
  */
 import SettingsPage from './components/settings-page';
 import SettingsSection from './components/settings-section';
+import TabbedNavigation from './components/tabbed-navigation';
 import { CheckBoxSetting } from './components/setting-types';
 
 const App = ( ) => {
@@ -29,6 +30,7 @@ const App = ( ) => {
 	const { blocksEnabled, slotFillEnabled, dashboardWidget } = settings;
 	return (
 		<SettingsPage title="Extending Gutenberg">
+			<TabbedNavigation />
 			<SettingsSection>
 				<CheckBoxSetting
 					label="Enable example blocks"

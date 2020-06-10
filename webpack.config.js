@@ -1,24 +1,25 @@
 const path = require( 'path' );
-const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
 const WebpackBar = require( 'webpackbar' );
-const DependencyExtractionWebpackPlugin = require( '@wordpress/dependency-extraction-webpack-plugin' );
 const marked = require( 'marked' );
 const markdownRenderer = new marked.Renderer();
-
+const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 module.exports = {
+	...defaultConfig,
 	entry: {
 		slotfill: './assets/js/slotfill/index.js',
 		blocks: './assets/js/blocks/index.js',
 		dashboard: './assets/js/dashboard/index.js',
-		settings: './assets/js/settings/index.js',
-		'settings-datastore': './assets/js/settings/datastore',
+		admin: './assets/js/admin/index.js',
+		datastore: './assets/js/admin/datastore',
 	},
 	output: {
 		filename: '[name].js',
 		path: path.resolve( process.cwd(), 'dist' ),
 	},
 	module: {
+		...defaultConfig.module,
 		rules: [
+			...defaultConfig.module.rules,
 			{
 				test: /\.md$/,
 				use: [
@@ -35,32 +36,11 @@ module.exports = {
 					},
 				],
 			},
-			{
-				test: /\.js$/,
-				exclude: /(node_modules)/,
-				use: {
-					loader: 'babel-loader',
-				},
-			},
-			{
-				test: /\.js$/,
-				exclude: /(node_modules)/,
-				enforce: 'pre',
-				loader: 'eslint-loader',
-				options: {
-					fix: true,
-				},
-			},
 		],
 	},
 	plugins: [
-		// Clean the `dist` folder on build.
-		new CleanWebpackPlugin(),
-
+		...defaultConfig.plugins,
 		// Fancy WebpackBar.
 		new WebpackBar(),
-
-		// Extract dependencies.
-		new DependencyExtractionWebpackPlugin(),
 	],
 };

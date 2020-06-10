@@ -3,10 +3,10 @@
  * Setup our enqueues for JavaScript
  */
 
-namespace ExtendingGutenberg\SettingsPage;
+namespace ExtendingGutenberg\AdminPage;
 
 /**
- * Settings page setup
+ * Admin page setup
  */
 function setup() {
 
@@ -86,13 +86,13 @@ function enqueue_settings_page_javascript( $hook ) {
 	if ( 'settings_page_extending-gutenberg' !== $hook ) {
 		return;
 	}
-	$store_build_assets = EG_DIR_PATH . '/dist/settings-datastore.asset.php';
+	$store_build_assets = EG_DIR_PATH . '/dist/datastore.asset.php';
 
 	if ( file_exists( $store_build_assets ) ) {
 		$assets = include $store_build_assets;
 		wp_enqueue_script(
-			'extending-gutenberg-settings-datastore', // Handle.
-			EG_DIR_URL . '/dist/settings-datastore.js',
+			'extending-gutenberg-datastore', // Handle.
+			EG_DIR_URL . 'dist/datastore.js',
 			$assets['dependencies'],
 			$assets['version'],
 			true
@@ -101,23 +101,23 @@ function enqueue_settings_page_javascript( $hook ) {
 
 
 	// Check for the build assets file.
-	$build_assets = EG_DIR_PATH . '/dist/settings.asset.php';
+	$build_assets = EG_DIR_PATH . '/dist/admin.asset.php';
 
 	// If it exists, enqueue our JavaScript file.
 	if ( file_exists( $build_assets ) ) {
 		$assets = include $build_assets;
 		wp_enqueue_script(
-			'extending-gutenberg-settings', // Handle.
-			EG_DIR_URL . '/dist/settings.js',
-			array_merge( $assets['dependencies'], array( 'extending-gutenberg-settings-datastore' ) ),
+			'extending-gutenberg-admin', // Handle.
+			EG_DIR_URL . 'dist/admin.js',
+			array_merge( $assets['dependencies'], array( 'extending-gutenberg-datastore' ) ),
 			$assets['version'],
 			true
 		);
 
 		// We'll hydrate the app with this.
 		wp_localize_script(
-			'extending-gutenberg-settings',
-			'_extendingGutenbergSettings',
+			'extending-gutenberg-admin',
+			'_extendingGutenbergAdmin',
 			[
 				'nonce'      => wp_create_nonce( 'wp_rest' ),
 				'restBase'   => rest_url(),
@@ -125,7 +125,13 @@ function enqueue_settings_page_javascript( $hook ) {
 				'pluginPath' => EG_DIR_URL
 			]
 		);
-	};
 
+		wp_enqueue_style(
+			'extending-gutenberg-admin-styles',
+			EG_DIR_URL . 'dist/admin.css',
+			[],
+			$assets['version']
+		);
+	};
 	
 }

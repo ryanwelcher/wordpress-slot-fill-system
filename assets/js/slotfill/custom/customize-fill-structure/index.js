@@ -8,6 +8,6 @@ const CustomizeFillStructure = ( { children } ) => (
 			{ children }
 		</PanelBody>
 	</Fill>
-)
+);
 CustomizeFillStructure.Slot = Slot;
 export default CustomizeFillStructure;

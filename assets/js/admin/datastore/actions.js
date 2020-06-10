@@ -72,7 +72,7 @@ const actions = {
 
 	changeTab( slug ) {
 		return {
-			payload: { slug },
+			payload: slug,
 			type: CHANGE_TAB,
 		};
 	},

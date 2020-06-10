@@ -3,6 +3,7 @@
  * Internal dependencies
  */
 import {
+	CHANGE_TAB,
 	START_SAVE_SETTINGS,
 	FINISH_SAVE_SETTINGS,
 	UPDATE_SETTING,
@@ -57,6 +58,13 @@ const reducer = ( state, { payload, type } ) => {
 			return {
 				...state,
 				settings: newSettings,
+			};
+		}
+
+		case CHANGE_TAB: {
+			return {
+				...state,
+				activePage: payload,
 			};
 		}
 

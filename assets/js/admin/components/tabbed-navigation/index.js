@@ -1,25 +1,18 @@
 import { useDispatch, useSelect } from '@wordpress/data';
+import './styles.css';
 
 const TabbedNavigation = () => {
 	const activeTab = useSelect( ( select ) => select( 'extending-gutenberg/settings' ).getActivePage() );
 	const pages = useSelect( ( select ) => select( 'extending-gutenberg/settings' ).getPages() );
 	const { changeTab } = useDispatch( 'extending-gutenberg/settings' );
-	const buttonStyles = {
-		borderRight: 'none',
-		borderBottom: '4px solid #fff',
-		borderTop: 'none',
-		borderLeft: 'none',
-		color: '#666',
-		cursor: 'pointer',
-		margin: '0 10px',
-		padding: '15px 0',
-	};
-
+	if ( pages.length < 2 ) {
+		return null;
+	}
 	const links = pages.map( ( item ) => {
-		const current = activeTab === item.slug ? 'current' : '';
+		const current = activeTab === item.slug ? 'eg-tab current' : 'eg-tab';
 		return (
 			<li key={ item.title } className={ current }>
-				<button style={ buttonStyles }onClick={ () => {
+				<button onClick={ () => {
 					changeTab( item.slug );
 				} }>{ item.title }
 				</button>
