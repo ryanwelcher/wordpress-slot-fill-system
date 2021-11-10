@@ -10,9 +10,9 @@
     "start:dashboard": "wp-scripts start ./src/dashboard/index.js --output-path=build --output-filename=dashboard.js"
   },
   "author": "Ryan Welcher",
-  "license": "GPL 2.0",
+  "license": "GPL v2.0 or Later",
   "devDependencies": {
-    "@wordpress/scripts": "^3.2.1"
+    "@wordpress/scripts": "^19.1.0"
   },
   "dependencies": {
     "react-google-charts": "^3.0.13"
