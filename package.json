@@ -4,6 +4,8 @@
   "description": "A plugin to demonstrate extension points in Gutenberg",
   "scripts": {
     "setup": "npm install && npm run build && npm run build:dashboard",
+    "env:start":"wp-env start",
+    "env:stop":"wp-env stop",
     "build": "wp-scripts build",
     "start": "wp-scripts start",
     "build:dashboard": "wp-scripts build ./src/dashboard/index.js --output-path=build --output-filename=dashboard.js",
@@ -12,6 +14,7 @@
   "author": "Ryan Welcher",
   "license": "GPL v2.0 or Later",
   "devDependencies": {
+    "@wordpress/env": "^4.1.3",
     "@wordpress/scripts": "^19.1.0"
   },
   "dependencies": {
