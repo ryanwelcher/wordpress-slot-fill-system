@@ -11,7 +11,7 @@ const { registerPlugin } = wp.plugins;
 /**
  * Import our components that contain the SlotFills
  */
-import { TenUp } from '../../svg/icons';
+import { Logo } from '../../svg/icons';
 import PluginBlockSettingsMenuGroupDemo from './plugin-block-settings-menu-item';
 import MyDocumentSettingDemo from './plugin-document-setting-panel';
 import MyButtonMoreMenuItemDemo from './plugin-more-menu-item';
@@ -38,6 +38,6 @@ const CombinedSlotFillsDemo = () => (
 /**
  * register the plugin.
  */
-registerPlugin( 'extending-gutenberg', { render: CombinedSlotFillsDemo, icon: TenUp } );
+registerPlugin( 'extending-gutenberg', { render: CombinedSlotFillsDemo, icon: Logo } );
 ```
 [Back: PluginDocumentSettingPanel ](./plugin-document-setting-panel.md)

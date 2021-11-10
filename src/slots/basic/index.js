@@ -1,12 +1,13 @@
 /**
  * Get registerPlugin.
  */
-const { registerPlugin } = wp.plugins;
+import { registerPlugin } from '@wordpress/plugins';
+import { Fragment } from '@wordpress/element';
 
 /**
  * Import our components that contain the SlotFills
  */
-import { TenUp } from '../../svg/icons';
+import { Logo } from '../../svg/icons';
 import PluginBlockSettingsMenuGroupDemo from './plugin-block-settings-menu-item';
 import MyDocumentSettingDemo from './plugin-document-setting-panel';
 import MyButtonMoreMenuItemDemo from './plugin-more-menu-item';
@@ -18,19 +19,24 @@ import PluginSidebarMoreMenuItemDemo from './plugin-sidebar-more-menu-item';
 /**
  * One plugin to rule them all.
  */
-const CombinedSlotFillsDemo = () => (
-	<>
-		<PluginBlockSettingsMenuGroupDemo />
-		<MyDocumentSettingDemo />
-		<MyButtonMoreMenuItemDemo />
-		<PluginPrePublishPanelDemo />
-		<PluginPostPublishPanelDemo />
-		<PluginPostStatusInfoDemo />
-		<PluginSidebarMoreMenuItemDemo />
-	</>
-);
+const CombinedSlotFillsDemo = () => {
+	return (
+		<Fragment>
+			<PluginBlockSettingsMenuGroupDemo />
+			<MyDocumentSettingDemo />
+			<MyButtonMoreMenuItemDemo />
+			<PluginPrePublishPanelDemo />
+			<PluginPostPublishPanelDemo />
+			<PluginPostStatusInfoDemo />
+			<PluginSidebarMoreMenuItemDemo />
+		</Fragment>
+	);
+};
 
 /**
  * register the plugin.
  */
-registerPlugin( 'extending-gutenberg', { render: CombinedSlotFillsDemo, icon: TenUp } );
+registerPlugin('extending-gutenberg', {
+	render: CombinedSlotFillsDemo,
+	icon: Logo,
+});

@@ -2,7 +2,7 @@ const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n;
 const { InspectorControls } = wp.editor;
 
-import { TenUp } from '../../svg/icons';
+import { Logo } from '../../svg/icons';
 
 import PostInfoAuthor  from '../slots/post-info-author';
 import PostInfoOpen from '../slots/post-info-open';
@@ -16,7 +16,7 @@ import '../plugins';
 registerBlockType( 'extending-gutenberg/post-info', {
 	title: __( 'Post Information' ),
 	description: __( 'This block displays information about the post such as author information' ),
-	icon: TenUp,
+	icon: Logo,
 	category: 'common',
 	attributes: {
 		showAuthor: {

@@ -1,7 +1,7 @@
 const { registerPlugin } = wp.plugins;
 const { PluginDocumentSettingPanel } = wp.editPost;
 const { Fill, Slot } = wp.components;
-import { TenUp } from '../../svg/icons';
+import { Logo } from '../../svg/icons';
 
 // Import our custom SlotFill components.
 import BasicCreateSlotFill from './basic-create-slot-fill';
@@ -46,4 +46,4 @@ const CustomSlotFillDemo = () => (
 	</>
 );
 
-registerPlugin( 'extending-gutenberg-custom-panel', { render: CustomSlotFillDemo, icon: TenUp } );
+registerPlugin( 'extending-gutenberg-custom-panel', { render: CustomSlotFillDemo, icon: Logo } );

@@ -1,7 +1,7 @@
 const { registerPlugin } = wp.plugins;
 const { Fill } = wp.components;
 
-import { TenUp } from '../../../svg/icons';
+import { Logo } from '../../../svg/icons';
 import BasicCreateSlotFill from '../basic-create-slot-fill';
 import CustomizeFillStructure from '../customize-fill-structure';
 import CustomizeSlotStructure from '../customize-slot-stucture';
@@ -53,4 +53,4 @@ const CustomSlotFillDemo = () => (
 	</>
 );
 
-registerPlugin( 'extending-gutenberg-custom-slotfills', { render: CustomSlotFillDemo, icon: TenUp } );
+registerPlugin( 'extending-gutenberg-custom-slotfills', { render: CustomSlotFillDemo, icon: Logo } );
