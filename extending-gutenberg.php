@@ -56,5 +56,5 @@ function enqueue_dashboard_js( $hook ) {
 		);
 	}
 	$user = wp_get_current_user();
-	wp_localize_script( 'eg-dashboard-widget', 'EB_DASH', [ user => [ 'display_name' => $user->display_name ] ] );
+	wp_localize_script( 'eg-dashboard-widget', 'EB_DASH', [ 'user' => [ 'display_name' => $user->display_name ] ] );
 }
