@@ -1,5 +1,5 @@
 {
-  "name": "extending-gutenberg",
+  "name": "@ryanwelcher/gutenberg-slot-fill-system",
   "version": "1.0.0",
   "description": "A plugin to demonstrate extension points in Gutenberg",
   "scripts": {
@@ -18,7 +18,11 @@
     "@wordpress/scripts": "^19.1.0"
   },
   "dependencies": {
+    "@wordpress/components": "^19.0.1",
+    "@wordpress/compose": "^5.0.5",
+    "@wordpress/edit-post": "^5.0.6",
     "@wordpress/element": "^4.0.3",
+    "@wordpress/i18n": "^4.2.3",
     "@wordpress/plugins": "^4.0.5",
     "react-google-charts": "^3.0.13"
   }
