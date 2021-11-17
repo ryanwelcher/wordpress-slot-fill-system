@@ -16,12 +16,12 @@
     </SlotFillProvider>
 </Editor>
 ```
-[View actual source](https://github.com/WordPress/gutenberg/blob/master/packages/edit-post/src/editor.js)
+[View actual source](https://github.com/WordPress/gutenberg/blob/trunk/packages/edit-post/src/editor.js)
 
 ## Accessing the System ##
 
 #### registerPlugin ###
-This function provides an entry point to the SlotFill system by accesssing an array that contains all of the plugins ( Fills ).
+This function provides an entry point to the SlotFill system by accessing an array that contains all of the plugins ( Fills ).
 
 ### PluginArea ##
 This component accesses the array of registered plugins and renders them inside a hidden div. The `SlotFillProvider` then takes over and connects the Fills to their Slot.

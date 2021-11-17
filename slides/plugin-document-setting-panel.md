@@ -1,8 +1,6 @@
 # PluginDocumentSettingPanel
 Renders items below the Status & Availability panel in the Document Sidebar.
 
-__Available in the Gutenberg plugin as of version 6.1__
-
 ## Component Structure ##
 ```jsx
 const PluginDocumentSettingFill = ( { isEnabled, opened, onToggle, className, title, icon, children } ) => {
@@ -24,7 +22,7 @@ const PluginDocumentSettingFill = ( { isEnabled, opened, onToggle, className, ti
 	);
 };
 ```
-[View source](https://github.com/WordPress/gutenberg/blob/master/packages/edit-post/src/components/sidebar/plugin-document-setting-panel/index.js)
+[View source](https://github.com/WordPress/gutenberg/blob/trunk/packages/edit-post/src/components/sidebar/plugin-document-setting-panel/index.js)
 
 ## Available Props
 * __name__ `string`: A string identifying the panel.
@@ -37,8 +35,8 @@ Yes.
 
 ## Example
 ```js
-const { registerPlugin } = wp.plugins;
-const { PluginDocumentSettingPanel } = wp.editPost;
+import { registerPlugin } from '@wordpress/plugins';
+import { PluginDocumentSettingPanel } from '@wordpress/edit-post';
 
 const PluginDocumentSettingPanelDemo = () => (
 	<PluginDocumentSettingPanel

@@ -1,8 +1,8 @@
 ## wp.plugins API ##
 
-The `wp.plugins` API is used to manage adding and removing plugins that are used in the SlotFill system.
+The `@wordpress/plugins` API is used to manage adding and removing plugins that are used in the SlotFill system.
 
-[View Source](https://github.com/WordPress/gutenberg/blob/master/packages/plugins/src/api/index.js)
+[View Source](https://github.com/WordPress/gutenberg/blob/trunk/packages/plugins/src/api/index.js)
 
 ### registerPlugin ##
 `registerPlugin` is used to register a new plugin by adding it to the internal array used by the `wp.plugin` API.
@@ -18,9 +18,9 @@ Some SlotFills will inherit the icon passed to `registerPlugin`.
 
 
 ### Example ###
-```jsx
-const { registerPlugin } = wp.plugins;
-const { PluginPostStatusInfo } = wp.editPost;
+```js
+import { registerPlugin } from '@wordpress/plugins';
+import { PluginPostStatusInfo } from '@wordpress/edit-post';
 
 const MyFirstPlugin = () => (
     <PluginPostStatusInfo className='my-custom-classname'>
@@ -31,13 +31,13 @@ registerPlugin( 'example-plugin', { render: MyFirstPlugin, icon: 'smiley' } );
 ```
 
 ### unregisterPlugin ###
-Unregisters a plugin by name
+Unregister a plugin by name
 #### Params ####
 *  __name__ `string`: The name of a registered plugin.
 
 ### Example ###
-```jsx
-const { unregisterPlugin } = wp.plugins;
+```js
+import { unregisterPlugin } from '@wordpress/plugins';
 unregisterPlugin( 'example-plugin' );
 ```
 
@@ -48,8 +48,8 @@ Retrieves the settings object for a registered plugin by name.
 ### Returns ###
 *  __name__ `Object`: Plugin settings.
 ### Example ###
-```jsx
-const { getPlugin } = wp.plugins;
+```js
+import { getPlugin } from '@wordpress/plugins';
 getPlugin( 'example-plugin' );
 ```
 
@@ -60,8 +60,8 @@ None
 ### Returns ###
 *  __name__ `array`: Array of plugin settings objects.
 ### Example ###
-```jsx
-const { getPlugins } = wp.plugins;
+```js
+import { getPlugins } from '@wordpress/plugins';
 getPlugins();
 ```
 

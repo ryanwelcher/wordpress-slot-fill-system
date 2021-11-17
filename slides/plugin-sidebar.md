@@ -56,7 +56,7 @@ function PluginSidebar( props ) {
 	);
 }
 ```
-[View source](https://github.com/WordPress/gutenberg/blob/master/packages/edit-post/src/components/sidebar/plugin-sidebar/index.js)
+[View source](https://github.com/WordPress/gutenberg/blob/trunk/packages/edit-post/src/components/sidebar/plugin-sidebar/index.js)
 
 ## Available Props
 * __name__ `string`: A string identifying the sidebar. Must be unique for every sidebar registered within the scope of your plugin.

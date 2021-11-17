@@ -16,7 +16,7 @@ const PluginPrePublishPanel = ( { children, className, title, initialOpen = fals
 	</Fill>
 );
 ```
-[View source](https://github.com/WordPress/gutenberg/blob/master/packages/edit-post/src/components/sidebar/plugin-pre-publish-panel/index.js)
+[View source](https://github.com/WordPress/gutenberg/blob/trunk/packages/edit-post/src/components/sidebar/plugin-pre-publish-panel/index.js)
 
 ## Available Props
 * __className__ `string`: An optional class name added to the row.
@@ -28,8 +28,8 @@ No. There is a Pull Request open.
 
 ## Example
 ```jsx
-const { registerPlugin } = wp.plugins;
-const { PluginPrePublishPanel }= wp.editPost;
+import { registerPlugin } = from '@wordpress/plugins';
+import { PluginPrePublishPanel } from '@wordpress/edit-post';
 
 const PluginPrePublishPanelDemo = () => (
 	<PluginPrePublishPanel

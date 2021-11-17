@@ -15,7 +15,7 @@ const PluginMoreMenuItem = ( { onClick = noop, ...props } ) => (
 	</PluginsMoreMenuGroup>
 );
 ```
-[View source](https://github.com/WordPress/gutenberg/blob/master/packages/edit-post/src/components/header/plugin-more-menu-item/index.js)
+[View source](https://github.com/WordPress/gutenberg/blob/trunk/packages/edit-post/src/components/header/plugin-more-menu-item/index.js)
 
 ## Available Props
 * __href__ `string`: When `href` is provided then the menu item is represented as an anchor rather than button. It corresponds to the `href` attribute of the anchor.
@@ -28,8 +28,8 @@ Yes.
 
 ## Example
 ```jsx
-const { registerPlugin } = wp.plugins;
-const { PluginMoreMenuItem } = wp.editPost;
+import { registerPlugin } from '@wordpress/plugins';
+import { PluginMoreMenuItem } from '@wordpress/edit-post';
 
 const MyButtonMoreMenuItemDemo = () => (
 	<PluginMoreMenuItem

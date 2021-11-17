@@ -14,7 +14,7 @@ const PluginSidebarMoreMenuItem = ( { children, icon, isSelected, onClick } ) =>
 	</PluginMoreMenuItem>
 );
 ```
-[View source](https://github.com/WordPress/gutenberg/blob/master/packages/edit-post/src/components/header/plugin-sidebar-more-menu-item/index.js)
+[View source](https://github.com/WordPress/gutenberg/blob/trunk/packages/edit-post/src/components/header/plugin-sidebar-more-menu-item/index.js)
 
 ## Available Props
 * __target__ `string`: A string identifying the target sidebar you wish to be activated by this menu item. Must be the same as the `name` prop you have given to that sidebar.
@@ -25,9 +25,9 @@ Yes.
 
 ## Example
 ```js
-const { registerPlugin } = wp.plugins;
-const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
-const { PanelBody } = wp.components;
+import { registerPlugin } from '@wordpress/plugins';
+import { PluginSidebar, PluginSidebarMoreMenuItem } from '@wordpress/edit-post';
+import { PanelBody } from '@wordpress/components';
 
 const PluginSidebarMoreMenuItemDemo = () => (
 	<>

@@ -28,8 +28,8 @@ No. There is a Pull Request open.
 
 ## Example
 ```jsx
-const { registerPlugin } = wp.plugins;
-const { PluginPostPublishPanel } = wp.editPost;
+import { registerPlugin } from '@wordpress/plugins';
+import { PluginPostPublishPanel } from '@wordpress/edit-post';
 
 const PluginPostPublishPanelDemo = () => (
 	<PluginPostPublishPanel

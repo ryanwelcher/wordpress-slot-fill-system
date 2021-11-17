@@ -1,5 +1,5 @@
 ## Available SlotFIlls ##
-There are currently 8 SlotsFills exposed for use on the `wp.editPost` object.
+There are currently 8 SlotsFills exposed for use in the  `@wordpress/edit-post` package.
 * [PluginPostStatusInfo](./plugin-post-status-info.md)
 * [PluginPrePublishPanel](./plugin-pre-publish-panel.md)
 * [PluginPostPublishPanel](./plugin-post-publish-panel.md)
@@ -10,7 +10,9 @@ There are currently 8 SlotsFills exposed for use on the `wp.editPost` object.
 * [PluginDocumentSettingPanel - new!](./plugin-document-setting-panel.md)
 
 ### Internal SlotFills ##
-There are internal and special SlotFills as well. These are either not exposed or, in the case of `InspectorControls`, have certain uses. They include:
+There are internal and special SlotFills as well. These are either not exposed or, in the case of `InspectorControls`, have certain uses.
+
+They include:
 * InspectorControls
 * InspectorControlsAdvanced
 * BlockFormatControls

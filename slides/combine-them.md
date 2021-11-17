@@ -6,7 +6,7 @@ All the examples have shown a single SlotFill being used with `registerPlugin`. 
 ```js
  * Get registerPlugin.
  */
-const { registerPlugin } = wp.plugins;
+import { registerPlugin } from '@wordpress/plugins';
 
 /**
  * Import our components that contain the SlotFills

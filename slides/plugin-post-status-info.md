@@ -12,7 +12,7 @@ const PluginPostStatusInfo = ( { children, className } ) => (
 	</Fill>
 );
 ```
-[View source](https://github.com/WordPress/gutenberg/blob/master/packages/edit-post/src/components/sidebar/plugin-post-status-info/index.js)
+[View source](https://github.com/WordPress/gutenberg/blob/trunk/packages/edit-post/src/components/sidebar/plugin-post-status-info/index.js)
 
 ## Available Props
 * __className__ `string`: An optional class name added to the row.
