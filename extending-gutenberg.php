@@ -65,6 +65,7 @@ function enqueue_dashboard_js( $hook ) {
 			);
 		}
 	}
+	
 	$user = \wp_get_current_user();
 	\wp_localize_script(
 		'eg-dashboard-widget',
@@ -75,3 +76,10 @@ function enqueue_dashboard_js( $hook ) {
 	);
 }
 \add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\enqueue_dashboard_js' );
+
+
+\add_filter( 'block_editor_settings_all', __NAMESPACE__ . '\test_context', 10, 2 );
+
+// function test_context( $editor_settings, $block_editor_context ) {
+// 	die( var_dump( $block_editor_context ) );
+// }

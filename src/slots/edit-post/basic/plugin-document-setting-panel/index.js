@@ -1,4 +1,5 @@
-const { PluginDocumentSettingPanel } = wp.editPost;
+import { PluginDocumentSettingPanel } from '@wordpress/edit-post';
+import { __ } from '@wordpress/i18n';
 
 const MyDocumentSettingDemo = () => (
 	<PluginDocumentSettingPanel
@@ -6,7 +7,7 @@ const MyDocumentSettingDemo = () => (
 		title="Custom Panel"
 		className="custom-panel"
 	>
-		Custom Panel Contents
+		{__('Custom Panel Contents', 'slot-fill-system')}
 	</PluginDocumentSettingPanel>
 );
 

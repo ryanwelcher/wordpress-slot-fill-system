@@ -7,7 +7,7 @@
     "env:start": "wp-env start",
     "env:stop": "wp-env stop",
     "build": "wp-scripts build",
-    "start": "wp-scripts start",
+    "start": "wp-scripts start ./src/slots/fse/index.js",
     "build:dashboard": "wp-scripts build ./src/dashboard/index.js --output-path=build --output-filename=dashboard.js",
     "start:dashboard": "wp-scripts start ./src/dashboard/index.js --output-path=build --output-filename=dashboard.js"
   },
