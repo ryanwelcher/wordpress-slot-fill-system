@@ -7,7 +7,7 @@ import { Fragment } from '@wordpress/element';
 /**
  * Import our components that contain the SlotFills
  */
-import { Logo } from '../../svg/icons';
+import { Avocado } from '../../../svg/icons';
 import PluginBlockSettingsMenuGroupDemo from './plugin-block-settings-menu-item';
 import MyDocumentSettingDemo from './plugin-document-setting-panel';
 import MyButtonMoreMenuItemDemo from './plugin-more-menu-item';
@@ -18,6 +18,8 @@ import PluginSidebarMoreMenuItemDemo from './plugin-sidebar-more-menu-item';
 
 /**
  * One plugin to rule them all.
+ *
+ * @param  props
  */
 const CombinedSlotFillsDemo = () => {
 	return (
@@ -38,5 +40,6 @@ const CombinedSlotFillsDemo = () => {
  */
 registerPlugin('extending-gutenberg', {
 	render: CombinedSlotFillsDemo,
-	icon: Logo,
+	icon: Avocado,
+	scope: 'my-page',
 });
