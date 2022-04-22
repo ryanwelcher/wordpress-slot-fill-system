@@ -7,23 +7,25 @@
     "env:start": "wp-env start",
     "env:stop": "wp-env stop",
     "build": "wp-scripts build",
-    "start": "wp-scripts start ./src/slots/fse/index.js",
+    "start": "wp-scripts start",
     "build:dashboard": "wp-scripts build ./src/dashboard/index.js --output-path=build --output-filename=dashboard.js",
-    "start:dashboard": "wp-scripts start ./src/dashboard/index.js --output-path=build --output-filename=dashboard.js"
+    "start:dashboard": "wp-scripts start ./src/dashboard/index.js --output-path=build --output-filename=dashboard.js",
+    "packages-update": "wp-scripts packages-update"
   },
   "author": "Ryan Welcher",
   "license": "GPL v2.0 or Later",
   "devDependencies": {
-    "@wordpress/env": "^4.1.3",
-    "@wordpress/scripts": "^19.1.0"
+    "@wordpress/env": "^4.6.0",
+    "@wordpress/scripts": "^22.5.0"
   },
   "dependencies": {
-    "@wordpress/components": "^19.0.1",
-    "@wordpress/compose": "^5.0.5",
-    "@wordpress/edit-post": "^5.0.6",
-    "@wordpress/element": "^4.0.3",
-    "@wordpress/i18n": "^4.2.3",
-    "@wordpress/plugins": "^4.0.5",
+    "@wordpress/components": "^19.9.0",
+    "@wordpress/compose": "^5.5.0",
+    "@wordpress/edit-post": "^6.4.0",
+    "@wordpress/edit-site": "^4.4.0",
+    "@wordpress/element": "^4.5.0",
+    "@wordpress/i18n": "^4.7.0",
+    "@wordpress/plugins": "^4.5.0",
     "react-google-charts": "^3.0.13"
   }
 }
