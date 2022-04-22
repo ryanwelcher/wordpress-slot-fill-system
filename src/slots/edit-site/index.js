@@ -1,32 +1,24 @@
-import {
-	PluginSidebar,
-	PluginSidebarMoreMenuItem,
-	PluginMoreMenuItem,
-} from '@wordpress/edit-site';
-import { PanelBody } from '@wordpress/components';
+/**
+ * WordPress dependencies
+ */
 import { registerPlugin } from '@wordpress/plugins';
 
-const PluginSidebarDemo = () => (
-	<>
-		<PluginMoreMenuItem
-			href="https://developer.wordpress.org/block-editor/reference-guides/slotfills/"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			SlotFill Reference Guide
-		</PluginMoreMenuItem>
+/**
+ * Internal dependencies
+ */
+import { Avocado } from '../../svg/icons';
+import SiteEditorMainDashboardButtonExample from './MainDashboardButton';
+import SiteEditorPluginSidebarExample from './PluginSidebar';
+import SiteEditorPluginMoreMenuItemExample from './PluginMoreMenuItem';
 
-		<PluginSidebar
-			name="plugin-sidebar-test"
-			title="Plugin Sidebar"
-			icon="palmtree"
-		>
-			<PanelBody>
-				<p>Plugin Sidebar</p>
-			</PanelBody>
-		</PluginSidebar>
-	</>
-);
-export default PluginSidebarDemo;
-
-registerPlugin('fse-sidebar-test', { render: PluginSidebarDemo });
+// Register the plugin containing all the slots available in the Site Editor
+registerPlugin('gutenberg-slot-fill-system', {
+	render: () => (
+		<>
+			<SiteEditorMainDashboardButtonExample />
+			<SiteEditorPluginSidebarExample />
+			<SiteEditorPluginMoreMenuItemExample />
+		</>
+	),
+	icon: Avocado,
+});
