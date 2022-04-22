@@ -1,6 +1,6 @@
 // Examples for the Post Edit screen
 
-import './slots/edit-post/basic';
+import './slots/edit-post/';
 // Examples for the Site Editor
 import './slots/edit-site/';
 
