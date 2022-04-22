@@ -1,21 +1,22 @@
-const { createSlotFill, Icon } = wp.components;
-const { Fill, Slot } = createSlotFill( 'PluginDashboardIconWidget' );
-const { compose }  = wp.compose;
+import { createSlotFill, Icon } from '@wordpress/components';
+const { Fill, Slot } = createSlotFill('PluginDashboardIconWidget');
+const { compose } = wp.compose;
 const { withPluginContext } = wp.plugins;
 
-const PluginDashboardIconWidgetFill = ( { children, icon, title } ) => (
+const PluginDashboardIconWidgetFill = ({ children, icon, title }) => (
 	<Fill>
-		<Icon icon={ icon } />{children}
+		<Icon icon={icon} />
+		{children}
 	</Fill>
 );
 
 const PluginDashboardIconWidget = compose(
-	withPluginContext( ( context, ownProps ) => {
+	withPluginContext((context, ownProps) => {
 		return {
 			icon: ownProps.icon || context.icon,
 		};
-	} ),
-)( PluginDashboardIconWidgetFill );
+	})
+)(PluginDashboardIconWidgetFill);
 
 PluginDashboardIconWidget.Slot = Slot;
 

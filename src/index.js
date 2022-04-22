@@ -1,15 +1,9 @@
-// Examples for the Post Edit screen
-
+// Examples for the Post Editor and Site Editor screens.
 import './slots/edit-post/';
-// Examples for the Site Editor
 import './slots/edit-site/';
 
-// import './slots/basic';
+// Custom SlotFill Examples.
 
-// Real World Examples
-// import './slots/real-world';
-
-// Custom SlotFill Examples
 // import './slots/custom';
 
 // Custom Block

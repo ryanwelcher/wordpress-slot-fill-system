@@ -8,8 +8,8 @@
     "env:stop": "wp-env stop",
     "build": "wp-scripts build",
     "start": "wp-scripts start",
-    "build:dashboard": "wp-scripts build ./src/dashboard/index.js --output-path=build --output-filename=dashboard.js",
-    "start:dashboard": "wp-scripts start ./src/dashboard/index.js --output-path=build --output-filename=dashboard.js",
+    "build:dashboard": "wp-scripts build ./src/dashboard/index.js --output-path=build/dashboard",
+    "start:dashboard": "wp-scripts start ./src/dashboard/index.js --output-path=build/dashboard",
     "packages-update": "wp-scripts packages-update"
   },
   "author": "Ryan Welcher",

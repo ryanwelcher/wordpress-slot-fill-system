@@ -36,8 +36,6 @@ namespace GutenbergSlotFillSystem;
 
 
 
-
-
 /**
  * Create a new Dashboard Widget.
  */
@@ -60,12 +58,12 @@ function add_dashboard_widgets() {
  */
 function enqueue_dashboard_js( $hook ) {
 	if ( 'index.php' === $hook ) {
-		$dashboard_assets = plugin_dir_path( __FILE__ ) . 'build/dashboard.asset.php';
+		$dashboard_assets = plugin_dir_path( __FILE__ ) . 'build/dashboard/index.asset.php';
 		if ( file_exists( $dashboard_assets ) ) {
 			$assets = require_once $dashboard_assets;
 			wp_enqueue_script(
 				'eg-dashboard-widget',
-				plugin_dir_url( __FILE__ ) . '/build/dashboard.js',
+				plugin_dir_url( __FILE__ ) . '/build/dashboard/index.js',
 				$assets['dependencies'],
 				$assets['version'],
 				true
