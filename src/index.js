@@ -1,5 +1,10 @@
-// Basic Examples
-import './slots/basic';
+// Examples for the Post Edit screen
+
+import './slots/edit-post/basic';
+// Examples for the Site Editor
+import './slots/edit-site/';
+
+// import './slots/basic';
 
 // Real World Examples
 // import './slots/real-world';
