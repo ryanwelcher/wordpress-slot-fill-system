@@ -6,6 +6,7 @@
  * Author: Ryan Welcher
  * Author URI: www.ryanwelcher.com
  * Plugin URI: https://github.com/ryanwelcher/the-gutenberg-slotfill-system
+ * Textdomain: gutenberg-slot-fill-system
  *
  * @package GutenbergSlotFillSystem
  */
@@ -13,22 +14,28 @@
 namespace GutenbergSlotFillSystem;
 
 /**
- * Enqueue the JS for our demos
+ * Enqueue the SlotFill Examples.
  */
-function enqueue_block_editor_assets() {
-	$index_assets = plugin_dir_path( __FILE__ ) . 'build/index.asset.php';
-	if ( file_exists( $index_assets) ) {
-		$assets = require_once $index_assets;
-		\wp_enqueue_script(
-			'gutenberg-slot-fill-system', // Handle.
-			plugin_dir_url( __FILE__ ) . '/build/index.js',
-			$assets['dependencies'],
-			$assets['version'],
-			true
-		);
+\add_action(
+	'enqueue_block_editor_assets',
+	function() {
+		$index_assets = plugin_dir_path( __FILE__ ) . 'build/index.asset.php';
+		if ( file_exists( $index_assets) ) {
+			$assets = require_once $index_assets;
+			\wp_enqueue_script(
+				'gutenberg-slot-fill-system', // Handle.
+				plugin_dir_url( __FILE__ ) . '/build/index.js',
+				$assets['dependencies'],
+				$assets['version'],
+				true
+			);
+		}
 	}
-}
-\add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue_block_editor_assets' );
+);
+
+
+
+
 
 
 /**
@@ -78,7 +85,7 @@ function enqueue_dashboard_js( $hook ) {
 \add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\enqueue_dashboard_js' );
 
 
-\add_filter( 'block_editor_settings_all', __NAMESPACE__ . '\test_context', 10, 2 );
+// \add_filter( 'block_editor_settings_all', __NAMESPACE__ . '\test_context', 10, 2 );
 
 // function test_context( $editor_settings, $block_editor_context ) {
 // 	die( var_dump( $block_editor_context ) );
