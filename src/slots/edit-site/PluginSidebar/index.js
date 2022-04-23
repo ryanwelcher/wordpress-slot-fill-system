@@ -16,7 +16,8 @@ const SiteEditorPluginSidebarExample = () => (
 		<PanelBody>
 			<p>
 				{__(
-					'View the code in the src/edit-site/PluginSidebar/index.js file'
+					'View the code in the src/edit-site/PluginSidebar/index.js file',
+					'gutenberg-slot-fill-system'
 				)}
 			</p>
 		</PanelBody>
