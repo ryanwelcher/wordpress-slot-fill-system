@@ -8,13 +8,16 @@ import { Fragment } from '@wordpress/element';
  * Import our components that contain the SlotFills
  */
 import { Avocado } from '../../svg/icons';
+import EditPostPluginSidebarExample from './PluginSidebar';
+import EditPostPluginSidebarMoreMenuItemExample from './PluginSidebarMoreMenuItem';
+import EditPostPluginPrePublishPanelExample from './PluginPrePublishPanel';
+
 import PluginBlockSettingsMenuGroupDemo from './plugin-block-settings-menu-item';
 import MyDocumentSettingDemo from './plugin-document-setting-panel';
 import MyButtonMoreMenuItemDemo from './plugin-more-menu-item';
 import PluginPostPublishPanelDemo from './plugin-post-publish-panel';
 import PluginPostStatusInfoDemo from './plugin-post-status-info';
-import PluginPrePublishPanelDemo from './plugin-pre-publish-panel';
-import PluginSidebarMoreMenuItemDemo from './plugin-sidebar-more-menu-item';
+import PluginPrePublishPanelDemo from './PluginPrePublishPanel';
 
 /**
  * One plugin to rule them all.
@@ -30,7 +33,6 @@ const CombinedSlotFillsDemo = () => {
 			<PluginPrePublishPanelDemo />
 			<PluginPostPublishPanelDemo />
 			<PluginPostStatusInfoDemo />
-			<PluginSidebarMoreMenuItemDemo />
 		</Fragment>
 	);
 };
@@ -39,6 +41,12 @@ const CombinedSlotFillsDemo = () => {
  * register the plugin.
  */
 registerPlugin('extending-gutenberg', {
-	render: CombinedSlotFillsDemo,
+	render: () => (
+		<>
+			<EditPostPluginSidebarExample />
+			<EditPostPluginSidebarMoreMenuItemExample />
+			<EditPostPluginPrePublishPanelExample />
+		</>
+	),
 	icon: Avocado,
 });
