@@ -10,15 +10,15 @@ import { __ } from '@wordpress/i18n';
  */
 import { Avocado } from '../../../svg/icons';
 
-registerPlugin('example-document-settings-panel', {
-	render: () => (
-		<PluginDocumentSettingPanel
-			name="custom-panel"
-			title="Custom Panel"
-			className="custom-panel"
-		>
-			{__('Custom Panel Contents', 'slot-fill-system')}
-		</PluginDocumentSettingPanel>
-	),
-	icon: Avocado,
-});
+// registerPlugin('example-document-settings-panel', {
+// 	render: () => (
+// 		<PluginDocumentSettingPanel
+// 			name="custom-panel"
+// 			title="Custom Panel"
+// 			className="custom-panel"
+// 		>
+// 			{__('Custom Panel Contents', 'slot-fill-system')}
+// 		</PluginDocumentSettingPanel>
+// 	),
+// 	icon: Avocado,
+// });

@@ -1,5 +1,5 @@
 //
-import './PluginPostStatusInfo';
+// import './PluginPostStatusInfo';
 
 /**
  * Get registerPlugin.
@@ -23,31 +23,11 @@ import PluginPostPublishPanelDemo from './plugin-post-publish-panel';
 import PluginPrePublishPanelDemo from './PluginPrePublishPanel';
 
 /**
- * One plugin to rule them all.
- *
- * @param  props
- */
-const CombinedSlotFillsDemo = () => {
-	return (
-		<Fragment>
-			{/* <PluginBlockSettingsMenuGroupDemo /> */}
-			<MyDocumentSettingDemo />
-			{/* <MyButtonMoreMenuItemDemo /> */}
-			{/* <PluginPrePublishPanelDemo /> */}
-			{/* <PluginPostPublishPanelDemo /> */}
-			{/* <PluginPostStatusInfoDemo /> */}
-		</Fragment>
-	);
-};
-
-/**
  * register the plugin.
  */
-registerPlugin('extending-gutenberg', {
-	render: () => (
-		<>
-			<EditPostPluginSidebarExample />
-		</>
-	),
-	icon: Avocado,
-});
+// registerPlugin('extending-gutenberg', {
+// 	render: () => <EditPostPluginSidebarExample />,
+// 	icon: Avocado,
+// });
+
+import './PluginSidebar';

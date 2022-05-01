@@ -1,6 +1,6 @@
 // Examples for the Post Editor and Site Editor screens.
 import './slots/edit-post/';
-import './slots/edit-site/';
+// import './slots/edit-site/';
 
 // Custom SlotFill Examples.
 

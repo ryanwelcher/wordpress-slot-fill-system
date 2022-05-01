@@ -13,14 +13,14 @@ import SiteEditorPluginMoreMenuItemExample from './PluginMoreMenuItem';
 import MyDocumentSettingDemo from '../edit-post/plugin-document-setting-panel';
 
 // Register the plugin containing all the slots available in the Site Editor
-registerPlugin('gutenberg-slot-fill-system', {
-	render: () => (
-		<>
-			{/* <SiteEditorMainDashboardButtonExample /> */}
-			{/* <SiteEditorPluginSidebarExample /> */}
-			{/* <SiteEditorPluginMoreMenuItemExample /> */}
-			{/* <MyDocumentSettingDemo /> */}
-		</>
-	),
-	icon: Avocado,
-});
+// registerPlugin('gutenberg-slot-fill-system', {
+// 	render: () => (
+// 		<>
+// 			{/* <SiteEditorMainDashboardButtonExample /> */}
+// 			{/* <SiteEditorPluginSidebarExample /> */}
+// 			{/* <SiteEditorPluginMoreMenuItemExample /> */}
+// 			{/* <MyDocumentSettingDemo /> */}
+// 		</>
+// 	),
+// 	icon: Avocado,
+// });
