@@ -1,3 +1,6 @@
+//
+import './PluginPostStatusInfo';
+
 /**
  * Get registerPlugin.
  */
@@ -16,7 +19,7 @@ import PluginBlockSettingsMenuGroupDemo from './plugin-block-settings-menu-item'
 import MyDocumentSettingDemo from './plugin-document-setting-panel';
 import MyButtonMoreMenuItemDemo from './plugin-more-menu-item';
 import PluginPostPublishPanelDemo from './plugin-post-publish-panel';
-import PluginPostStatusInfoDemo from './plugin-post-status-info';
+// import PluginPostStatusInfoDemo from './PluginPostStatusInfo';
 import PluginPrePublishPanelDemo from './PluginPrePublishPanel';
 
 /**
@@ -27,12 +30,12 @@ import PluginPrePublishPanelDemo from './PluginPrePublishPanel';
 const CombinedSlotFillsDemo = () => {
 	return (
 		<Fragment>
-			<PluginBlockSettingsMenuGroupDemo />
+			{/* <PluginBlockSettingsMenuGroupDemo /> */}
 			<MyDocumentSettingDemo />
-			<MyButtonMoreMenuItemDemo />
-			<PluginPrePublishPanelDemo />
-			<PluginPostPublishPanelDemo />
-			<PluginPostStatusInfoDemo />
+			{/* <MyButtonMoreMenuItemDemo /> */}
+			{/* <PluginPrePublishPanelDemo /> */}
+			{/* <PluginPostPublishPanelDemo /> */}
+			{/* <PluginPostStatusInfoDemo /> */}
 		</Fragment>
 	);
 };
@@ -44,8 +47,6 @@ registerPlugin('extending-gutenberg', {
 	render: () => (
 		<>
 			<EditPostPluginSidebarExample />
-			<EditPostPluginSidebarMoreMenuItemExample />
-			<EditPostPluginPrePublishPanelExample />
 		</>
 	),
 	icon: Avocado,

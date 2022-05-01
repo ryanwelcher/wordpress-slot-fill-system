@@ -1,14 +1,24 @@
+/**
+ * WordPress dependencies
+ */
+import { registerPlugin } from '@wordpress/plugins';
 import { PluginDocumentSettingPanel } from '@wordpress/edit-post';
 import { __ } from '@wordpress/i18n';
 
-const MyDocumentSettingDemo = () => (
-	<PluginDocumentSettingPanel
-		name="custom-panel"
-		title="Custom Panel"
-		className="custom-panel"
-	>
-		{__('Custom Panel Contents', 'slot-fill-system')}
-	</PluginDocumentSettingPanel>
-);
+/**
+ * Internal dependencies
+ */
+import { Avocado } from '../../../svg/icons';
 
-export default MyDocumentSettingDemo;
+registerPlugin('example-document-settings-panel', {
+	render: () => (
+		<PluginDocumentSettingPanel
+			name="custom-panel"
+			title="Custom Panel"
+			className="custom-panel"
+		>
+			{__('Custom Panel Contents', 'slot-fill-system')}
+		</PluginDocumentSettingPanel>
+	),
+	icon: Avocado,
+});
