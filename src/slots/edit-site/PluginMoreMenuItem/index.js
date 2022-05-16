@@ -3,15 +3,23 @@
  */
 import { __ } from '@wordpress/i18n';
 import { PluginMoreMenuItem } from '@wordpress/edit-site';
+import { registerPlugin } from '@wordpress/plugins';
 
-const SiteEditorPluginMoreMenuItemExample = () => (
-	<PluginMoreMenuItem
-		href="https://developer.wordpress.org/block-editor/reference-guides/slotfills/"
-		target="_blank"
-		rel="noopener noreferrer"
-	>
-		{ __( 'SlotFill Reference Guide', 'gutenberg-slot-fill-system' ) }
-	</PluginMoreMenuItem>
-);
+/**
+ * Internal dependencies
+ */
+import { Avocado } from '../../../svg/icons';
 
-export default SiteEditorPluginMoreMenuItemExample;
+// Register the plugin.
+registerPlugin( 'example-edit-site-plugin-more-menu-item', {
+	render: () => (
+		<PluginMoreMenuItem
+			href="https://developer.wordpress.org/block-editor/reference-guides/slotfills/"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			{ __( 'SlotFill Reference Guide', 'gutenberg-slot-fill-system' ) }
+		</PluginMoreMenuItem>
+	),
+	icon: Avocado,
+} );

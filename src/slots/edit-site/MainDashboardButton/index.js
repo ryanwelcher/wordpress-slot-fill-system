@@ -6,17 +6,26 @@ import { __ } from '@wordpress/i18n';
 import { __experimentalMainDashboardButton as MainDashboardButton } from '@wordpress/edit-site';
 // eslint-disable-next-line @wordpress/no-unsafe-wp-apis
 import { __experimentalNavigationBackButton as NavigationBackButton } from '@wordpress/components';
+import { registerPlugin } from '@wordpress/plugins';
 
-const SiteEditorMainDashboardButtonExample = () => {
-	return (
+/**
+ * Internal dependencies
+ */
+import { Avocado } from '../../../svg/icons';
+
+// Register the plugin.
+registerPlugin( 'example-edit-site-plugin-more-menu-item', {
+	render: () => (
 		<MainDashboardButton>
 			<NavigationBackButton
-				backButtonLabel={ __( 'Custom CTA Text' ) }
+				backButtonLabel={ __(
+					'Custom CTA Text',
+					'gutenberg-slot-fill-system'
+				) }
 				className="edit-site-navigation-panel__back-to-dashboard"
 				href="index.php"
 			/>
 		</MainDashboardButton>
-	);
-};
-
-export default SiteEditorMainDashboardButtonExample;
+	),
+	icon: Avocado,
+} );
