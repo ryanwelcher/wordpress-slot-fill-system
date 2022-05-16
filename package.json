@@ -1,31 +1,34 @@
 {
-  "name": "@ryanwelcher/gutenberg-slot-fill-system",
-  "version": "1.0.0",
-  "description": "A plugin to demonstrate extension points in Gutenberg",
-  "scripts": {
-    "setup": "npm install && npm run build && npm run build:dashboard",
-    "env:start": "wp-env start",
-    "env:stop": "wp-env stop",
-    "build": "wp-scripts build",
-    "start": "wp-scripts start",
-    "build:dashboard": "wp-scripts build ./src/dashboard/index.js --output-path=build/dashboard",
-    "start:dashboard": "wp-scripts start ./src/dashboard/index.js --output-path=build/dashboard",
-    "packages-update": "wp-scripts packages-update"
-  },
-  "author": "Ryan Welcher",
-  "license": "GPL v2.0 or Later",
-  "devDependencies": {
-    "@wordpress/env": "^4.6.0",
-    "@wordpress/scripts": "^22.5.0"
-  },
-  "dependencies": {
-    "@wordpress/components": "^19.9.0",
-    "@wordpress/compose": "^5.5.0",
-    "@wordpress/edit-post": "^6.4.0",
-    "@wordpress/edit-site": "^4.4.0",
-    "@wordpress/element": "^4.5.0",
-    "@wordpress/i18n": "^4.7.0",
-    "@wordpress/plugins": "^4.5.0",
-    "react-google-charts": "^3.0.13"
-  }
+	"name": "@ryanwelcher/gutenberg-slot-fill-system",
+	"version": "1.0.0",
+	"description": "A plugin to demonstrate extension points in Gutenberg",
+	"scripts": {
+		"setup": "npm install && npm run build && npm run build:dashboard",
+		"env:start": "wp-env start",
+		"env:stop": "wp-env stop",
+		"build": "wp-scripts build",
+		"start": "wp-scripts start",
+		"build:dashboard": "wp-scripts build ./src/dashboard/index.js --output-path=build/dashboard",
+		"start:dashboard": "wp-scripts start ./src/dashboard/index.js --output-path=build/dashboard",
+		"packages-update": "wp-scripts packages-update"
+	},
+	"author": "Ryan Welcher",
+	"license": "GPL v2.0 or Later",
+	"devDependencies": {
+		"@wordpress/env": "^4.6.0",
+		"@wordpress/scripts": "^23.0.0",
+		"eslint-plugin-prettier": "^4.0.0",
+		"prettier": "npm:wp-prettier@2.2.1-beta-1"
+	},
+	"prettier": "@wordpress/prettier-config",
+	"dependencies": {
+		"@wordpress/components": "^19.10.0",
+		"@wordpress/compose": "^5.6.0",
+		"@wordpress/edit-post": "^6.5.0",
+		"@wordpress/edit-site": "^4.5.0",
+		"@wordpress/element": "^4.6.0",
+		"@wordpress/i18n": "^4.8.0",
+		"@wordpress/plugins": "^4.6.0",
+		"react-google-charts": "^3.0.13"
+	}
 }
