@@ -7,7 +7,7 @@ const MyButtonMoreMenuItemDemo = () => (
 		target="_blank"
 		rel="noopener noreferrer"
 	>
-		{__('SlotFill Reference Guide', 'slot-fill-system')}
+		{ __( 'SlotFill Reference Guide', 'slot-fill-system' ) }
 	</PluginMoreMenuItem>
 );
 

@@ -7,7 +7,7 @@ const PluginPostPublishPanelDemo = () => (
 		title="My Custom Panel"
 		initialOpen
 	>
-		<p>{__('Post Publish Panel', 'slot-fill-system')}</p>
+		<p>{ __( 'Post Publish Panel', 'slot-fill-system' ) }</p>
 	</PluginPostPublishPanel>
 );
 export default PluginPostPublishPanelDemo;

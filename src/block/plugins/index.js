@@ -7,32 +7,32 @@ import PostInfoAuthor from '../slots/post-info-author';
 const InspectorControlsCustomSlotFill = () => (
 	<>
 		<PostInfoAuthor>
-			{(props) => (
+			{ ( props ) => (
 				<>
 					<ToggleControl
-						label={__('Show Post Author')}
-						onChange={(val) =>
-							props.setAttributes({ showAuthor: val })
+						label={ __( 'Show Post Author' ) }
+						onChange={ ( val ) =>
+							props.setAttributes( { showAuthor: val } )
 						}
-						checked={props.attributes.showAuthor}
+						checked={ props.attributes.showAuthor }
 					/>
 					<ToggleControl
-						label={__('Show Post Bio')}
-						onChange={(val) =>
-							props.setAttributes({ showBio: val })
+						label={ __( 'Show Post Bio' ) }
+						onChange={ ( val ) =>
+							props.setAttributes( { showBio: val } )
 						}
-						checked={props.attributes.showBio}
+						checked={ props.attributes.showBio }
 					/>
 				</>
-			)}
+			) }
 		</PostInfoAuthor>
 		<PostInfoOpen>
-			<PanelBody title={__('Information')}>
-				<p>{__('Information you need to know')}</p>
+			<PanelBody title={ __( 'Information' ) }>
+				<p>{ __( 'Information you need to know' ) }</p>
 			</PanelBody>
 		</PostInfoOpen>
 	</>
 );
-registerPlugin('extending-gutenberg-inspector-controls-slotfill', {
+registerPlugin( 'extending-gutenberg-inspector-controls-slotfill', {
 	render: InspectorControlsCustomSlotFill,
-});
+} );

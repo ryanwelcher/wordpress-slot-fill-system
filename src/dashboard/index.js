@@ -19,15 +19,15 @@ const DashboardWidget = () => {
 
 render(
 	<DashboardWidget />,
-	document.querySelector('#extending-gutenberg-dashboard')
+	document.querySelector( '#extending-gutenberg-dashboard' )
 );
 
 // register our plugin
-registerPlugin('rediculous-widget', {
+registerPlugin( 'rediculous-widget', {
 	render: () => (
 		<PluginDashboardWidget>
 			<CologneChart />
 			<BeardedWonder />
 		</PluginDashboardWidget>
 	),
-});
+} );

@@ -11,7 +11,7 @@ const SiteEditorMainDashboardButtonExample = () => {
 	return (
 		<MainDashboardButton>
 			<NavigationBackButton
-				backButtonLabel={__('Custom CTA Text')}
+				backButtonLabel={ __( 'Custom CTA Text' ) }
 				className="edit-site-navigation-panel__back-to-dashboard"
 				href="index.php"
 			/>

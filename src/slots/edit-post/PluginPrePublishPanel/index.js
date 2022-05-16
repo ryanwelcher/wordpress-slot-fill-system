@@ -8,9 +8,9 @@ const EditPostPluginPrePublishPanelExample = () => (
 	<PluginPrePublishPanel
 		className="custom-panel-class"
 		initialOpen
-		title={__('My Custom Panel', 'gutenberg-slot-fill-system')}
+		title={ __( 'My Custom Panel', 'gutenberg-slot-fill-system' ) }
 	>
-		<p>{__('Pre Publish Panel', 'gutenberg-slot-fill-system')}</p>
+		<p>{ __( 'Pre Publish Panel', 'gutenberg-slot-fill-system' ) }</p>
 	</PluginPrePublishPanel>
 );
 export default EditPostPluginPrePublishPanelExample;

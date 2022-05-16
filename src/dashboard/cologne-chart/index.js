@@ -39,12 +39,12 @@ const CologneChart = () => {
 	return (
 		<Chart
 			chartType="PieChart"
-			data={[
-				['Age', 'Weight'],
-				['Other Times', 40],
-				['Works Every Time', 60],
-			]}
-			options={chartOptions}
+			data={ [
+				[ 'Age', 'Weight' ],
+				[ 'Other Times', 40 ],
+				[ 'Works Every Time', 60 ],
+			] }
+			options={ chartOptions }
 			graph_id="PieChart"
 			width="100%"
 			height="400px"

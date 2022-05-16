@@ -11,17 +11,20 @@ const { select } = wp.data;
  * @returns {{count: int, passed: boolean}}
  */
 const withWordCounter = ( { minCount = 1000, countType = 'words' } ) => {
-	const wordCount = count( serialize( select( 'core/editor' ).getBlocks() ), countType );
+	const wordCount = count(
+		serialize( select( 'core/editor' ).getBlocks() ),
+		countType
+	);
 	if ( minCount > 0 && wordCount < minCount ) {
 		return {
 			passed: false,
 			count: wordCount,
-		}
+		};
 	} else {
 		return {
 			passed: true,
-			count: wordCount
-		}
+			count: wordCount,
+		};
 	}
 };
 

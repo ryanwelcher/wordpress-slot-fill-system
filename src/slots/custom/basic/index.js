@@ -9,4 +9,4 @@ const BasicFill = () => (
 		This text will appear wherever the Slot named "BasicSlot" is rendered.
 	</Fill>
 );
-registerPlugin('raw-slot-fill', { render: BasicFill });
+registerPlugin( 'raw-slot-fill', { render: BasicFill } );

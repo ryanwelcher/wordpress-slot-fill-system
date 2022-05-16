@@ -10,7 +10,7 @@ const SiteEditorPluginMoreMenuItemExample = () => (
 		target="_blank"
 		rel="noopener noreferrer"
 	>
-		{__('SlotFill Reference Guide', 'gutenberg-slot-fill-system')}
+		{ __( 'SlotFill Reference Guide', 'gutenberg-slot-fill-system' ) }
 	</PluginMoreMenuItem>
 );
 

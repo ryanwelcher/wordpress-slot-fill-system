@@ -3,9 +3,9 @@ import { createSlotFill } from '@wordpress/components';
 /**
  * createSlotFill creates and returns a named Slot and Fill component.
  */
-const { Fill, Slot } = createSlotFill('BasicCreateSlotFill');
+const { Fill, Slot } = createSlotFill( 'BasicCreateSlotFill' );
 
-const BasicCreateSlotFill = ({ children }) => <Fill>{children}</Fill>;
+const BasicCreateSlotFill = ( { children } ) => <Fill>{ children }</Fill>;
 
 BasicCreateSlotFill.Slot = Slot;
 

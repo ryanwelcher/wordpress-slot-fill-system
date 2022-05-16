@@ -3,12 +3,12 @@ import { PluginBlockSettingsMenuItem } from '@wordpress/edit-post';
 
 const PluginBlockSettingsMenuGroupDemo = () => (
 	<PluginBlockSettingsMenuItem
-		allowedBlocks={['core/paragraph']}
+		allowedBlocks={ [ 'core/paragraph' ] }
 		label="PluginBlockSettingsMenuItem Text"
-		onClick={() => {
+		onClick={ () => {
 			// eslint-disable-next-line no-alert
-			alert('clicked');
-		}}
+			alert( 'clicked' );
+		} }
 	/>
 );
 

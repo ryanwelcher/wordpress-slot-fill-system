@@ -8,17 +8,17 @@ import { PanelBody } from '@wordpress/components';
 const SiteEditorPluginSidebarExample = () => (
 	<PluginSidebar
 		name="plugin-sidebar-test"
-		title={__(
+		title={ __(
 			'Site Editor Example: PluginSidebar',
 			'gutenberg-slot-fill-system'
-		)}
+		) }
 	>
 		<PanelBody>
 			<p>
-				{__(
+				{ __(
 					'View the code in the src/edit-site/PluginSidebar/index.js file',
 					'gutenberg-slot-fill-system'
-				)}
+				) }
 			</p>
 		</PanelBody>
 	</PluginSidebar>

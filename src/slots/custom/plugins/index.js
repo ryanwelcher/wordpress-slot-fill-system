@@ -11,18 +11,21 @@ import InheritIcon from '../inherit-icon';
 const CustomSlotFillDemo = () => (
 	<>
 		<Fill name="BasicSlot">
-			<p>This text will appear wherever the Slot named "BasicSlot" is rendered</p>
+			<p>
+				This text will appear wherever the Slot named "BasicSlot" is
+				rendered
+			</p>
 		</Fill>
 
 		<BasicCreateSlotFill>
-			<p>{`This appears where <BasicCreateSlotFill.Slot/> is rendered`}</p>
+			<p>{ `This appears where <BasicCreateSlotFill.Slot/> is rendered` }</p>
 		</BasicCreateSlotFill>
 
-		{/* <BasicCreateSlotFill>
+		{ /* <BasicCreateSlotFill>
 			{ ( props ) => (
 				<p>I was passed fillProps!<br/>{`Modified Date: ${props.modified}`} </p>
 			) }
-		</BasicCreateSlotFill> */}
+		</BasicCreateSlotFill> */ }
 
 		<CustomizeFillStructure>
 			<p>This gets wrapped in a nested panel</p>
@@ -35,22 +38,19 @@ const CustomSlotFillDemo = () => (
 		<CustomizeSlotStructure>
 			<p>This is in a panel</p>
 		</CustomizeSlotStructure>
-		
+
 		<CustomizeSlotStructure>
 			<p>This is in the same panel</p>
 		</CustomizeSlotStructure>
-		
-		<CustomizeBoth>
-			First list item
-		</CustomizeBoth>
-		<CustomizeBoth>
-			Second list item
-		</CustomizeBoth>
 
-		<InheritIcon>
-			I inherited my icon!
-		</InheritIcon>
+		<CustomizeBoth>First list item</CustomizeBoth>
+		<CustomizeBoth>Second list item</CustomizeBoth>
+
+		<InheritIcon>I inherited my icon!</InheritIcon>
 	</>
 );
 
-registerPlugin( 'extending-gutenberg-custom-slotfills', { render: CustomSlotFillDemo, icon: Logo } );
+registerPlugin( 'extending-gutenberg-custom-slotfills', {
+	render: CustomSlotFillDemo,
+	icon: Logo,
+} );

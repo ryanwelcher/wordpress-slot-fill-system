@@ -13,8 +13,8 @@ import '../plugins';
 /**
  * Register a block that shows Post Information.
  */
-registerBlockType('extending-gutenberg/post-info', {
-	title: __('Post Information'),
+registerBlockType( 'extending-gutenberg/post-info', {
+	title: __( 'Post Information' ),
 	description: __(
 		'This block displays information about the post such as author information'
 	),
@@ -30,19 +30,19 @@ registerBlockType('extending-gutenberg/post-info', {
 			default: false,
 		},
 	},
-	edit: (props) => {
+	edit: ( props ) => {
 		return (
 			<>
 				Post Information Block
 				<InspectorControls>
-					<PostInfoAuthor.Slot fillProps={props} />
+					<PostInfoAuthor.Slot fillProps={ props } />
 					<PostInfoOpen.Slot />
 				</InspectorControls>
 			</>
 		);
 	},
 
-	save: (props) => {
+	save: ( props ) => {
 		return null;
 	},
-});
+} );

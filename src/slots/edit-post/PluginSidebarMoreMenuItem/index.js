@@ -8,17 +8,17 @@ import { PanelBody } from '@wordpress/components';
 const EditPostPluginSidebarMoreMenuItemExample = () => (
 	<>
 		<PluginSidebarMoreMenuItem target="sidebar-name">
-			{__(
+			{ __(
 				'PluginSidebarMoreMenuItem - Menu Item',
 				'gutenberg-slot-fill-system'
-			)}
+			) }
 		</PluginSidebarMoreMenuItem>
 		<PluginSidebar name="sidebar-name" title="PluginSidebarMoreMenuItem">
 			<PanelBody>
-				{__(
+				{ __(
 					'PluginSidebarMoreMenuItem - Panel Content',
 					'gutenberg-slot-fill-system'
-				)}
+				) }
 			</PanelBody>
 		</PluginSidebar>
 	</>

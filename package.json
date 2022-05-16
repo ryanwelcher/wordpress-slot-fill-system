@@ -8,6 +8,9 @@
 		"env:stop": "wp-env stop",
 		"build": "wp-scripts build",
 		"start": "wp-scripts start",
+		"lint:js": "wp-scripts lint-js",
+		"lint:style": "wp-scripts lint-style",
+		"format:js": "wp-scripts format",
 		"build:dashboard": "wp-scripts build ./src/dashboard/index.js --output-path=build/dashboard",
 		"start:dashboard": "wp-scripts start ./src/dashboard/index.js --output-path=build/dashboard",
 		"packages-update": "wp-scripts packages-update"

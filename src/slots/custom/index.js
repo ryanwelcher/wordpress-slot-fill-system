@@ -31,7 +31,7 @@ const CustomSlotFillDemo = () => (
 			title="Basic with Props"
 		>
 			<BasicCreateSlotFill.Slot
-				fillProps={wp.data.select('core/editor').getCurrentPost()}
+				fillProps={ wp.data.select( 'core/editor' ).getCurrentPost() }
 			/>
 		</PluginDocumentSettingPanel>
 
@@ -65,7 +65,7 @@ const CustomSlotFillDemo = () => (
 	</>
 );
 
-registerPlugin('extending-gutenberg-custom-panel', {
+registerPlugin( 'extending-gutenberg-custom-panel', {
 	render: CustomSlotFillDemo,
 	icon: Logo,
-});
+} );
