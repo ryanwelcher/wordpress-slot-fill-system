@@ -3,16 +3,13 @@
 	"version": "1.0.0",
 	"description": "A plugin to demonstrate extension points in Gutenberg",
 	"scripts": {
-		"setup": "npm install && npm run build && npm run build:dashboard",
-		"env:start": "wp-env start",
-		"env:stop": "wp-env stop",
+		"setup": "npm install && composer install && npm run build",
+		"env:": "wp-env",
 		"build": "wp-scripts build",
 		"start": "wp-scripts start",
 		"lint:js": "wp-scripts lint-js",
 		"lint:style": "wp-scripts lint-style",
 		"format:js": "wp-scripts format",
-		"build:dashboard": "wp-scripts build ./src/dashboard/index.js --output-path=build/dashboard",
-		"start:dashboard": "wp-scripts start ./src/dashboard/index.js --output-path=build/dashboard",
 		"packages-update": "wp-scripts packages-update"
 	},
 	"author": "Ryan Welcher",
