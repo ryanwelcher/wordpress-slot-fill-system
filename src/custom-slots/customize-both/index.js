@@ -1,4 +1,4 @@
-const { createSlotFill, PanelBody } = wp.components;
+const { createSlotFill } = wp.components;
 
 const { Fill, Slot } = createSlotFill( 'CustomizeBoth' );
 
@@ -12,9 +12,9 @@ CustomizeBoth.Slot = () => (
 	<Slot>
 		{ ( fills ) => {
 			return fills.length ? (
-				<PanelBody title="My List">
-					<ul style={ { listStyle: 'initial' } }>{ fills }</ul>
-				</PanelBody>
+				<ul style={ { listStyle: 'initial', marginLeft: '5px' } }>
+					{ fills }
+				</ul>
 			) : null;
 		} }
 	</Slot>

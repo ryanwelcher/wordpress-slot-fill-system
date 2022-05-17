@@ -5,5 +5,6 @@ module.exports = {
 		'edit-post': './src/available-slots/edit-post',
 		'edit-site': './src/available-slots/edit-site',
 		'dashboard-widget': './src/dashboard',
+		'custom-slots': './src/custom-slots',
 	},
 };

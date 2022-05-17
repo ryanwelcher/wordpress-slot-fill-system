@@ -88,7 +88,7 @@ namespace GutenbergSlotFillSystem;
 			if ( file_exists( $dashboard_asset_path ) ) {
 				$dashboard_assets = require_once $dashboard_asset_path;
 				wp_enqueue_script(
-					'eg-dashboard-widget',
+					'gutenberg-slot-fill-system-dashboard-widget',
 					plugin_dir_url( __FILE__ ) . '/build/dashboard-widget.js',
 					$dashboard_assets['dependencies'],
 					$dashboard_assets['version'],
@@ -100,12 +100,55 @@ namespace GutenbergSlotFillSystem;
 		// Localize some data we need for the script.
 		$user = \wp_get_current_user();
 		\wp_localize_script(
-			'eg-dashboard-widget',
+			'gutenberg-slot-fill-system-dashboard-widget',
 			'EB_DASH',
 			array(
 				'user'            => array( 'display_name' => $user->display_name ),
 				'pluginAssetPath' => plugin_dir_url( __FILE__ ),
 			)
 		);
+	}
+);
+
+
+// Register a custom page for our custom SlotFill examples.
+\add_action(
+	'admin_menu',
+	function() {
+		add_menu_page(
+			__( 'Custom Slot Examples', 'gutenberg-slot-fill-system' ),
+			__( 'Custom Slot Examples', 'gutenberg-slot-fill-system' ),
+			'manage_options',
+			'gutenberg-slot-fill-system',
+			function() {
+				?>
+				<div id="gutenberg-slot-fill-system-custom-slots">
+					<?php esc_html_e( 'Requires JavaScript', 'gutenberg-slot-fill-system' ); ?>
+				</div>
+				<?php
+			}
+		);
+	}
+);
+/**
+ * Enqueue our script on the settings page,
+ */
+add_action(
+	'admin_enqueue_scripts',
+	function( $suffix ) {
+		$asset_file_page = plugin_dir_path( __FILE__ ) . 'build/custom-slots.asset.php';
+		if ( file_exists( $asset_file_page ) && 'toplevel_page_gutenberg-slot-fill-system' === $suffix ) {
+			$assets = require_once $asset_file_page;
+			wp_enqueue_script(
+				'gutenberg-slot-fill-system-custom-slots',
+				plugin_dir_url( __FILE__ ) . 'build/custom-slots.js',
+				$assets['dependencies'],
+				$assets['version'],
+				true
+			);
+			foreach ( $assets['dependencies'] as $style ) {
+				wp_enqueue_style( $style );
+			}
+		}
 	}
 );

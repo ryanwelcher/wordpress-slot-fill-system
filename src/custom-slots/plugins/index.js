@@ -1,7 +1,7 @@
 const { registerPlugin } = wp.plugins;
 const { Fill } = wp.components;
 
-import { Logo } from '../../../svg/icons';
+import { Avocado } from '../../svg/icons';
 import BasicCreateSlotFill from '../basic-create-slot-fill';
 import CustomizeFillStructure from '../customize-fill-structure';
 import CustomizeSlotStructure from '../customize-slot-stucture';
@@ -52,5 +52,6 @@ const CustomSlotFillDemo = () => (
 
 registerPlugin( 'extending-gutenberg-custom-slotfills', {
 	render: CustomSlotFillDemo,
-	icon: Logo,
+	icon: Avocado,
+	scope: 'custom-slots',
 } );
