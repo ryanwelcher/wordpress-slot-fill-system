@@ -19,14 +19,28 @@ namespace GutenbergSlotFillSystem;
 \add_action(
 	'enqueue_block_editor_assets',
 	function() {
-		$index_assets = plugin_dir_path( __FILE__ ) . 'build/index.asset.php';
-		if ( file_exists( $index_assets) ) {
-			$assets = require_once $index_assets;
+		// Enqueue the slots for the edit post screen.
+		$edit_post_examples_asset_path = plugin_dir_path( __FILE__ ) . 'build/edit-post.asset.php';
+		if ( file_exists( $edit_post_examples_asset_path ) ) {
+			$edit_post_examples_assets = require_once $edit_post_examples_asset_path;
 			\wp_enqueue_script(
-				'gutenberg-slot-fill-system', // Handle.
-				plugin_dir_url( __FILE__ ) . '/build/index.js',
-				$assets['dependencies'],
-				$assets['version'],
+				'gutenberg-slot-fill-system-edit-post-examples', // Handle.
+				plugin_dir_url( __FILE__ ) . '/build/edit-post.js',
+				$edit_post_examples_assets['dependencies'],
+				$edit_post_examples_assets['version'],
+				true
+			);
+		}
+
+		// Enqueue the slots for the edit site screen.
+		$edit_site_examples_asset_path = plugin_dir_path( __FILE__ ) . 'build/edit-site.asset.php';
+		if ( file_exists( $edit_site_examples_asset_path ) ) {
+			$edit_site_examples_assets = require_once $edit_site_examples_asset_path;
+			\wp_enqueue_script(
+				'gutenberg-slot-fill-system-edit-site-examples', // Handle.
+				plugin_dir_url( __FILE__ ) . '/build/edit-site.js',
+				$edit_site_examples_assets['dependencies'],
+				$edit_site_examples_assets['version'],
 				true
 			);
 		}
@@ -40,7 +54,7 @@ namespace GutenbergSlotFillSystem;
  * Create a new Dashboard Widget.
  */
 function add_dashboard_widgets() {
-	wp_add_dashboard_widget(
+	\wp_add_dashboard_widget(
 		'extending_gutenberg_dashboard_widget',
 		'Custom SlotFill System',
 		function() {
@@ -70,7 +84,7 @@ function enqueue_dashboard_js( $hook ) {
 			);
 		}
 	}
-	
+
 	$user = \wp_get_current_user();
 	\wp_localize_script(
 		'eg-dashboard-widget',
