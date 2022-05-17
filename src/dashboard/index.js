@@ -4,13 +4,16 @@ import { registerPlugin, PluginArea } from '@wordpress/plugins';
 // Import the SlotFill
 import PluginDashboardWidget from './plugin-dashboard-widget';
 // Import some useless things to display
-import CologneChart from './cologne-chart';
-import BeardedWonder from './joey-blake';
+import BeardedWonder from './BeardedWonder';
+
+/**
+ * Internal dependencies
+ */
+import { Avocado } from '../svg/icons';
 
 const DashboardWidget = () => {
 	return (
 		<SlotFillProvider>
-			<p>This widget provides no value, I hope you enjoy it!</p>
 			<PluginDashboardWidget.Slot />
 			<PluginArea />
 		</SlotFillProvider>
@@ -23,11 +26,11 @@ render(
 );
 
 // register our plugin
-registerPlugin( 'rediculous-widget', {
+registerPlugin( 'ridiculous-widget', {
 	render: () => (
 		<PluginDashboardWidget>
-			<CologneChart />
 			<BeardedWonder />
 		</PluginDashboardWidget>
 	),
+	icon: Avocado,
 } );

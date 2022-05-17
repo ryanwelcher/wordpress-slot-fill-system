@@ -53,16 +53,18 @@ namespace GutenbergSlotFillSystem;
 /**
  * Create a new Dashboard Widget.
  */
-function add_dashboard_widgets() {
-	\wp_add_dashboard_widget(
-		'extending_gutenberg_dashboard_widget',
-		'Custom SlotFill System',
-		function() {
-			echo '<div id="extending-gutenberg-dashboard"></div>';
-		}
-	);
-}
-\add_action( 'wp_dashboard_setup', __NAMESPACE__ . '\add_dashboard_widgets' );
+\add_action(
+	'wp_dashboard_setup',
+	function() {
+		\wp_add_dashboard_widget(
+			'extending_gutenberg_dashboard_widget',
+			'Custom SlotFill System',
+			function() {
+				echo '<div id="extending-gutenberg-dashboard"></div>';
+			}
+		);
+	}
+);
 
 
 /**
@@ -70,35 +72,32 @@ function add_dashboard_widgets() {
  *
  * @param string $hook The hook associated with the screen.
  */
-function enqueue_dashboard_js( $hook ) {
-	if ( 'index.php' === $hook ) {
-		$dashboard_assets = plugin_dir_path( __FILE__ ) . 'build/dashboard/index.asset.php';
-		if ( file_exists( $dashboard_assets ) ) {
-			$assets = require_once $dashboard_assets;
-			wp_enqueue_script(
-				'eg-dashboard-widget',
-				plugin_dir_url( __FILE__ ) . '/build/dashboard/index.js',
-				$assets['dependencies'],
-				$assets['version'],
-				true
-			);
+\add_action(
+	'admin_enqueue_scripts',
+	function( $hook ) {
+		if ( 'index.php' === $hook ) {
+			$dashboard_asset_path = plugin_dir_path( __FILE__ ) . 'build/dashboard-widget.asset.php';
+			if ( file_exists( $dashboard_asset_path ) ) {
+				$dashboard_assets = require_once $dashboard_asset_path;
+				wp_enqueue_script(
+					'eg-dashboard-widget',
+					plugin_dir_url( __FILE__ ) . '/build/dashboard-widget.js',
+					$dashboard_assets['dependencies'],
+					$dashboard_assets['version'],
+					true
+				);
+			}
 		}
+
+		// Localize some data we need for the script.
+		$user = \wp_get_current_user();
+		\wp_localize_script(
+			'eg-dashboard-widget',
+			'EB_DASH',
+			array(
+				'user'            => array( 'display_name' => $user->display_name ),
+				'pluginAssetPath' => plugin_dir_url( __FILE__ ),
+			)
+		);
 	}
-
-	$user = \wp_get_current_user();
-	\wp_localize_script(
-		'eg-dashboard-widget',
-		'EB_DASH',
-		array(
-			'user' => array( 'display_name' => $user->display_name ),
-		)
-	);
-}
-\add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\enqueue_dashboard_js' );
-
-
-// \add_filter( 'block_editor_settings_all', __NAMESPACE__ . '\test_context', 10, 2 );
-
-// function test_context( $editor_settings, $block_editor_context ) {
-// 	die( var_dump( $block_editor_context ) );
-// }
+);

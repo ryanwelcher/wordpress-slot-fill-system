@@ -4,5 +4,6 @@ module.exports = {
 	entry: {
 		'edit-post': './src/slots/edit-post',
 		'edit-site': './src/slots/edit-site',
+		'dashboard-widget': './src/dashboard',
 	},
 };

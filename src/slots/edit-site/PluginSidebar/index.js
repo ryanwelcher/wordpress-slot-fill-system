@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { PluginSidebar } from '@wordpress/edit-post';
+import { PluginSidebar } from '@wordpress/edit-site';
 import { PanelBody } from '@wordpress/components';
 import { registerPlugin } from '@wordpress/plugins';
 
