@@ -1,29 +1,32 @@
-import {
-	createSlotFill,
-	Icon,
-	PanelBody,
-	PanelRow,
-} from '@wordpress/components';
+/**
+ * WordPress dependencies
+ */
+import { createSlotFill, Icon } from '@wordpress/components';
 const { Fill, Slot } = createSlotFill( 'PluginDashboardWidget' );
 import { compose } from '@wordpress/compose';
 import { withPluginContext } from '@wordpress/plugins';
 
+// Define the structure of the Fill.
 const PluginDashboardWidgetFill = ( { children, icon } ) => {
 	return (
 		<Fill>
-			<p
+			<section
 				style={ {
 					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'space-between',
 				} }
 			>
-				<Icon icon={ icon } />
-				This widget serves no purpose, enjoy!
-			</p>
-			{ children }
+				<div>
+					<Icon icon={ icon } size="50" />
+				</div>
+				<div>{ children }</div>
+			</section>
 		</Fill>
 	);
 };
 
+// We're using compose here to allow the SlotFill to use an icon prop or inherit it from the registerPlugin settings.
 const PluginDashboardWidget = compose(
 	withPluginContext( ( context, ownProps ) => {
 		return {
@@ -32,15 +35,8 @@ const PluginDashboardWidget = compose(
 	} )
 )( PluginDashboardWidgetFill );
 
-// PluginDashboardWidget.Slot = Slot;
-PluginDashboardWidget.Slot = ( data ) => {
-	return (
-		<Slot>
-			{ ( fills ) => {
-				return fills.length ? fills : null;
-			} }
-		</Slot>
-	);
-};
+// Define the Slot portion
+PluginDashboardWidget.Slot = Slot;
 
+// Export the finished SlotFill
 export default PluginDashboardWidget;

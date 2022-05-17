@@ -7,7 +7,9 @@ const BeardedWonder = () => {
 		<div style={ { width: '100%' } }>
 			<img
 				src={ `${ pluginAssetPath }/img/beardy.gif` }
-				style={ { display: 'block', margin: 'auto' } }
+				style={ {
+					border: '1px solid #c3c4c7',
+				} }
 				alt="Man blowing kisses at the camera"
 				width="100%"
 			/>
