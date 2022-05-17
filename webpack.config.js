@@ -2,8 +2,8 @@ const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 module.exports = {
 	...defaultConfig,
 	entry: {
-		'edit-post': './src/slots/edit-post',
-		'edit-site': './src/slots/edit-site',
+		'edit-post': './src/available-slots/edit-post',
+		'edit-site': './src/available-slots/edit-site',
 		'dashboard-widget': './src/dashboard',
 	},
 };
