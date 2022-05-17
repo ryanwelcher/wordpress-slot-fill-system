@@ -19,9 +19,14 @@ namespace GutenbergSlotFillSystem;
 \add_action(
 	'enqueue_block_editor_assets',
 	function() {
+
+		$current_page = get_current_screen();
 		// Enqueue the slots for the edit post screen.
 		$edit_post_examples_asset_path = plugin_dir_path( __FILE__ ) . 'build/edit-post.asset.php';
-		if ( file_exists( $edit_post_examples_asset_path ) ) {
+		if (
+			file_exists( $edit_post_examples_asset_path )
+			&& 'post' === $current_page->base
+		) {
 			$edit_post_examples_assets = require_once $edit_post_examples_asset_path;
 			\wp_enqueue_script(
 				'gutenberg-slot-fill-system-edit-post-examples', // Handle.
@@ -34,7 +39,10 @@ namespace GutenbergSlotFillSystem;
 
 		// Enqueue the slots for the edit site screen.
 		$edit_site_examples_asset_path = plugin_dir_path( __FILE__ ) . 'build/edit-site.asset.php';
-		if ( file_exists( $edit_site_examples_asset_path ) ) {
+		if (
+			file_exists( $edit_site_examples_asset_path )
+			&& 'site-editor' === $current_page->base
+		) {
 			$edit_site_examples_assets = require_once $edit_site_examples_asset_path;
 			\wp_enqueue_script(
 				'gutenberg-slot-fill-system-edit-site-examples', // Handle.
