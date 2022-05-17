@@ -2,7 +2,7 @@
 
 This repository contains working example of all of the existing SlotFills available in WordPress as of version 6.0.
 
-## Slots Available in the Edit Post Screen
+## Slots Available in the Post Edit Screen
 
 -   [PluginPostStatusInfo](./plugin-post-status-info.md)
 -   [PluginPrePublishPanel](./plugin-pre-publish-panel.md)
@@ -12,12 +12,13 @@ This repository contains working example of all of the existing SlotFills availa
 -   [PluginSidebar](./plugin-sidebar.md)
 -   [PluginSidebarMoreMenuItem](./plugin-sidebar-more-menu-item.md)
 -   [PluginDocumentSettingPanel](./plugin-document-setting-panel.md)
+-   [MainDashboardButton](https://developer.wordpress.org/block-editor/reference-guides/slotfills/main-dashboard-button/#post-editor-example) **Marked as experimental**
 
 ## Slots Available in the Site Edit Screen
 
--   [MainDashboardButtons]()
 -   [PluginMoreMenuItem](./plugin-more-menu-item.md)
 -   [PluginSidebar](./plugin-sidebar.md)
+-   [MainDashboardButton](https://developer.wordpress.org/block-editor/reference-guides/slotfills/main-dashboard-button/#site-editor-example) **Marked as experimental**
 
 ### Setup Instructions
 

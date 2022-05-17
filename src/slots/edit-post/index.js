@@ -9,3 +9,4 @@ import './PluginPostStatusInfo';
 import './PluginPrePublishPanel';
 import './PluginSidebar';
 import './PluginSidebarMoreMenuItem';
+import './MainDashboardButton';
