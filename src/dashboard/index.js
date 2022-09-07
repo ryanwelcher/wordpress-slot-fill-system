@@ -50,6 +50,5 @@ registerPlugin( 'example-custom-dashboard-widget', {
 			<BeardedWonder />
 		</PluginDashboardWidget>
 	),
-	icon: Avocado,
 	scope: 'dashboard', // This scope matches the scope defined in PluginArea.
 } );

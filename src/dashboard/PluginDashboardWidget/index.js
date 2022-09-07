@@ -10,16 +10,7 @@ import { withPluginContext } from '@wordpress/plugins';
 const PluginDashboardWidgetFill = ( { children, icon } ) => {
 	return (
 		<Fill>
-			<section
-				style={ {
-					display: 'flex',
-					alignItems: 'center',
-					justifyContent: 'space-between',
-				} }
-			>
-				<div>
-					<Icon icon={ icon } size="50" />
-				</div>
+			<section>
 				<div>{ children }</div>
 			</section>
 		</Fill>
