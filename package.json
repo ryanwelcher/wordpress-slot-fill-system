@@ -1,7 +1,7 @@
 {
-	"name": "@ryanwelcher/gutenberg-slot-fill-system",
+	"name": "@ryanwelcher/wordpress-slot-fill-system",
 	"version": "1.0.0",
-	"description": "A plugin to demonstrate extension points in Gutenberg",
+	"description": "A plugin to demonstrate SlotFill in WordPress",
 	"scripts": {
 		"setup": "npm install && composer install && npm run build",
 		"env": "wp-env",
