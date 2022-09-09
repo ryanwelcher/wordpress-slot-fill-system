@@ -1,4 +1,4 @@
-const { createSlotFill, PanelBody } = wp.components;
+import { createSlotFill } from '@wordpress/components';
 
 const { Fill: CustomizeSlotStructure, Slot } = createSlotFill(
 	'CustomizeSlotStructure'
@@ -7,7 +7,7 @@ const { Fill: CustomizeSlotStructure, Slot } = createSlotFill(
 CustomizeSlotStructure.Slot = () => (
 	<Slot>
 		{ ( fills ) => {
-			return fills.length ? <PanelBody>{ fills }</PanelBody> : null;
+			return fills.length ? <code>{ fills }</code> : null;
 		} }
 	</Slot>
 );

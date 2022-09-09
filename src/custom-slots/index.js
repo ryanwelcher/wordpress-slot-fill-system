@@ -16,6 +16,7 @@ import { PluginArea } from '@wordpress/plugins';
  * Internal dependencies
  */
 import BasicCreateSlotFill from './basic-create-slot-fill';
+import SlotFillProps from './fill-props';
 import CustomizeFillStructure from './customize-fill-structure';
 import CustomizeSlotStructure from './customize-slot-stucture';
 import CustomizeBoth from './customize-both';
@@ -36,18 +37,27 @@ const SettingsScreen = () => (
 						<Slot name="BasicSlot" />
 					</PanelRow>
 				</PanelBody>
+			</Panel>
+			<br />
+			<Panel>
 				<PanelBody title="Basic" initialOpen={ false }>
 					<PanelRow>
 						<BasicCreateSlotFill.Slot />
 					</PanelRow>
 				</PanelBody>
+			</Panel>
+			<br />
+			<Panel>
 				<PanelBody title="Basic with Props" initialOpen={ false }>
 					<PanelRow>
-						<BasicCreateSlotFill.Slot
-							fillProps={ { test: 'data' } }
+						<SlotFillProps.Slot
+							fillProps={ { message: 'Hello Slots!' } }
 						/>
 					</PanelRow>
 				</PanelBody>
+			</Panel>
+			<br />
+			<Panel>
 				<PanelBody
 					title="Customize Slot Structure"
 					initialOpen={ false }
@@ -56,6 +66,9 @@ const SettingsScreen = () => (
 						<CustomizeSlotStructure.Slot />
 					</PanelRow>
 				</PanelBody>
+			</Panel>
+			<br />
+			<Panel>
 				<PanelBody
 					title="Customize Fill Structure"
 					initialOpen={ false }
@@ -64,6 +77,9 @@ const SettingsScreen = () => (
 						<CustomizeFillStructure.Slot />
 					</PanelRow>
 				</PanelBody>
+			</Panel>
+			<br />
+			<Panel>
 				<PanelBody
 					title="Customized Slot and Fill Structure"
 					initialOpen={ false }

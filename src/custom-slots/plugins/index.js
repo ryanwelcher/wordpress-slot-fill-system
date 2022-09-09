@@ -1,8 +1,9 @@
 const { registerPlugin } = wp.plugins;
-const { Fill } = wp.components;
+const { Fill, Button } = wp.components;
 
 import { Avocado } from '../../svg/icons';
 import BasicCreateSlotFill from '../basic-create-slot-fill';
+import SlotFillProps from '../fill-props';
 import CustomizeFillStructure from '../customize-fill-structure';
 import CustomizeSlotStructure from '../customize-slot-stucture';
 import CustomizeBoth from '../customize-both';
@@ -21,26 +22,22 @@ const CustomSlotFillDemo = () => (
 			<p>{ `This appears where <BasicCreateSlotFill.Slot/> is rendered` }</p>
 		</BasicCreateSlotFill>
 
-		{ /* <BasicCreateSlotFill>
+		<SlotFillProps>
 			{ ( props ) => (
-				<p>I was passed fillProps!<br/>{`Modified Date: ${props.modified}`} </p>
+				<p>
+					I was passed fillProps!
+					<br />
+					{ `Message: ${ props.message }` }
+				</p>
 			) }
-		</BasicCreateSlotFill> */ }
+		</SlotFillProps>
 
-		<CustomizeFillStructure>
-			<p>This gets wrapped in a nested panel</p>
-		</CustomizeFillStructure>
-
-		<CustomizeFillStructure>
-			<p>So does this</p>
-		</CustomizeFillStructure>
+		<CustomizeFillStructure>Button 1</CustomizeFillStructure>
+		<CustomizeFillStructure>Button 2</CustomizeFillStructure>
+		<CustomizeFillStructure>Button 3</CustomizeFillStructure>
 
 		<CustomizeSlotStructure>
-			<p>This is in a panel</p>
-		</CustomizeSlotStructure>
-
-		<CustomizeSlotStructure>
-			<p>This is in the same panel</p>
+			This will be rendered in a code tag
 		</CustomizeSlotStructure>
 
 		<CustomizeBoth>First list item</CustomizeBoth>

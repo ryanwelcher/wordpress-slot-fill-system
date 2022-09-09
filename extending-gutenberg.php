@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name: The Gutenberg SlotFill System
- * Description: Plugin of examples for my JavaScript for WordPress conference presentation.
+ * Plugin Name: The WordPress SlotFill System
+ * Description: Plugin of Slot Fill Examples.
  * Version: 1.0.0
  * Author: Ryan Welcher
  * Author URI: www.ryanwelcher.com
@@ -31,6 +31,21 @@ namespace GutenbergSlotFillSystem;
 			\wp_enqueue_script(
 				'gutenberg-slot-fill-system-edit-post-examples', // Handle.
 				plugin_dir_url( __FILE__ ) . '/build/edit-post.js',
+				$edit_post_examples_assets['dependencies'],
+				$edit_post_examples_assets['version'],
+				true
+			);
+		}
+
+		$portal_example_asset_path = plugin_dir_path( __FILE__ ) . 'build/portal.asset.php';
+		if (
+			file_exists( $portal_example_asset_path )
+			&& 'post' === $current_page->base
+		) {
+			$edit_post_examples_assets = require_once $portal_example_asset_path;
+			\wp_enqueue_script(
+				'gutenberg-slot-fill-system-portal', // Handle.
+				plugin_dir_url( __FILE__ ) . '/build/portal.js',
 				$edit_post_examples_assets['dependencies'],
 				$edit_post_examples_assets['version'],
 				true

@@ -5,26 +5,28 @@ import { createSlotFill } from '@wordpress/components';
  */
 const { Fill, Slot } = createSlotFill( 'BasicCreateSlotFill' );
 
-const BasicCreateSlotFill = ( { children } ) => <Fill>{ children }</Fill>;
+const BasicCreateSlotFill = ( { children } ) => {
+	return <Fill>{ children }</Fill>;
+};
 
 BasicCreateSlotFill.Slot = Slot;
 
 /**
  * Streamlined
-  
+
   const { Fill: BasicCreateSlotFill, Slot } = createSlotFill( 'BasicCreateSlotFill' );
   BasicCreateSlotFill.Slot = Slot;
-  
+
  */
 
 /**
-  
+
   const BasicCreateSlotFill = ( { children } ) => (
   <Fill>
   { children }
   </Fill>
   );
-  
+
   BasicCreateSlotFill.Slot = ( { children }  ) => {
   <Slot>
   { children }
