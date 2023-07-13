@@ -15,22 +15,11 @@
 	"author": "Ryan Welcher",
 	"license": "GPL v2.0 or Later",
 	"devDependencies": {
-		"@wordpress/env": "^5.2.0",
-		"@wordpress/eslint-plugin": "^13.0.0",
-		"@wordpress/prettier-config": "^2.0.0",
-		"@wordpress/scripts": "^24.0.0",
-		"eslint-plugin-prettier": "^4.0.0",
-		"prettier": "npm:wp-prettier@2.2.1-beta-1"
+		"@wordpress/env": "^8.3.0",
+		"@wordpress/scripts": "^26.8.0"
 	},
 	"prettier": "@wordpress/prettier-config",
 	"dependencies": {
-		"@wordpress/components": "^20.0.0",
-		"@wordpress/compose": "^5.14.0",
-		"@wordpress/edit-post": "^6.13.0",
-		"@wordpress/edit-site": "^4.13.0",
-		"@wordpress/element": "^4.14.0",
-		"@wordpress/i18n": "^4.16.0",
-		"@wordpress/plugins": "^4.14.0",
 		"react-google-charts": "^3.0.13"
 	}
 }
