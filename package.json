@@ -16,8 +16,8 @@
 	"author": "Ryan Welcher",
 	"license": "GPL v2.0 or Later",
 	"devDependencies": {
-		"@wordpress/env": "^8.3.0",
-		"@wordpress/scripts": "^26.8.0",
+		"@wordpress/env": "^8.5.0",
+		"@wordpress/scripts": "^26.10.0",
 		"@wp-now/wp-now": "^0.1.54"
 	},
 	"prettier": "@wordpress/prettier-config",
