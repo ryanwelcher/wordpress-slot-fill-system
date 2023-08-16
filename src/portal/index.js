@@ -25,9 +25,16 @@ function MyToolbarButton() {
 		return () => {
 			editorToolbar?.removeChild( container );
 		};
-	}, [] );
+	}, [ container ] );
 
-	return createPortal( <Button icon="smiley"></Button>, container );
+	return createPortal(
+		<Button
+			icon="smiley"
+			// eslint-disable-next-line no-alert, no-undef
+			onClick={ () => alert( "I'm a portal!" ) }
+		></Button>,
+		container
+	);
 }
 
 // Register Block Editor plugin
