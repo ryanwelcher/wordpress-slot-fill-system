@@ -40,7 +40,13 @@ Watch Commands - compiles when files are changed.
 npm run start
 ```
 
-Start the local development environment. Requires docker.
+### Start the local development environment.
+
+#### wp-now
+
+`npm run wp-now start --blueprint=./wp-now.json`
+
+#### wp-env
 
 ```
 npm run env start
