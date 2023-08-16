@@ -10,13 +10,15 @@
 		"lint:js": "wp-scripts lint-js",
 		"lint:style": "wp-scripts lint-style",
 		"format:js": "wp-scripts format",
-		"packages-update": "wp-scripts packages-update"
+		"packages-update": "wp-scripts packages-update",
+		"wp-now": "wp-now"
 	},
 	"author": "Ryan Welcher",
 	"license": "GPL v2.0 or Later",
 	"devDependencies": {
 		"@wordpress/env": "^8.3.0",
-		"@wordpress/scripts": "^26.8.0"
+		"@wordpress/scripts": "^26.8.0",
+		"@wp-now/wp-now": "^0.1.54"
 	},
 	"prettier": "@wordpress/prettier-config",
 	"dependencies": {
