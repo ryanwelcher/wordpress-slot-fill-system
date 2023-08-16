@@ -18,7 +18,10 @@ registerPlugin( 'example-edit-site-plugin-more-menu-item', {
 			target="_blank"
 			rel="noopener noreferrer"
 		>
-			{ __( 'SlotFill Reference Guide', 'gutenberg-slot-fill-system' ) }
+			{ __(
+				'Site Editor Example: SlotFill Reference Guide',
+				'gutenberg-slot-fill-system'
+			) }
 		</PluginMoreMenuItem>
 	),
 	icon: Avocado,

@@ -18,7 +18,7 @@ This repository contains working example of all of the existing SlotFills availa
 
 -   [PluginMoreMenuItem](#)
 -   [PluginSidebar](#)
--   [MainDashboardButton](https://developer.wordpress.org/block-editor/reference-guides/slotfills/main-dashboard-button/#site-editor-example) **Marked as experimental**
+-   [PluginSidebarMoreMenuItem](#)
 
 ### Local Development
 

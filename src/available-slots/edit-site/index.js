@@ -1,6 +1,8 @@
 /**
- * Import each slotfill example into main file.
+ * Import each SlotFill example into main file.
  */
-import './MainDashboardButton';
+
 import './PluginMoreMenuItem';
 import './PluginSidebar';
+import './PluginSidebarMoreMenuItem';
+import './PluginTemplateSettingPanel';
