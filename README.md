@@ -19,6 +19,7 @@ This repository contains working example of all of the existing SlotFills availa
 -   [PluginMoreMenuItem](#)
 -   [PluginSidebar](#)
 -   [PluginSidebarMoreMenuItem](#)
+-   [PluginTemplateSettingPanel](#)
 
 ### Local Development
 
@@ -44,7 +45,9 @@ npm run start
 
 #### wp-now
 
-`npm run wp-now start --blueprint=./wp-now.json`
+```
+npm run wp-now start --blueprint=./wp-now.json
+```
 
 #### wp-env
 
